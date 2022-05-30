@@ -1,0 +1,134 @@
+* {
+    box-sizing: border-box;
+	margin:0;
+}
+html{
+    width: 100%;
+}
+body{
+    width: 100%;
+    margin: 0;
+}
+#cajaExtension{
+    position: absolute;
+    top: 0;
+    left: 40%;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 6px;
+}
+#cartelExtension{
+    width: 97%;
+    margin-top: 4px;
+}
+#wikiLetrero{
+    width: 100%;
+    filter: drop-shadow(1px 2px 2px rgb(130, 130, 190));
+}
+form{
+    box-shadow: 1px 1px 3px rgb(20 20 210);
+    border-radius: 10px;
+    padding: 10px 7px 10px 7px;
+    margin: 20px 0px 12px 0px; 
+}
+#radioDiv{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 5px;
+}
+input #alfabetico{
+    height: 30px;
+    width: 185px;
+    text-align: center;
+    border: 2px solid rgb(10,10,210);
+    border-radius: 10px;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: rgb(185, 10, 10)
+}
+#lanzar{
+    width: 45%;
+    padding: 4px;
+    border-radius: 15px;
+    box-shadow: 1px 1px 3px rgb(5 5 195);
+    text-align: center;
+    font-size: 1.3em;
+    color: rgb(210,0,0);
+    cursor: pointer;
+}
+#lanzar:hover{
+    box-shadow: 2px 3px 4px rgb(75, 75, 250) ;
+}
+.panelBotones{
+    display: flex;
+    flex-direction: column;
+    width: 96%;
+    margin:40px 0px 12px 0px;
+}
+.boton{
+    width: 45%;
+    padding: 2px; 
+    text-align: center;
+    border-radius: 5px;
+    z-index: 99;
+    box-shadow: 1px 1px 3px rgb(10, 10, 230);
+    color: rgb(210,0,0, 0.9);
+    font-weight: bold;
+    opacity: 0.9;
+    cursor: pointer;
+}
+.botonInstrucciones{
+    float: left;
+}
+.botonAcercaDe{
+    float: right;
+}
+
+/*.panelBotones:hover{
+    height: 120px;
+}
+.botonInstrucciones:hover + .textoInstr {
+    display: inline;
+    opacity: 1;
+    height: 100%;
+    
+}
+.botonAcercaDe:hover + .acercaDe {
+    display: block;
+    opacity: 1;
+    height: 100%;
+}*/
+
+.textos{
+    width: 99%;
+    margin-top: 6px;
+    font-weight: bold;
+    text-align: justify;
+    color: rgb(10,10,140)
+}
+.pTextos{
+    padding: 2px 1px 2px 1px;
+}
+/*.textoInstr{
+    opacity: 0;
+    height: 0px;
+    
+}
+.acercaDe{
+   
+    opacity: 0;
+    height: 0px;
+}*/
+.politicaPrivacidad{
+    font-size: 0.9em; 
+    color: rgb(195, 0,0); 
+    text-align: center; 
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+
