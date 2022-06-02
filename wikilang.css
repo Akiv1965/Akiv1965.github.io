@@ -20,7 +20,7 @@ body{
     padding: 6px;
 }
 #cartelExtension{
-    width: 97%;
+    width: 80%;
     margin-top: 4px;
 }
 #wikiLetrero{
@@ -51,19 +51,18 @@ input #alfabetico{
     color: rgb(185, 10, 10)
 }
 #lanzar{
-    width: 45%;
-    padding: 4px;
+    width: 40%;
+    padding: 3px;
     border-radius: 15px;
     box-shadow: 1px 1px 3px rgb(5 5 195);
     text-align: center;
-    font-size: 1.3em;
     color: rgb(210,0,0);
     cursor: pointer;
 }
 #lanzar:hover{
     box-shadow: 2px 3px 4px rgb(75, 75, 250) ;
 }
-.panelBotones{
+.panelEntrada{
     display: flex;
     flex-direction: column;
     width: 96%;
@@ -131,4 +130,114 @@ input #alfabetico{
     cursor: pointer;
 }
 
+/*    Pantalla RESULTADOS   */
+#caja{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    opacity: 0;
+}
+#cajaLetrero{
+    width: 35%;
+    height: 410px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+#letrero{
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#cartelLetrero{
+    width: 50%;
+}
+#wikiLetrero{
+    width: 100%;
+    filter: drop-shadow(1px 2px 2px rgb(130, 130, 190));
+}
+.datosLetrero{
+    font-size: 1.3em;
+    width: 90%;
+    min-height: 25px;
+    font-weight: bold;
+    text-align: center;
+    padding: 3px;
+    color: rgb(10 10 205);
+    box-shadow: 0px 1px 3px rgb(30 30 95);
+    border-radius: 5px;
+    margin-top: 4px;
+}
+#letreroContador{
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.contador1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.9em;
+}
+#listaPaginas{
+    width: 55%;
+    max-height: 530px;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    box-shadow: -1px 1px 3px rgb(120, 120, 125);
+}
+#listaPaginas::-webkit-scrollbar  {
+    width: 4px;
+     background: rgb(170, 170, 205);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgb(210,210,225); 
+  }
+#paginaEnLista{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 6px 0px 6px 12px;
+    box-shadow: 0px 1px 4px inset rgb(165 165 200);
+}
+.articuloEnLista{
+    width: 60%;
+    font-size: 1.4em;
+}
+.hideText{
+    width: 95%;
+    background: rgb(245, 245, 250, 0.2);
+    padding: 3px 2px 2px 5px;
+    margin: 5px 0px 2px 0px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px inset;
+    
+}
+#idiomasEnLista{
+    width: 90%;
+    font-size: 0.9em;
+}
+#idiomasEnLista a{
+    margin-right: 3px;
+}
+#nuevaBusqueda{
+    width: 35px;
+    cursor: pointer;
+}
+#imgNuevaBusqueda{
+    width: 100%;
+    filter: drop-shadow(-1px 2px 2px rgb(80,80,100));
+}
+#imgNuevaBusqueda:hover{
+    filter:drop-shadow(1px 2px 4px rgb(100,100,140))
+}
+#imgNuevaBusqueda:active{
+    filter:drop-shadow(1px 1px 2px rgb(10,10,40))
+}
 

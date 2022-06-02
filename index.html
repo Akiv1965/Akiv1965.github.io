@@ -5,7 +5,7 @@
 		<meta charset="utf-8" />
         <link rel="stylesheet" href="wikilang.css" />
 		<script src="jquery-3.5.1.js"></script>
-		<!--<script src="testWiki.js"></script>-->
+		<script type="text/javascript" src="lanzarwiki.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 	</head>
 	<body>
@@ -14,38 +14,27 @@
 				<img src="iconos/wikiLetrero.png" id="wikiLetrero" />
 			</div>
 			<form>
-			<div id="radioDiv">
-				<input type="radio" id="radioAlfa" name="tipoBusqueda" value="alfa" checked>
-  				<label for="html">Alfabético</label>
-  				<input type="radio" id="radioCateg" name="tipoBusqueda" value="categ">
-  				<label for="css">Categoría</label>
-			</div>
 				<input type="text" id="alfabetico" />
+				
 			</form>
-			<div id="lanzar">BUSCAR</div>
-			<div class="panelBotones">
-				<div style="width: 100%;">
-				<div id="botonAcercaDe" class="boton botonAcercaDe">Acerca de</div>
-				<div id="" class="boton botonInstrucciones">Instrucciones</div>
-				</div>
+			<button type="button" onclick="clickLanzar()" id="lanzar">BUSCAR</button>
+			<script>
+				function clickLanzar(){
+					//event.prevent.default()
+					response= $("#alfabetico").val()
+					console.log(response)
+					lanzarWiki(response)
+				}
+			</script>
+		</div>
+			<div class="panelEntrada">
+			
 			
 				<div id="acercaDe" class="textos acercaDe" hidden>
 					<p class="pTextos"><big style="color: rgb(195, 0,0)">Wiki-Lang</big> busca en la Wikipedia en inglés artículos que tengan varios
 					enlaces a otros idiomas pero no tenga enlace a español por lo que puede ser un artículo 
 					candidato a ser traducido.</p>
-					<hr>
-					<p class="pTextos"><small>Desarrollado por: </small><br><a href="mailto:akivhch@gmail.com" style="text-decoration: none; color: rgb(195, 0,0)"><big>Iñaki &#9993;</big></a></p>
-					<hr>
-					
-					<p class="pTextos"><small>Datos: </small><br><a href="https://www.mediawiki.org/wiki/API:Main_page" target="_blank" style="text-decoration: none; color: rgb(195, 0,0)"><big>API Wikipedia</a></big></p>
-					<hr>
-					<p   class="politicaPrivacidad">Política de Privacidad
-					<p id="politicaPrivacidad" class="pTextos" hidden ><small>Como desarrollador de <big>Wiki-lang</big> declaro que esta extensión 
-						no solicita, recoge o almecena ningún tipo de dato del usuario.</small>
-						<br>
-						<span style="float: right"><small>ZAMORA - 2022</small> </span>
-					</p>
-					</p>
+				
 				</div>
 
 				<div id="" class="textos textoInstr" hidden>
@@ -57,6 +46,14 @@
 					Pruebe con nombres de pila como "Paul", "James", "Charles"... O con palabras genéricas como "King", "Church", "Queen of", "Battle of"...</p>
 				</div>
 			</div>
-		</div>
+			<div id="caja" >
+				<div id="cajaLetrero">
+				 <div id="cartelLetrero"><img src="iconos/wikiLetrero.png" id="wikiLetrero"></div> 
+				  <div id="letrero"></div>
+				  <div id="nuevaBusqueda" title="Más resultados"><img src="iconos/iconMasDatos.png" id="imgNuevaBusqueda"></div>
+				</div>
+				<div id="listaPaginas"></div>
+			  </div>
     </body>
+
     </html>
