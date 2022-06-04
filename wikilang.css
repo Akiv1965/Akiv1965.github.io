@@ -245,6 +245,12 @@ input #alfabetico{
     width: 100%;
     filter: drop-shadow(-1px 2px 2px rgb(80,80,100));
 }
+#botonesLetrero{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
 #imgNuevaBusqueda:hover{
     filter:drop-shadow(1px 2px 4px rgb(100,100,140))
 }
