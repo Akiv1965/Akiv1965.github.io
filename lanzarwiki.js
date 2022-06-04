@@ -13,11 +13,14 @@
 
 	
 	//Evento para repetir búsqueda
-	$("#nuevaBusqueda").on("click", function () {
+	//$("#nuevaBusqueda").click(
+		function nuevaBusqueda () {
+		console.log("EEEKK")
 		var response = $("#ultimaPagina").text();
 		urlApi = "generator=allpages&gapfrom=" + response + "&gaplimit=480";
 		lanzarWiki(response, urlApi);
-	});
+	}
+	//);
 
 	//LANZARWIKI Función------------
 	function lanzarWiki(response, urlApi) {
@@ -79,7 +82,7 @@
 				var ultimaPagina = listaPaginas[listaPaginas.length - 1].title;
 				var primeraPagina = listaPaginas[aleatorio].title;
 				if (response == "") {
-					response = primeraPagina;
+					response = listaPaginas[0].title;
 				}
 				var arrayLang = []; //array de todos los lenguajes del artículo
 				var arrayCHeck = []; //"arrayCheckTest"

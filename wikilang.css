@@ -4,9 +4,11 @@
 }
 html{
     width: 100%;
+    height: 100%;
 }
 body{
     width: 100%;
+    height: 100%;
     margin: 0;
 }
 #cajaExtension{
@@ -72,7 +74,7 @@ input #alfabetico{
     box-shadow: 2px 3px 4px rgb(75, 75, 250) ;
 }
 .panelEntrada{
-    display: flex;
+    display: none;
     flex-direction: column;
     width: 96%;
     margin:40px 0px 12px 0px;
@@ -148,21 +150,21 @@ input #alfabetico{
     opacity: 0;
 }
 #cajaLetrero{
-    width: 35%;
-    height: 410px;
+    width: 30%;
+    height: 500px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
 }
 #letrero{
-    width: 75%;
+    width: 85%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 #cartelLetrero{
-    width: 50%;
+    width: 35%;
 }
 #wikiLetrero{
     width: 100%;
@@ -170,7 +172,7 @@ input #alfabetico{
 }
 .datosLetrero{
     font-size: 1.3em;
-    width: 90%;
+    width: 95%;
     min-height: 25px;
     font-weight: bold;
     text-align: center;
@@ -193,8 +195,8 @@ input #alfabetico{
     font-size: 0.9em;
 }
 #listaPaginas{
-    width: 55%;
-    max-height: 530px;
+    width: 65%;
+    max-height: 535px;
     display: flex;
     flex-direction: column;
     overflow: auto;
@@ -230,7 +232,7 @@ input #alfabetico{
 }
 #idiomasEnLista{
     width: 90%;
-    font-size: 0.9em;
+    font-size: 0.8em;
 }
 #idiomasEnLista a{
     margin-right: 3px;
