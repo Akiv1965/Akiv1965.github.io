@@ -14,7 +14,7 @@ body{
 #cajaExtension{
     position: absolute;
     width: 100%;
-    top: 20%;
+    top: 8%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -33,16 +33,18 @@ form{
     box-shadow: 1px 1px 3px rgb(20 20 210);
     border-radius: 10px;
     margin: 20px 0px 12px 0px; 
+    text-align: center;
 }
 
-input{
+/*input{
     width: 100%;
     border: none;
     font-size: 1.3em;
     border-radius: 10px;
     padding: 5px;
     box-shadow: 1px 1px 3px rgb(20 20 210);
-}
+    text-align: center;
+}*/
 
 #radioDiv{
     width: 100%;
@@ -51,15 +53,16 @@ input{
     justify-content: center;
     column-gap: 5px;
 }
-input #alfabetico{
-    height: 30px;
-    width: 185px;
+input{
+    width: 98%;
+    height: 31px;
     text-align: center;
-    border: 2px solid rgb(10,10,210);
-    border-radius: 10px;
-    font-size: 1.5em;
+    border: none;
+    font-size: 1.4em;
     font-weight: bold;
-    color: rgb(185, 10, 10)
+    color: rgb(185, 10, 10);
+    border-radius: 10px;
+    padding: 5px;
 }
 #lanzar{
     padding: 10px 15px 10px 15px;
@@ -74,10 +77,10 @@ input #alfabetico{
     box-shadow: 2px 3px 4px rgb(75, 75, 250) ;
 }
 .panelEntrada{
-    display: none;
+    width: 60%;
+    display: flex;
     flex-direction: column;
-    width: 96%;
-    margin:40px 0px 12px 0px;
+    margin-top: 20px;
 }
 .boton{
     width: 45%;
@@ -115,10 +118,11 @@ input #alfabetico{
 
 .textos{
     width: 99%;
-    margin-top: 6px;
-    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 0.9em;
     text-align: justify;
-    color: rgb(10,10,140)
+    color: rgb(10,10,140);
+    opacity: 0.9;
 }
 .pTextos{
     padding: 2px 1px 2px 1px;
