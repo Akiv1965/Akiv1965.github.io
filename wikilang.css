@@ -78,10 +78,19 @@ input{
 }
 .panelEntrada{
     width: 60%;
+    max-height: 495px;
     display: flex;
     flex-direction: column;
     margin-top: 20px;
+    overflow: auto;
 }
+.panelEntrada::-webkit-scrollbar  {
+    width: 4px;
+     background: rgb(210, 210, 250);
+  }
+.panelEntrada::-webkit-scrollbar-thumb {
+    background: rgb(120,120,235); 
+  }
 .boton{
     width: 45%;
     padding: 2px; 
@@ -262,3 +271,44 @@ input{
     filter:drop-shadow(1px 1px 2px rgb(10,10,40))
 }
 
+
+
+/* ///////// \\\\\\\\\\\\\\
+   MEDIA QUERYS    
+   ///////////////*/
+   @media only screen and (max-width: 600px) {
+    #caja{
+        flex-direction: column;
+    }
+
+   #cajaLetrero{
+        width: 100%;
+        height: auto;
+        padding: 10px 0px 10px 0px;
+   }
+   #cartelLetrero{
+       width: 27%;
+   }
+   #letrero{
+       width: 95%;
+   }
+   .datosLetrero{
+       font-size: 1em;
+   }
+   #botonesLetrero{
+       justify-content: space-evenly;
+   }
+   #nuevaBusqueda{
+       width: 30px;
+       margin-top: 7px;
+   }
+   #listaPaginas{
+       width: 96%;
+   }
+   .articuloEnLista{
+       width: 100%;
+       margin-bottom: 4px;
+       font-size: 1.2em;
+       font-weight: bold;
+   }
+}
