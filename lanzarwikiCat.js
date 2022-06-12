@@ -238,7 +238,7 @@ $.get(
 						console.log("OFF")
 						$("#nuevaBusqueda").hide()
 						$("#nuevaBusquedaFin").show()
-						$(".botonVolverRebusca").css("cursor", "not-allowed")
+						//$(".botonVolverRebusca #nuevaBusquedaFin").css("cursor", "not-allowed")
 						//document.querySelector("#nuevaBusqueda").removeEventListener("click", nuevaBusqueda())
 						//$("#nuevaBusqueda").attr("title", "No hay más artículos en la categoría")
 						//$("#nuevaBusqueda").css("z-index", 0)

@@ -8,6 +8,7 @@
 		<script src="jquery-3.5.1.js"></script>
 		<script type="text/javascript" src="lanzarwiki.js"></script>
 		<script type="text/javascript" src="lanzarwikiCat.js"></script>
+		<script type="text/javascript" src="contador.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 	</head>
 	<body>
@@ -104,11 +105,16 @@
 				  <div id="botonesLetrero">
 				  	<div id="volver" class="botonVolverRebusca" onclick="location.replace('index.html')" title="Volver"><img src="iconos/iconVolver.png" id="imgNuevaBusqueda"></div>
 				  	<div id="nuevaBusqueda" class="botonVolverRebusca" onclick="nuevaBusqueda()" title="Más resultados"><img src="iconos/iconMasDatos.png" id="imgNuevaBusqueda"></div>
-					  <div id="nuevaBusquedaFin" class="botonVolverRebusca"  title="No hay más artículos" style="opacity: 0.8" hidden><img src="iconos/iconMasDatos.png" id="imgNuevaBusquedaFin"><span style="width: 100%; position:absolute">No hay más artículos en esta categoría</span></div>
+					  <div id="nuevaBusquedaFin" class="botonVolverRebusca"  title="No hay más artículos" style="opacity: 0.8" hidden><img src="iconos/iconMasDatos.png" id="imgNuevaBusquedaFin"><span style="width: 105px; position:absolute; left: -25px; top: 5px; font-size: 0.7em; font-weight: bold; color: rgb(170, 10, 10); cursor: not-allowed;">No hay más artículos en esta categoría</span></div>
 				</div>
 				</div>
 				<div id="listaPaginas"></div>
 			  </div>
+	<div id="contador" hidden>
+		<div hidden>Website visit count:</div>
+    	<div class="website-counter" hidden></div>
+    	<button id="reset" hidden>Reset</button>
+	</div>
     </body>
 
     </html>
