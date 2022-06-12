@@ -29,11 +29,17 @@ body{
     filter: drop-shadow(1px 2px 2px rgb(130, 130, 190));
 }
 form{
-    width: 70%;
+    width: 75%;
+    height: 70px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: space-between;
     box-shadow: 1px 1px 3px rgb(20 20 210);
     border-radius: 10px;
     margin: 20px 0px 12px 0px; 
     text-align: center;
+    padding: 6px 4px 6px 4px;
 }
 
 /*input{
@@ -47,13 +53,12 @@ form{
 }*/
 
 #radioDiv{
-    width: 100%;
+    width: 70%;
     display: flex;
     align-items: center;
-    justify-content: center;
-    column-gap: 5px;
+    justify-content: space-around;
 }
-input{
+#alfabetico{
     width: 98%;
     height: 31px;
     text-align: center;
@@ -62,7 +67,12 @@ input{
     font-weight: bold;
     color: rgb(185, 10, 10);
     border-radius: 10px;
-    padding: 5px;
+    background: rgb(200,200,200, 0.3);
+}
+input::placeholder{
+    font-size: 0.6em;
+    opacity: 0.6;
+    color: rgb(185, 10, 10, 0.7);
 }
 #lanzar{
     padding: 10px 15px 10px 15px;
@@ -77,8 +87,8 @@ input{
     box-shadow: 2px 3px 4px rgb(75, 75, 250) ;
 }
 .panelEntrada{
-    width: 60%;
-    max-height: 495px;
+    width: 66%;
+    max-height: 500px;
     display: flex;
     flex-direction: column;
     margin-top: 20px;
@@ -250,7 +260,7 @@ input{
 #idiomasEnLista a{
     margin-right: 3px;
 }
-#nuevaBusqueda{
+.botonVolverRebusca{
     width: 35px;
     cursor: pointer;
 }
@@ -258,6 +268,16 @@ input{
     width: 100%;
     filter: drop-shadow(-1px 2px 2px rgb(80,80,100));
 }
+#imgNuevaBusquedaFin{
+    width: 100%;
+    filter: drop-shadow(-1px 2px 2px rgb(80,80,100));
+    opacity: 0.8;
+}
+#imgVolver{
+    width: 100%;
+    filter: drop-shadow(-1px 2px 2px rgb(80,80,100));
+}
+
 #botonesLetrero{
     width: 100%;
     display: flex;

@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="wikilang.css" />
 		<script src="jquery-3.5.1.js"></script>
 		<script type="text/javascript" src="lanzarwiki.js"></script>
+		<script type="text/javascript" src="lanzarwikiCat.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 	</head>
 	<body>
@@ -14,24 +15,58 @@
 			<div id="cartelExtension">
 				<img src="iconos/wikiLetrero.png" id="wikiLetrero" />
 			</div>
-			<form>
-				<input type="text" id="alfabetico" />
-				
+			<form id="inputEntrada">
+				<input type="text" id="alfabetico" placeholder="BÚSQUEDA ALFABÉTICA" autocomplete="off"/>
+				<div id="radioDiv">
+					<span><input type="radio" id="radioAlfa" name="tipoBusqueda" value="alfa" checked>
+					  <label for="alfa">Alfabético</label></span>
+					  <span><input type="radio" id="radioCateg" name="tipoBusqueda" value="categ">
+					  <label for="categ">Categoría</label></span>
+				</div>
 			</form>
 			<button type="button" onclick="clickLanzar()" id="lanzar">BUSCAR</button>
 			<script>
+				$("input").change(
+					function(){
+						console.log("On change ",$(":checked").val())
+						if($(":checked").val() == "categ"){
+							$("#nuevaBusqueda").attr("onclick", "nuevaBusquedaCat()")
+							$("#alfabetico").attr({
+								placeholder: "BÚSQUEDA POR CATEGORÍA"
+							})
+						}else{
+							$("#nuevaBusqueda").attr("onclick", "nuevaBusqueda()")
+							$("#alfabetico").attr({
+								placeholder: "BÚSQUEDA ALFABÉTICA"
+							})
+						}
+					}
+				)
+				
 				function clickLanzar(){
-					//event.prevent.default()
+					console.log($(":checked").val())
 					response= $("#alfabetico").val()
+					if($(":checked").val() == "categ"){
+						
+						if(response == ""){
+							alert("Introduzca el nombre de una categoría de la Wikipedia en inglés")
+						}else{
+							lanzarWikiCat(response)
+						}
+						
+					}else{
+						lanzarWiki(response)
+					}
 					console.log(response)
-					lanzarWiki(response)
+					
+
 				}
 			</script>
 			<div class="panelEntrada">
 			
 			
 				<div id="acercaDe" class="textos acercaDe">
-					<p style="width: 100%; text-align: center; font-size: 1em; color: rgb(195,0,0); font-weight: bold;">¿Qué es esto?</p>
+					<p style="width: 100%; text-align: center; font-size: 1.1em; color: rgb(195,0,0); font-weight: bold;">¿Qué es esto?</p>
 					<p class="pTextos"><big style="color: rgb(195, 0,0)">Wiki-Lang</big> es una ayuda para encontrar artículos de la Wikipedia en inglés que puedan
 					necesitar una traducción al español. </p>
 					<p class="pTextos"><big style="color: rgb(195, 0,0)">Wiki-Lang</big> busca en la Wikipedia en inglés artículos que contengan enlaces a varios
@@ -40,17 +75,23 @@
 				</div>
 
 				<div id="" class="textos textoInstr">
-					<p style="width: 100%; text-align: center; font-size: 1em; color: rgb(195,0,0); font-weight: bold;">¿Cómo funciona?</p>
+					<p style="width: 100%; text-align: center; font-size: 1.1em; color: rgb(195,0,0); font-weight: bold;">¿Cómo funciona?</p>
+					<p style="width: 100%; font-size: 1em; color: rgb(195,0,0); font-weight: bold;">Búsqueda alfabética</p>
 					<p class="pTextos">Introduzca cualquier letra, palabra o frase y pulse "BUSCAR" para iniciar una búsqueda
 						 por orden alfabético a partir del texto introducido.</p>
 					<p class="pTextos">Si deja el formulario en blanco la búsqueda se iniciará a partir de un
 					artículo aleatorio.</p>
 					<p>SUGERENCIAS: <br> 
-					Pruebe con nombres de pila como "Paul", "James", "Charles"... O con palabras que engloben algún rasgo común como "King", "Church", "Queen of", "Battle of"...</p>
+					Pruebe con nombres de pila como <b>"Paul", "James", "Charles"</b>... O con palabras que engloben algún rasgo común como <b>"King", "Church", "Queen of", "Battle of"</b> ...</p>
+					<br><p style="width: 100%; font-size: 1em; color: rgb(195,0,0); font-weight: bold;">Búsqueda por categoría</p>
+					<p class="pTextos">Introduzca el nombre de una categoría escrita tal y como aparece en la Wikipedia en Inglés.<br>
+					EJEMPLOS: <br>
+					<b>"British historical novelists", "English inventors"</b>...
+				</p>
 				</div>
 
 				<div id="" class="textos textoDesarr">
-						<p style="width: 100%; text-align: center; font-size: 1em; color: rgb(195,0,0); font-weight: bold;">¿A quién protestar?</p>
+						<p style="width: 100%; text-align: center; font-size: 1.1em; color: rgb(195,0,0); font-weight: bold;">¿A quién protestar?</p>
 						<p class="pTextos"> Los datos se extraen a través de la <a href="https://www.mediawiki.org/wiki/API:Main_page" target="_blank" style="text-decoration: none; color: rgb(195, 0,0)">API de Wikipedia</a>  y el desarrollo lo hizo <a href="mailto:akivhch@gmail.com" style="text-decoration: none; color: rgb(195, 0,0)">Iñaki &#9993;</a></p>
 				</div>
 			</div>
@@ -61,9 +102,10 @@
 				 <div id="cartelLetrero"><img src="iconos/wikiLetrero.png" id="wikiLetrero"></div> 
 				  <div id="letrero"></div>
 				  <div id="botonesLetrero">
-				  	<div id="nuevaBusqueda" onclick="location.replace('index.html')" title="Nueva Búsqueda"><img src="iconos/iconVolver.png" id="imgNuevaBusqueda"></div>
-				  	<div id="nuevaBusqueda" onclick="nuevaBusqueda()" title="Más resultados"><img src="iconos/iconMasDatos.png" id="imgNuevaBusqueda"></div>
-				  </div>
+				  	<div id="volver" class="botonVolverRebusca" onclick="location.replace('index.html')" title="Volver"><img src="iconos/iconVolver.png" id="imgNuevaBusqueda"></div>
+				  	<div id="nuevaBusqueda" class="botonVolverRebusca" onclick="nuevaBusqueda()" title="Más resultados"><img src="iconos/iconMasDatos.png" id="imgNuevaBusqueda"></div>
+					  <div id="nuevaBusquedaFin" class="botonVolverRebusca"  title="No hay más artículos" style="opacity: 0.8" hidden><img src="iconos/iconMasDatos.png" id="imgNuevaBusquedaFin"><span style="width: 100%; position:absolute">No hay más artículos en esta categoría</span></div>
+				</div>
 				</div>
 				<div id="listaPaginas"></div>
 			  </div>
