@@ -1,4 +1,5 @@
-var counterContainer = document.querySelector(".website-counter");
+$(document).ready(function(){
+//var counterContainer = document.querySelector(".website-counter");
 //var resetButton = document.querySelector("#reset");
 var visitCount = localStorage.getItem("page_view");
 
@@ -11,11 +12,12 @@ if (visitCount) {
   localStorage.setItem("page_view", 1);
 }
 console.log("***** ", visitCount)
-$(".website-counter").text(visitCount);
+$("#webCount").html(visitCount);
 
 // Adding onClick event listener
 /*resetButton.addEventListener("click", () => {
   visitCount = 1;
   localStorage.setItem("page_view", 1);
-  counterContainer.innerHTML = visitCount;
+  $(".website-counter").text(visitCount);
 });*/
+})
