@@ -17,7 +17,7 @@
 				<img src="iconos/wikiLetrero.png" id="wikiLetrero" />
 			</div>
 			<form id="inputEntrada">
-				<input type="text" id="alfabetico" placeholder="BÚSQUEDA ALFABÉTICA" autocomplete="off"/>
+				<input type="text" id="alfabetico" placeholder="BÚSQUEDA ALFABÉTICA" title="Introduzca un texto para iniciar una búsqueda por orden alfabético" autocomplete="off"/>
 				<div id="radioDiv">
 					<span><input type="radio" id="radioAlfa" name="tipoBusqueda" value="alfa" checked>
 					  <label for="alfa">Alfabético</label></span>
@@ -69,8 +69,8 @@
 				 <div id="cartelLetrero"><img src="iconos/wikiLetrero.png" id="wikiLetrero"></div> 
 				  <div id="letrero"></div>
 				  <div id="botonesLetrero">
-				  	<div id="volver" class="botonVolverRebusca" onclick="location.replace('index.html')" title="Volver"><img src="iconos/iconVolver.png" id="imgNuevaBusqueda"></div>
-				  	<div id="nuevaBusqueda" class="botonVolverRebusca" onclick="nuevaBusqueda()" title="Más resultados"><img src="iconos/iconMasDatos.png" id="imgNuevaBusqueda"></div>
+				  	<div id="volver" class="botonVolverRebusca" onclick="location.replace('index.html')" title="Volver"><img src="iconos/iconVolver.png" id="imgVolver"></div>
+				  	<div id="nuevaBusqueda" class="botonVolverRebusca" onclick="nuevaBusqueda()" title="Pulsa para continuar búsqueda"><img src="iconos/iconMasDatos.png" id="imgNuevaBusqueda"></div>
 					  <div id="nuevaBusquedaFin" class="botonVolverRebusca"  title="No hay más artículos" style="opacity: 0.8" hidden><img src="iconos/iconMasDatos.png" id="imgNuevaBusquedaFin"><span style="width: 105px; position:absolute; left: -25px; top: 5px; font-size: 0.7em; font-weight: bold; color: rgb(170, 10, 10); cursor: not-allowed;">No hay más artículos en esta categoría</span></div>
 				</div>
 				</div>
@@ -88,12 +88,14 @@
 				if($(":checked").val() == "categ"){
 					$("#nuevaBusqueda").attr("onclick", "nuevaBusquedaCat()")
 					$("#alfabetico").attr({
-						placeholder: "BÚSQUEDA POR CATEGORÍA"
+						placeholder: "BÚSQUEDA POR CATEGORÍA",
+						title: "Introduzca una categoría de la Wikipedia en inglés"
 					})
 				}else{
 					$("#nuevaBusqueda").attr("onclick", "nuevaBusqueda()")
 					$("#alfabetico").attr({
-						placeholder: "BÚSQUEDA ALFABÉTICA"
+						placeholder: "BÚSQUEDA ALFABÉTICA", 
+						title: "Introduzca un texto para iniciar una búsqueda por orden alfabético"
 					})
 				}
 			}
