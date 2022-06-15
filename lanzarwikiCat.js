@@ -1,31 +1,33 @@
 var contResultados = 0;
 	var contPaginas = 0;
 
-		//console.log("received user data", response);Category:English historical novelists Peanuts music
-		
-
+	//console.log("received user data", response);Category:English historical novelists Peanuts music
 	
 	//Evento para repetir búsqueda
 		function nuevaBusquedaCat() {
 		console.log("EEEKK")
-		//var continuePages = $("#continueOculto").text();
-		//urlApi = "generator=categorymembers&gcmtitle=Category:"+response+"&gcmcontinue="+continuePages+"&gcmprop=ids";
 		lanzarWikiCat(response);
 	}
-	//);
 	
 	//LANZARWIKI Función------------
 	function lanzarWikiCat(response) {
-var urlApi=  "generator=categorymembers&gcmtitle=Category:"+response+"&gcmprop=ids"
+	//Monta dirección con la categoría
+		var urlApi=  "generator=categorymembers&gcmtitle=Category:"+response+"&gcmprop=ids"
+	//Si hay CONTINUE monta la dirección con el continue
 		if($("#continueOculto").text() !== ""){
 			var continuePages = $("#continueOculto").text();
 			urlApi = "generator=categorymembers&gcmtitle=Category:"+response+"&gcmcontinue="+continuePages+"&gcmprop=ids";
 		}
+
 		$("#cajaExtension").animate({
 			opacity: "0",
 			height: "0px"
-		}, 500)
-		$("#caja").css("opacity", 1)
+		}, 400)
+		$("#caja").animate({
+			opacity: "1"
+		}, 400)
+		
+	//Monta HTML del letrero para datos artículos
 		$("#letrero").html(
 			"Categoría: <br><span class='datosLetrero'>" +
 			"<img src='iconos/loadingGif.gif' width='24px'>" +
@@ -42,17 +44,22 @@ var urlApi=  "generator=categorymembers&gcmtitle=Category:"+response+"&gcmprop=i
 				0 +
 				"</span></span></div>"
 		)
-$.get(
+	
+	//Conexión API  WIKI
+		$.get(
 			"https://en.wikipedia.org/w/api.php?action=query&" +
            		 urlApi +
 				"&prop=langlinks&lllimit=485&llprop=url|langname&" +
 				"format=json&formatversion=2&origin=*",
 			function (datosSet) {
+			
+			//Si no encuentra la categoría 
                 if(!datosSet.query){
 					location.replace('index.html')
 					alert("Categoría desconocida. <br> Introduzca una categoría en inglés válida.")
 				}
-                //var gcmcontinue= datosSet.continue.gcmcontinue
+                
+
                 console.log(datosSet)
                 var listaPaginas = [];
 				var continueOculto= ""
@@ -123,6 +130,7 @@ $.get(
 						}
 					}
 				}
+			//Monta letrero con los datos obtenidos
 				$("#letrero").html(
 					"Categoría: <br><span class='datosLetrero'>" +
 						response +
@@ -139,13 +147,16 @@ $.get(
 						0 +
 						"</span></span></div>"
 				);
+			
+			//Conteo páginas
 			$("#totalPages").text(contPaginas);
 
+			//Si hay CONTINUE
 				if(datosSet.continue){
 					var continuePages = datosSet.continue.gcmcontinue;
 				
-				
-                $.get(
+		//Conexión API WIKI para CONTINUE		
+            $.get(
                     "https://en.wikipedia.org/w/api.php?action=query&" +
                     "generator=categorymembers&gcmtitle=Category:"+response+"&gcmcontinue="+continuePages+"&gcmprop=ids"+
                         "&prop=langlinks&lllimit=485&llprop=url|langname&" +
@@ -156,10 +167,6 @@ $.get(
 							var continueOculto= ""
 				if(datosSet.continue){
 					continueOculto= datosSet2.continue.gcmcontinue
-				
-							/*min = Math.ceil(1);
-							max = Math.floor(9);
-							aleatorio = Math.floor(Math.random() * (max - min) + min); *///The maximum is exclusive and the minimum is inclusive
 
 							var ultimaPagina2 = listaPaginas2[listaPaginas2.length - 1].title;
 							var arrayLang2 = []; //"arrayLangTest"
@@ -208,9 +215,9 @@ $.get(
 												"</span></span>"
 										);
 									}
-									//Letrero informativo de la lista de artículos
 									
 								}
+							//Monta letrero para CONTINUE	
 								$("#letrero").html(
 										"Categoría: <br><span class='datosLetrero'>" +
 											response +
@@ -230,7 +237,6 @@ $.get(
 								$("#totalPages").text(contPaginas);
 							}
 						}
-							//$(".articuloEnLista").on("mouseenter", "a", mouse)
 							//Evento para mostrar extracto del texto
 							$("div .paginaEnLista .articuloEnLista").mouseenter(mouse);
                         })
@@ -238,17 +244,14 @@ $.get(
 						console.log("OFF")
 						$("#nuevaBusqueda").hide()
 						$("#nuevaBusquedaFin").show()
-						//$(".botonVolverRebusca #nuevaBusquedaFin").css("cursor", "not-allowed")
-						//document.querySelector("#nuevaBusqueda").removeEventListener("click", nuevaBusqueda())
-						//$("#nuevaBusqueda").attr("title", "No hay más artículos en la categoría")
-						//$("#nuevaBusqueda").css("z-index", 0)
 					}
-                        //EVENTO MOUSEENTER
+
+            //EVENTO MOUSEENTER
 				function mouse(e) {
-					//function(e){
-					console.log(e, e.target.id);
+					//console.log(e, e.target.id);
 					var tituloText = e.target.id; //Título artículo
 					var idExtract = tituloText.slice(2, 8); //ID aleatorio
+					
 					//Llamada a la API  WIKI para mostrar el extracto de texto del artículo seleccionado
 					$.get(
 						"https://en.wikipedia.org/w/api.php?action=query&" +
