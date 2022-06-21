@@ -1,126 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 	<head>
-		<title>Station</title>
+		<title>Wiki-Lang</title>
 		<meta charset="utf-8" />
 		<link rel="icon" sizes="192x192" href="iconos/icon128.png">
-        <link rel="stylesheet" href="wikilang.css" />
 		<script src="jquery-3.5.1.js"></script>
-		<script type="text/javascript" src="lanzarwiki.js"></script>
-		<script type="text/javascript" src="lanzarwikiCat.js"></script>
-		<script type="text/javascript" src="contador.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 	</head>
 	<body>
-        <div id="cajaExtension">
-			<div id="cartelExtension">
-				<img src="iconos/wikiLetrero.png" id="wikiLetrero" />
-			</div>
-			<form id="inputEntrada">
-				<input type="text" id="alfabetico" placeholder="BÚSQUEDA ALFABÉTICA" title="Introduzca un texto para iniciar una búsqueda por orden alfabético" autocomplete="off"/>
-				<div id="radioDiv">
-					<span><input type="radio" id="radioAlfa" name="tipoBusqueda" value="alfa" checked>
-					  <label for="alfa">Alfabético</label></span>
-					  <span><input type="radio" id="radioCateg" name="tipoBusqueda" value="categ">
-					  <label for="categ">Categoría</label></span>
-				</div>
-			</form>
-			<button type="button" onclick="clickLanzar()" id="lanzar">BUSCAR</button>
-			
-			<div class="panelEntrada">
-			
-			
-				<div id="acercaDe" class="textos acercaDe">
-					<div class="cabTexto" ><span id="queEs">&#9755;</span>¿Qué es esto?</div>
-					<p class="pTextos queEs"><big style="color: rgb(195, 0,0)">Wiki-Lang</big> es una ayuda para encontrar artículos de la Wikipedia en inglés que puedan
-					necesitar una traducción al español. </p>
-					<p class="pTextos queEs"><big style="color: rgb(195, 0,0)">Wiki-Lang</big> busca en la Wikipedia en inglés artículos que contengan enlaces a varios
-					 idiomas diferentes pero ninguno a español por lo que es seleccionado como artículo candidato para ser traducido.</p>
-						<hr>
-				</div>
-
-				<div id="" class="textos textoInstr">
-					<p class="cabTexto" ><span id="instrucc">&#9755;</span>¿Cómo funciona?</p>
-					<p class="pTextos instrucc" style="width: 100%; font-size: 1em; color: rgb(195,0,0); text-align: center;">Búsqueda alfabética</p>
-					<p class="pTextos instrucc">Introduzca cualquier letra, palabra o frase y pulse "BUSCAR" para iniciar una búsqueda
-					 por orden alfabético a partir del texto introducido.</p>
-					<p class="pTextos instrucc">Si deja el formulario en blanco la búsqueda se iniciará a partir de un
-					artículo aleatorio.</p>
-					<p class="pTextos instrucc">SUGERENCIAS: <br> 
-					Pruebe con nombres de pila como <b>"Paul", "James", "Charles"</b>... O con palabras que engloben algún rasgo común como <b>"King", "Church", "Queen of", "Battle of"</b> ...</p>
-					<p class="pTextos instrucc" style="width: 100%; font-size: 1em; color: rgb(195,0,0); text-align: center;">Búsqueda por categoría</p>
-					<p class="pTextos instrucc">Introduzca el nombre de una categoría escrita tal y como aparece en la Wikipedia en Inglés.<br>
-					<p class="pTextos instrucc">EJEMPLOS: <br>
-					<b>"British historical novelists", "English inventors"</b>...</p>
-				</p>
-				<hr>
-				</div>
-
-				<div id="" class="textos textoDesarr">
-						<p class="cabTexto" ><span id="desarr">&#9755;</span>¿A quién protestar?</p>
-						<p class="pTextos desarr"> Los datos se extraen a través de la <a href="https://www.mediawiki.org/wiki/API:Main_page" target="_blank" style="text-decoration: none; color: rgb(195, 0,0)">API de Wikipedia</a>  y el desarrollo lo hizo <a href="mailto:akivhch@gmail.com" style="text-decoration: none; color: rgb(195, 0,0)">Iñaki &#9993;</a></p>
-				<hr>
-				</div>
-			</div>
-		</div>
-			
-			<div id="caja" >
-				<div id="cajaLetrero">
-				 <div id="cartelLetrero"><img src="iconos/wikiLetrero.png" id="wikiLetrero"></div> 
-				  <div id="letrero"></div>
-				  <div id="botonesLetrero">
-				  	<div id="volver" class="botonVolverRebusca" onclick="location.replace('index.html')" title="Volver"><img src="iconos/iconVolver.png" id="imgVolver"></div>
-				  	<div id="nuevaBusqueda" class="botonVolverRebusca" onclick="nuevaBusqueda()" title="Pulsa para continuar búsqueda"><img src="iconos/iconMasDatos.png" id="imgNuevaBusqueda"></div>
-					  <div id="nuevaBusquedaFin" class="botonVolverRebusca"  title="No hay más artículos" style="opacity: 0.8" hidden><img src="iconos/iconMasDatos.png" id="imgNuevaBusquedaFin"><span style="width: 105px; position:absolute; left: -25px; top: 5px; font-size: 0.7em; font-weight: bold; color: rgb(170, 10, 10); cursor: not-allowed;">No hay más artículos en esta categoría</span></div>
-				</div>
-				</div>
-				<div id="listaPaginas"></div>
-			  </div>
-	<div id="contador">
-    	<div class="website-counter" id="webCount"></div>
-    	<button id="reset" hidden>Reset</button>
-	</div>
+        <div><a href="WikiLang/index.html">WIKILANG</a> </div>
     </body>
-	<script>
-		$("input").change(
-			function(){
-				console.log("On change ",$(":checked").val())
-				if($(":checked").val() == "categ"){
-					$("#nuevaBusqueda").attr("onclick", "nuevaBusquedaCat()")
-					$("#alfabetico").attr({
-						placeholder: "BÚSQUEDA POR CATEGORÍA",
-						title: "Introduzca una categoría de la Wikipedia en inglés"
-					})
-				}else{
-					$("#nuevaBusqueda").attr("onclick", "nuevaBusqueda()")
-					$("#alfabetico").attr({
-						placeholder: "BÚSQUEDA ALFABÉTICA", 
-						title: "Introduzca un texto para iniciar una búsqueda por orden alfabético"
-					})
-				}
-			}
-		)
-		
-		function clickLanzar(){
-			console.log($(":checked").val())
-			response= $("#alfabetico").val()
-			if($(":checked").val() == "categ"){
-				
-				if(response == ""){
-					alert("Introduzca el nombre de una categoría de la Wikipedia en inglés")
-				}else{
-					lanzarWikiCat(response)
-				}
-				
-			}else{
-				lanzarWiki(response)
-			}
-			console.log(response)
-		}
-		$(".cabTexto span").click(function(e){
-			console.log("DKDK", e.target.id)
-			$("."+e.target.id).toggle(600)
-		})
-	</script>
-
-    </html>
+</html>
