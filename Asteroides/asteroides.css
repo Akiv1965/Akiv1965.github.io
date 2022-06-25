@@ -1,0 +1,46 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+	font-family: sans-serif;
+	background: rgb(199,199,199);
+}
+#listaAsteroides{
+	display: flex;
+	flex-direction: column;
+	margin-top: 35px;
+}
+#cabeceraDatos{
+	width: 100%;
+	height: 30px;
+	position: fixed;
+	top: 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	border-bottom: 1px solid;
+    background: rgb(255 140 0);
+    color: rgb(10, 10, 170);
+}
+.styleCab{
+	width: 100%;
+	text-align: center;
+}
+.asteroideClass{
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	background-color: rgb(70,70,70, 0.7);
+	color: rgb(199,199,199);
+}
+.datosAst{
+	width: 100%;
+	text-align: center;
+}
+#nombreAsteroide{
+	text-align: center;
+}
+
