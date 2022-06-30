@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+  <title>Imágenes Curiosity Mars</title>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="marte.css">
+<link href="https://fonts.googleapis.com/css2?family=Electrolize&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+<link rel="icon" sizes="192x192" href="iconos/iconMars.png">
+<script src="../jquery-3.5.1.js"></script>
+<script src="contentMarte.js"></script>
+  </head>
+  <body onload="curiosityLaunch()">
+  <div id="datos" hidden></div>
+    
+  <div id="cajaMarte">
+    <div id="titulo"><span class="linkTitulo" title="Acerca de...">CURIOSITY Cams</span>
+  <img class="linkTitulo" src="iconos/iconCam2.png" width="35px" style="margin: 2px 10px 0px 0px" title="Acerca de...">
+  </div>
+  <div id="cabListaFechas"></div>
+ 
+ <div id="nombreCam"></div>
+  <!--SELECT de archivo-->
+<select id="fechasID" name="fechas"></select> 
+  <!-- SLIDESHOW-->
+  
+
+
+  <!-- Full-width images with number text -->
+  <div id="slidesContainer">
+  <div class="slides"></div>
+  <div id="cajaBotones">
+   <button id="FHAZ" class="botonCamara" title="Cámara frontal para prevención de riesgos" disabled>FHAZ</button>
+   <button id="RHAZ" class="botonCamara" title="Cámara trasera para prevención de riesgos" disabled>RHAZ</button>
+   <button id="MAST" class="botonCamara" title="Cámara del mástil" disabled>MAST</button>
+   <button id="CHEMCAM" class="botonCamara" title="Conjunto de cámaras para química" disabled>CHEMCAM</button>
+   <button id="MARDI" class="botonCamara" title="Cámara manual" disabled>MARDI</button>
+   <button id="MAHLI" class="botonCamara" title="Cámara de descenso" disabled>MAHLI</button>
+   <button id="NAVCAM" class="botonCamara" title="Cámara de navegación" disabled>NAVCAM</button>
+  </div>
+	<div id="slidesMovie" hidden></div>
+  </div>
+  <!-- Target button -->
+  <a id="target" title="Zoom">&target;</a>
+  
+
+  <!-- Image text -->
+   <!-- Container for the image gallery -->
+<div class="container">
+  <div class="caption-container" style="background: var(--backgroundPrincipal)">
+  
+  <a id="prev" class="flechas" >&#10094;</a>
+    <span id="caption">
+	<input type="number" id="primer" class="inputNumero" min="1" size="3" name="quantity">
+	<span id='botonCerrarMovie' hidden><img src="iconos/iconMovieStop.png" style="width: 28px; opacity: 0.8;"></span>
+	<span id="botonMovie" title="animation"><img src="iconos/iconMovie.png" style="width: 28px; opacity: 0.8;"></span>
+	<input type="number" id="ultimo" class="inputNumero" size="3" name="quantity">
+	</span>
+	<a id="next" class="flechas">&#10095;</a>
+  </div>
+
+  <!-- Thumbnail images -->
+   <div class="row" id="galeria" style="background: var(--backgroundPrincipal)">
+  </div>
+</div> 
+
+</div>
+
+  </body>
+  </html>

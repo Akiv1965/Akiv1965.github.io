@@ -1,0 +1,303 @@
+* {
+  box-sizing: border-box;
+}
+:root{
+	--backgroundPrincipal: linear-gradient(157deg, #333, #222, #333 50%, #222 58%, #111);
+	--boxShadow:  0px -5px 4px rgba(0, 0, 0, 0.5) inset,
+    15px 15px 20px rgba(0, 0, 0, 0.25) inset;
+	--colorContraste: rgb(255, 250, 240, 0.8);
+}
+html,
+body {
+
+    margin: 0;
+	background: var(--backgroundPrincipal);
+	font-family: sans-serif;
+}
+#cajaMarte{
+	display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#titulo{
+  width: 100%;
+  height: 55px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  column-gap: 15px;
+	color: var(--colorContraste);
+	font-size: 1.8em;
+	text-align: center;
+	font-family: 'Electrolize', sans-serif;
+	text-shadow: 0px 0px 2px rgb(173, 255, 47, 0.7);
+  background: var(--backgroundPrincipal);
+}
+#cabListaFechas{
+  margin: 12px 0px 6px 0px;
+  text-align: center;
+  color: rgb(173, 255, 47, 0.8);
+}
+#cajaBotones{
+  height:350px;
+	position: relative;
+	display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+@keyframes pingBall {
+  /*from {left: 0px; top: 0px}
+  to {left: 305px; top: 20px}*/
+  0% {left: 1%; bottom: 1px;}
+  /*20% {left: 40px; bottom: 10px;}
+  25% {left: 70px; bottom: 0px;}
+  30% {left: 100px; bottom: 10px;}
+  35% {left: 125px; bottom: 0px;}
+  40% {left: 145px; bottom: 10px;}
+  45% {left: 165px; bottom: 0px;}*/
+  50% {left: 96%; bottom: 1px;}
+  /*55% {left: 205px; bottom: 0px;}
+  60% {left: 210px; bottom: 10px;}
+  65% {left: 225px; bottom: 0px;}
+  70% {left: 250px; bottom: 10px;}
+  80% {left: 280px; bottom: 5px;}*/
+  100% {left: 1%; bottom: 1px;}
+}
+#ping{
+	position: relative;
+	width: 90%;
+	height: 12px;
+	margin-top: 5px;
+	box-shadow: inset 1px 0px 4px 3px rgb(30 140 20);
+	border-radius: 17px;
+}
+#imgBall{
+	position: absolute;
+	left: 0;
+	animation-name: pingBall;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+}
+.botonCamara{
+  width: 95px;
+	color: rgb(15, 205, 30,0.6);
+  background: rgb(10,10,10,0.3);
+  border-radius: 6px;
+  padding: 6px 5px 2px 5px;
+  cursor: pointer;
+  box-shadow: 0px 0px 4px inset greenyellow;
+  text-align: center;
+  opacity: 0.4;
+}
+#nombreCam{
+	color: rgb(200, 40, 40);
+	padding: 6px 0px 7px 0px;
+	text-align: center;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+  width: 60%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#slidesContainer{
+  display: flex;
+  align-items: center;
+}
+
+/* Hide the images by default */
+.slides {
+	display: flex;
+  max-width: 400px;
+  min-width: 400px;
+}
+#caption{
+	width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.inputNumero{
+	width: 45px;
+	height: 20px;
+	text-align: center;
+}
+#slidesMovie{
+	position: absolute;
+	top: 0;
+	width: 400px;
+	max-width: 400px;
+    min-height: 400px;
+	background: var(--backgroundPrincipal);
+}
+#botonMovie{
+	width: 29px;
+	
+}
+#botonCerrarMovie{
+	width: 29px;
+
+}
+#contMovie{
+	position: absolute;
+	top: 7px;
+	left: 5px;
+	color: rgb(173, 255, 47, 0.5);
+}
+#fechasID{
+  width: 495px;
+  color: rgb(173, 255, 47, 0.8);
+  margin:10px 0px 10px 0px;
+  padding: 5px;
+  border: none;
+  border-radius: 10px;
+  background: rgb(255,255,255, 0.2);
+  text-align: center;
+  outline: none;
+}
+.listaFechas{
+  font-size: 1.1em;
+}
+select{
+	background: rgb(15,15,15, 0.7);
+}
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+#target{
+	color: rgb(173, 255, 47, 0.5);
+    font-size: 45px;
+    position: absolute;
+    right: 138px;
+    top: 65%;
+    cursor: pointer;
+}
+
+/* Next & previous buttons */
+.flechas{
+  cursor: pointer;
+  padding: 25px;
+  margin-bottom: 5px;
+  color: rgb(30,30,25);
+  font-weight: bold;
+  font-size: 20px;
+  text-shadow: 0 0 3px greenyellow;
+}
+
+/* Position the "next button" to the right */
+#next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+#titulo:hover,
+#target:hover{
+	color: rgb(173,255,47, 0.9);
+	font-weight:bold;
+}
+#prev:hover,
+#next:hover {
+  color: rgb(173,255,47, 0.5);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: rgb(173,255,47, 0.8);
+  font-size: 12px;
+  margin-bottom: 4px;
+  padding: 1px 6px 1px 6px;
+}
+
+/* Container for image text */
+.caption-container {
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+	text-align: center;
+	box-shadow: var(--boxShadow);
+    height: 30px;
+}
+.row{
+	display: flex;
+	overflow: auto;
+}
+#indexThumb{
+	position: absolute;
+    bottom: 0;
+    right: 0;
+    color: rgb(173, 255, 47, 0.9);
+    background: rgb(10, 40, 10, 0.7);
+    border-radius: 2px;
+    padding: 1px 3px 1px 3px;
+    font-size: 0.9em;
+}
+/*.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}*/
+
+/* Six columns side by side */
+.column {
+	position: relative;
+  float: left;
+  min-width: 50px;
+  max-width: 50px;
+  height: 50px;
+  max-height: 50px;
+  z-index: 999999999;
+  border-right: 1px solid black;
+}
+
+#datosImagen{
+	position: relative;
+	background: var(--backgroundPrincipal);
+	color: greenyellow;
+    padding: 0px 5px 0px 5px;
+	text-align: center;
+	box-shadow: var(--boxShadow);
+	border-top: 1px inset rgb(250, 10, 15, 0.6);
+}
+#aviso{
+	position: absolute;
+	background: var(--backgroundPrincipal);
+}
+#datosTabla{
+	
+}
+.cajaDato{
+	color: var(--colorContraste);
+    box-shadow: 1px 2px 3px inset rgb(173, 255, 47);
+    border-radius: 3px;
+	padding: 5px 3px 3px 3px;
+	font-family: 'Orbitron', cursive;
+}
+/* Add a transparency effect for thumnbail images */
+.efect {
+  opacity: 0.6;
+}
+
+.active,
+.efect:hover {
+  opacity: 1;
+}
+::-webkit-scrollbar {
+  width: 10px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--backgroundPrincipal); 
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(173,255,47, 0.1); 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
