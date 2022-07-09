@@ -9,8 +9,8 @@
 }
 html,
 body {
-
-    margin: 0;
+  height: 100%;
+  margin: 0;
 	background: var(--backgroundPrincipal);
 	font-family: sans-serif;
 }
@@ -34,7 +34,7 @@ body {
   background: var(--backgroundPrincipal);
 }
 #cabListaFechas{
-  margin: 12px 0px 6px 0px;
+  margin: 10px 0px 5px 0px;
   text-align: center;
   color: rgb(173, 255, 47, 0.8);
 }
@@ -44,6 +44,7 @@ body {
 	display: flex;
   flex-direction: column;
   justify-content: space-around;
+  padding: 0px 5px;
 }
 @keyframes pingBall {
   /*from {left: 0px; top: 0px}
@@ -64,10 +65,11 @@ body {
   100% {left: 1%; bottom: 1px;}
 }
 #ping{
-	position: relative;
-	width: 90%;
-	height: 12px;
-	margin-top: 5px;
+	position: absolute;
+	width: 100%;
+	height: 10px;
+	bottom: -30px;
+  left: -10px;
 	box-shadow: inset 1px 0px 4px 3px rgb(30 140 20);
 	border-radius: 17px;
 }
@@ -78,34 +80,42 @@ body {
 	animation-duration: 1s;
 	animation-iteration-count: infinite;
 }
+.bloqueBoton{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 4px;
+}
 .botonCamara{
   width: 95px;
 	color: rgb(15, 205, 30,0.6);
   background: rgb(10,10,10,0.3);
   border-radius: 6px;
   padding: 6px 5px 2px 5px;
-  cursor: pointer;
   box-shadow: 0px 0px 4px inset greenyellow;
   text-align: center;
   opacity: 0.4;
+  border: none;
 }
 #nombreCam{
 	color: rgb(200, 40, 40);
 	padding: 6px 0px 7px 0px;
 	text-align: center;
 }
-
-/* Position the image container (needed to position the left and right arrows) */
-.container {
-  width: 60%;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.nombreCamOculto{
+  font-size: 0.8em;
+  color: rgb(15, 205, 30,0.6);
+  opacity: 0.4;
 }
+
+
 #slidesContainer{
+  width: 570px;
+  min-height: 400px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  position: relative;
 }
 
 /* Hide the images by default */
@@ -113,17 +123,29 @@ body {
 	display: flex;
   max-width: 400px;
   min-width: 400px;
+  min-height: 400px;
 }
 #caption{
-	width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+  position: absolute;
+  bottom: 0px;
+  left: 135px;
+	width: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: rgb(250,250,250, 0.1);
+  padding: 5px 4px 4px 10px;
+  border-radius: 12px 12px 0px 0px;
 }
 .inputNumero{
 	width: 45px;
 	height: 20px;
 	text-align: center;
+  border: none;
+  background: none;
+  color: rgb(40, 60, 40);
+  text-shadow: 1px 1px 2px rgb(135, 250, 135);
+  font-weight: bold;
 }
 #slidesMovie{
 	position: absolute;
@@ -134,12 +156,12 @@ body {
 	background: var(--backgroundPrincipal);
 }
 #botonMovie{
-	width: 29px;
-	
+	width: 30px;
+	cursor: pointer;
 }
 #botonCerrarMovie{
-	width: 29px;
-
+	width: 30px;
+  cursor: pointer;
 }
 #contMovie{
 	position: absolute;
@@ -148,7 +170,7 @@ body {
 	color: rgb(173, 255, 47, 0.5);
 }
 #fechasID{
-  width: 495px;
+  width: 570px;
   color: rgb(173, 255, 47, 0.8);
   margin:10px 0px 10px 0px;
   padding: 5px;
@@ -170,28 +192,22 @@ select{
 }
 #target{
 	color: rgb(173, 255, 47, 0.5);
-    font-size: 45px;
+  width: 20px;
     position: absolute;
-    right: 138px;
-    top: 65%;
+    top: 0px;
     cursor: pointer;
+    opacity: 0.9;
 }
 
 /* Next & previous buttons */
 .flechas{
+  width: 33px;
   cursor: pointer;
-  padding: 25px;
-  margin-bottom: 5px;
-  color: rgb(30,30,25);
-  font-weight: bold;
-  font-size: 20px;
-  text-shadow: 0 0 3px greenyellow;
 }
 
 /* Position the "next button" to the right */
 #next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
+
 }
 
 /* On hover, add a black background color with a little bit see-through */
@@ -213,18 +229,34 @@ select{
   padding: 1px 6px 1px 6px;
 }
 
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+  width: 570px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 /* Container for image text */
 .caption-container {
+  width: 160px;
+  height: 58px;
 	display: flex;
-    justify-content: space-between;
-    align-items: center;
-	text-align: center;
-	box-shadow: var(--boxShadow);
-    height: 30px;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 12px;
+  background: rgb(35, 35, 35);
+  box-shadow: 2px 1px 3px;
+  padding: 0px 4px;
 }
 .row{
+  width: 400px;
 	display: flex;
-	overflow: auto;
+  align-items: center;
+	overflow-x: auto;
+  overflow-y: hidden;
+  margin-top: 5px;
 }
 #indexThumb{
 	position: absolute;
@@ -245,13 +277,13 @@ select{
 /* Six columns side by side */
 .column {
 	position: relative;
-  float: left;
-  min-width: 50px;
-  max-width: 50px;
-  height: 50px;
-  max-height: 50px;
+  min-width: 65px;
+  max-width: 65px;
+  height: 65px;
+  max-height: 65px;
   z-index: 999999999;
-  border-right: 1px solid black;
+  margin-right: 2px;
+  cursor: pointer;
 }
 
 #datosImagen{
@@ -266,9 +298,6 @@ select{
 #aviso{
 	position: absolute;
 	background: var(--backgroundPrincipal);
-}
-#datosTabla{
-	
 }
 .cajaDato{
 	color: var(--colorContraste);
