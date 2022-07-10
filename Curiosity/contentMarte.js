@@ -287,7 +287,7 @@ function curiosityLaunch () {
 					indexArrayImg = Number($("#primer").val());
 					scrollX = scrollX - 50
 					$("#ping").hide();
-					$("#fechasID").show()
+					$("#fechasID").attr("disabled", false)
 					$(".botonCamara").css({"opacity": "1"})
 					$(".nombreCamOculto").css({"opacity": "1"})
 					$(".flechas").show()

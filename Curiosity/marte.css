@@ -36,17 +36,17 @@ body {
   background: var(--backgroundPrincipal);
 }
 #cabListaFechas{
-  margin: 10px 0px 5px 0px;
+  margin: 10px 0px 0px 0px;
   text-align: center;
   color: rgb(173, 255, 47, 0.8);
 }
 #cajaBotones{
-  height:350px;
+  height:340px;
 	position: relative;
 	display: flex;
   flex-direction: column;
   justify-content: space-around;
-  padding: 0px 5px;
+  padding: 0px 10px 0px 0px;
 }
 @keyframes pingBall {
   /*from {left: 0px; top: 0px}
@@ -58,7 +58,7 @@ body {
   35% {left: 125px; bottom: 0px;}
   40% {left: 145px; bottom: 10px;}
   45% {left: 165px; bottom: 0px;}*/
-  50% {left: 96%; bottom: 1px;}
+  50% {left: 92%; bottom: 1px;}
   /*55% {left: 205px; bottom: 0px;}
   60% {left: 210px; bottom: 10px;}
   65% {left: 225px; bottom: 0px;}
@@ -68,12 +68,12 @@ body {
 }
 #ping{
 	position: absolute;
-	width: 100%;
-	height: 10px;
-	bottom: -30px;
-  left: -10px;
-	box-shadow: inset 1px 0px 4px 3px rgb(30 140 20);
-	border-radius: 17px;
+	width: 147px;
+	height: 13px;
+	bottom: -16px;
+  left: -12px;
+	box-shadow: inset 1px 0px 4px 1px rgb(30 140 20);
+	border-radius: 25px;
 }
 #imgBall{
 	position: absolute;
@@ -89,7 +89,7 @@ body {
   row-gap: 4px;
 }
 .botonCamara{
-  width: 95px;
+  width: 90px;
 	color: rgb(15, 205, 30,0.6);
   background: rgb(10,10,10,0.3);
   border-radius: 6px;
@@ -98,6 +98,7 @@ body {
   text-align: center;
   opacity: 0.4;
   border: none;
+  font-size: 0.8em;
 }
 #nombreCam{
 	color: rgb(200, 40, 40);
@@ -105,7 +106,7 @@ body {
 	text-align: center;
 }
 .nombreCamOculto{
-  font-size: 0.8em;
+  font-size: 0.7em;
   color: rgb(15, 205, 30,0.6);
   opacity: 0.4;
 }
@@ -113,19 +114,22 @@ body {
 
 #slidesContainer{
   width: 570px;
-  min-height: 400px;
+  min-height: 355px;
+  max-height: 355px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   position: relative;
+  background: var(--backgroundPrincipal);
+  border-radius: 15px;
+  box-shadow: 1px 2px 3px;
 }
 
 /* Hide the images by default */
 .slides {
 	display: flex;
-  max-width: 400px;
-  min-width: 400px;
-  min-height: 400px;
+  max-width: 350px;
+  min-width: 355px;
 }
 #caption{
   position: absolute;
@@ -195,8 +199,9 @@ select{
 #target{
 	color: rgb(173, 255, 47, 0.5);
   width: 20px;
-    position: absolute;
-    top: 0px;
+  position: absolute;
+  top: 3px;
+  left: 3px;
     cursor: pointer;
     opacity: 0.9;
 }
