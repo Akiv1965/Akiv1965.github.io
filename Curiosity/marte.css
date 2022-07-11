@@ -8,6 +8,7 @@
 	--colorContraste: rgb(255, 250, 240, 0.8);
 }
 html{
+  height: 100%;
    margin: 0;
 }
 body {
@@ -22,7 +23,6 @@ body {
   align-items: center;
 }
 #titulo{
-  width: 100%;
   height: 55px;
 	display: flex;
 	justify-content: center;
@@ -33,10 +33,8 @@ body {
 	text-align: center;
 	font-family: 'Electrolize', sans-serif;
 	text-shadow: 0px 0px 2px rgb(173, 255, 47, 0.7);
-  background: var(--backgroundPrincipal);
 }
 #cabListaFechas{
-  margin: 10px 0px 0px 0px;
   text-align: center;
   color: rgb(173, 255, 47, 0.8);
 }
@@ -128,7 +126,7 @@ body {
 /* Hide the images by default */
 .slides {
 	display: flex;
-  max-width: 350px;
+  max-width: 355px;
   min-width: 355px;
 }
 #caption{

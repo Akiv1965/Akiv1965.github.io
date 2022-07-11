@@ -23,7 +23,7 @@ function curiosityLaunch () {
 				var diaSolUltimoArchivo
 				var diaTierraUltimo=new Date(data.photo_manifest.photos[fotoLengthArchivo].earth_date).toLocaleDateString()
 				var arrayImagenes = []
-				$("#cabListaFechas").html("<small>"+diaTierraUltimo+" - <small>(Sol"+diaSolUltimo+")</small></small><br><span style='color: rgb(173, 255, 47)'>Cámaras On-Line: <big>"+data.photo_manifest.photos[fotoLengthArchivo].cameras.length+"</big> <small> ("+data.photo_manifest.photos[fotoLengthArchivo].total_photos+" Fotos)</small></span>")
+				$("#cabListaFechas").html("<small>"+diaTierraUltimo+" - <small>(Sol"+diaSolUltimo+")</small></small><br><span style='color: rgb(173, 255, 47); font-size: 1.1em'>Cámaras On-Line: <big>"+data.photo_manifest.photos[fotoLengthArchivo].cameras.length+"</big> <small> ("+data.photo_manifest.photos[fotoLengthArchivo].total_photos+" Fotos)</small></span>")
 				//Monta desplegable para archivo de fechas
 				//Set menu for dates archive	
 				for (var k = 0; k < 8; k++) {
@@ -49,7 +49,7 @@ function curiosityLaunch () {
 					camaraArray = data.photo_manifest.photos[fotoLengthArchivo].cameras
 					diaSolUltimo = data.photo_manifest.photos[fotoLengthArchivo].sol
 					camara = data.photo_manifest.photos[fotoLengthArchivo].cameras[0]
-					$("#cabListaFechas").html("<small>"+data.photo_manifest.photos[fotoLengthArchivo].earth_date+" - <small>(Sol"+diaSolUltimo+")</small></small><br><span style='color: rgb(173, 255, 47)'>Cámaras On-Line: <big>"+data.photo_manifest.photos[fotoLengthArchivo].cameras.length+"</big><small> ("+data.photo_manifest.photos[fotoLengthArchivo].total_photos+" Fotos)</small></span>")
+					$("#cabListaFechas").html("<small>"+data.photo_manifest.photos[fotoLengthArchivo].earth_date+" - <small>(Sol"+diaSolUltimo+")</small></small><br><span style='color: rgb(173, 255, 47); font-size: 1.1em'>Cámaras On-Line: <big>"+data.photo_manifest.photos[fotoLengthArchivo].cameras.length+"</big><small> ("+data.photo_manifest.photos[fotoLengthArchivo].total_photos+" Fotos)</small></span>")
 					creaBotones()
 					setFoto()
 				})
