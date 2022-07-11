@@ -66,12 +66,12 @@ body {
 }
 #ping{
 	position: absolute;
-	width: 147px;
+	width: 140px;
 	height: 13px;
-	bottom: -16px;
-  left: -12px;
+	bottom: -28px;
+  left: -2px;
 	box-shadow: inset 1px 0px 4px 1px rgb(30 140 20);
-	border-radius: 25px;
+	border-radius: 10px;
 }
 #imgBall{
 	position: absolute;
@@ -257,6 +257,7 @@ select{
 }
 .row{
   width: 400px;
+  height: 75px;
 	display: flex;
   align-items: center;
 	overflow-x: auto;
