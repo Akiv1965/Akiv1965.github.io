@@ -210,11 +210,11 @@ select{
   cursor: pointer;
 }
 
-/* Position the "next button" to the right */
+/* Position the "next button" to the right
 #next {
 
 }
-
+ */
 /* On hover, add a black background color with a little bit see-through */
 #titulo:hover,
 #target:hover{

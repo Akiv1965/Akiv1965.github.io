@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+  <title>Station</title>
+    <meta charset="utf-8">
+	
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="sunDisc.css">
+<!--<link rel="stylesheet" href="stationSVG.css">
+<link rel="stylesheet" href="stationMenu.css">
+<link rel="stylesheet" href="stationMoon.css">-->
+<link rel="icon" sizes="192x192" href="iconos/iconSun.png">
+<script src="../jquery-3.5.1.js"></script>
+<script src="sunDisc.js"></script>
+<script src="crono.js"></script>
+<script src="setUbicacion.js"></script>
+<script src="moonPhases.js"></script>
+  </head>
+	<body>
+		<span id="fechaActual"></span>
+		<div id="horaActual"></div>
+		<div id="ciudad"></div>
+	<div id="cajaSolar" class="cajas">
+	<div class="solarFlex">
+		<div class="amanecerAnochecer"><img src="iconos/iconAmanecer.png" style="width: 100%;"><span id="amanecer"> - -: - -</span></div>
+		<div class="amanecerAnochecer"><img src="iconos/iconAnochecer.png" style="width: 100%;"><span id="anochecer"> - -: - -</span></div>
+    </div> 
+		<div class="base-timer">
+				<div class="cronoSolar">
+				<span class="cronoDescuento" id="hastaElAmanecer">- -:- -</span>
+				<span class="cronoDescuento" id="hastaElAnochecer">- -:- -</span>
+				</div>
+				
+				
+			<!--<span id="sunrise" class="riseSet" ></span>
+			<span id='sunset' class="riseSet" style="right: 0;"></span></span>
+
+			<div id="duracionDia" class="duracion" hidden></div>
+			<div id="duracionNoche" class="duracion" hidden></div>-->
+			<svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+			
+			  <g class="base-timer__circle">
+				<circle class="base-timer__path-elapsed" cx="50" cy="50" r="25" />
+				<path fill="none" id="curvaTextSup"
+        		d="
+				M 27, 27
+           		A 20 20 0 1 1 73,73
+				 " />
+				 <path fill="none" id="curvaTextInf"
+        		d="
+				M 23, 23
+           		A 20 20 0 1 0 76,76
+				 " />
+				<path
+				  id="base-timer-path-remaining"
+				  stroke-dasharray="100 155"
+				  class="base-timer__path-remaining ${remainingPathColor}"
+				  d="
+					 M 50, 50
+					m -25, 0
+					a 25,25 0 1,1 50,0
+					a 25,25 0 1,1 -50,0
+				  "
+				   
+				>
+				</path>
+				 <path
+				  id="base-timer-path-remaining2"
+				  stroke-dasharray="80 155"
+				  class="base-timer__path-remaining2 ${remainingPathColor}"
+				  d="
+					M 50, 50
+					m -25, 0
+					a 25,25 0 1,1 50,0
+					a 25,25 0 1,1 -50,0
+				  "
+				  
+				  <!--xlink:href="#smallRise"-->
+				> 
+				</path>
+				
+				<!---->
+				<image id="imgSun" href="iconos/iconSun.png" height="11" width="12"  x="50" y="50"></image>
+			  </g>
+			  <text id="textSVGSup">
+				<textPath id="textSVGAmanecer" xlink:href="#curvaTextSup">
+					
+				</textPath>	
+				</text>
+				<text id="textSVGInf">
+					<textPath id="textSVGAnochecer" xlink:href="#curvaTextInf">
+						
+					</textPath>	
+					</text>
+			</svg>
+				<!--<span class="flechitas">
+					<span id="flechitaIz" hidden>&#10146;</span>
+					<span id="flechitaDe" >&#10146;</span>
+				</span>-->
+			  <span id="reloj"></span>
+			</span>
+		  </div>
+		  <div id="semanaSolar"></div>
+	</div>
+	<div id="cajaLunar" class="cajas">
+		<div id="displayDatos">
+		  <div id="fecha"></div>
+		  <div id="RiseSet"></div>
+		  <div id="datosLuna"></div>
+		  <span id="azimuth" hidden></span>
+		  <div id="imgLuna" style="width: 110px; height: 113px">
+			<img id="setImgLuna" src="" width="70" />
+		  </div>
+		</div>
+		<div id="semanaLunar"></div>
+		<!--<div class="tooltip" id="toolRotation">
+		  <img src="iconos/iconRotation.png" width="18px" />
+  
+		  <span class="tooltiptext">Click para ver rotación</span>
+		</div>
+		<div class="tooltip" id="toolDirection" style="left: 9px; width: 25px">
+		  <img src="iconos/iconDirection.png" width="20px" />
+		  <span class="tooltiptext" style="left: 0"
+			>Click para ver punto de salida</span>
+		</div>-->
+	  </div>
+    </body>
+</html>

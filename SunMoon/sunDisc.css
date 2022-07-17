@@ -1,0 +1,290 @@
+* {
+    box-sizing: border-box;
+}
+
+html{
+    width: 100%;
+    height: 100%;
+}
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(9deg, rgb(10,25,145), rgb(200,245,255));
+}
+#ciudad{
+    position: absolute;
+    top: 55px;
+    left: 10px;
+    text-align: center;
+    font-size: 1.3em;
+}
+
+.base-timer{
+    height: 205px;
+    position: relative;
+    /*background: linear-gradient(9deg, rgb(10,25,145), rgb(200,245,255));
+    box-shadow: -1px 0px 3px inset rgb(25 75 95);*/
+}
+.base-timer__svg {
+    width:  215px;
+}
+#imgSun{
+	transform: rotate(-90deg);
+    transform-origin: center;
+}
+#riseSetCab{
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+}
+/*.riseSet{
+    width: 25%;
+    height: 45px;
+    position: absolute;
+    top: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.3em;
+    overflow-x: auto;
+    overflow: hidden;
+}
+@keyframes RiseSet{
+    0%{bottom: -30px; opacity: 0.4;}
+    80%{bottom: 0px; opacity: 1;}
+    100%{bottom: 65px; opacity: 1;}
+}
+.riseSetIcon{
+    width: 40px;
+    position: absolute;
+    bottom: -30px;
+    animation-name: RiseSet;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+.textoRiseSet{
+    position: absolute;
+    bottom: 6px;
+}*/
+.duracion{
+    position: absolute;
+}
+#horaActual{
+    position: absolute;
+    top: 39px;
+    left: 10px;
+    font-size: 0.9em;
+    text-align: center;
+}
+#fechaActual{
+	position: absolute;
+    top: 6px;
+    left: 10px;
+	font-size: 0.7em;
+	text-align: center;
+}
+#reloj{
+	position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+	font-size: 1.1em;
+}
+/*@keyframes flechitaNoche{
+    from{transform: rotateZ(195deg); opacity: 1;}
+    to{transform: rotateZ(355deg); opacity: 0;}
+}
+@keyframes flechitaDia{
+    from{transform: rotateZ(0deg); opacity: 1;}
+    to{transform: rotateZ(180deg); opacity: 0;}
+}
+
+.flechitas{
+    width: 30%;
+    position: absolute;
+    top: 46%;
+    left: 89px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+    animation-name: flechitaDia;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-delay: 2s;
+    opacity: 0;
+}
+#flechitaIz{
+    
+}
+#flechitaDe{
+    transform: rotateZ(270deg);
+}
+#oclock{
+	animation-name: iluminacion;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+}
+
+@keyframes iluminacion {
+  0%   {color: rgb(0,245,255, 0.3);}
+  20%  {color: rgb(0,245,255, 0.5);}
+  50%  {color: rgb(25,25,112, 0.5);}
+  80% {color: rgb(25,25,112, 0.9);}
+  100% {color: rgb(25,25,112, 0.3);}
+}*/
+
+/* Removes SVG styling that would hide the time label */
+
+.cajas{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.solarFlex{
+    width: 215px;
+    display: flex;
+    justify-content: space-around;
+}
+.amanecerAnochecer{
+    width: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+#amanecer{
+    color: rgb(0,255,255, 0.9);
+}
+#anochecer{
+    color: rgb(25,25,112, 0.9);
+}
+.cronoSolar{
+    width: 100%;
+    height: 20px;
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.cronoDescuento{
+    width: 50%;
+    text-align: center;
+}
+.mascara {
+    fill: lightseagreen;
+}
+
+.base-timer__circle {
+    fill: none;
+    stroke: none;
+   transform-origin: center;
+    transform: rotate(-90deg);
+}
+#curvaTextSup{
+    transform: rotate(45deg);
+    transform-origin: center; 
+}
+#textSVGSup{
+    transform: rotate(310deg);
+    transform-origin: center;
+    font-size: 0.5em;
+}
+#textSVGInf{
+    transform: rotate(269deg);
+    transform-origin: center;
+    font-size: 0.5em;
+}
+
+/* The SVG path that displays the timer's progress */
+
+.base-timer__path-elapsed {
+    fill: none;
+    stroke-width: 12px;
+    stroke: midnightblue;
+   /* stroke-opacity: 0.5;*/
+   transform: rotate(-90deg);
+    transform-origin: center;
+}
+
+.base-timer__label {
+    position: absolute;
+    /* Size should match the parent container */
+    width: 100%;
+    height: 100%;
+    /* Keep the label aligned to the top */
+    top: 0;
+    /* Create a flexible box that centers content vertically and horizontally */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: honeydew;
+}
+
+.base-timer__path-remaining {
+    stroke-width: 12px;
+    stroke-linecap: round;
+    stroke: cyan;
+     /*Makes sure the animation starts at the top of the circle */
+   transform-origin: center;
+transform: rotate(90deg);
+    /* One second aligns with the speed of the countdown timer 
+  transition: 1s linear all;*/
+    /* Allows the ring to change color when the color value updates */
+}
+
+.base-timer__path-remaining2 {
+    stroke-width: 12px;
+    /*stroke: paleturquoise;*/
+    stroke-opacity: 0.2;
+    stroke-linecap: round;
+	transform: rotate(90deg);
+    transform-origin: center;
+}
+#semanaSolar{
+    width: 215px;
+    max-height: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+#semanaSolar::-webkit-scrollbar{
+    width: 5px;
+}
+#semanaSolar::-webkit-scrollbar-track{
+    background: rgb(10,20,115, 0.2);
+}
+#semanaSolar::-webkit-scrollbar-thumb{
+    background: rgb(255, 255, 255, 0.8);
+}
+.blockSemanal{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 4px 0px 2px 0px;
+}
+.amaneceAnoche{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.centroSemanal{
+    width: 40%;
+}
+.diaSemanal{
+    font-size: 0.8em;
+    text-align: center;
+}
