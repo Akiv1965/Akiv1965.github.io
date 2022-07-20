@@ -168,7 +168,7 @@ fetch(
 
 function moonJson(moonrise, moonset, riseSetWeek, direccion, azimuth, fechaLunaHoy, idioma) {
     //Funcion AJAX para MOONJSON
-    $.getJSON("https://akiv1965.github.io/SunMoon/moon2022.json", function (response) {
+    $.getJSON("moon2022.json", function (response) {
       //console.log(response);
       
       for (var i = 0; i < response.length; i = i + 24) {
