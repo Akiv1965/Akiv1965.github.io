@@ -6,8 +6,8 @@
 	
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="sunDisc.css">
-<!--<link rel="stylesheet" href="stationSVG.css">
-<link rel="stylesheet" href="stationMenu.css">
+<link rel="stylesheet" href="moonPhases.css">
+<!--<link rel="stylesheet" href="stationMenu.css">
 <link rel="stylesheet" href="stationMoon.css">-->
 <link rel="icon" sizes="192x192" href="iconos/iconSun.png">
 <script src="../jquery-3.5.1.js"></script>
@@ -80,7 +80,7 @@
 				</path>
 				
 				<!---->
-				<image id="imgSun" href="iconos/iconSun.png" height="11" width="12"  x="50" y="50"></image>
+				<image id="imgSun" href="iconos/iconSun.png" height="11" width="12"  x="44" y="44"></image>
 			  </g>
 			  <text id="textSVGSup">
 				<textPath id="textSVGAmanecer" xlink:href="#curvaTextSup">
@@ -100,19 +100,21 @@
 			  <span id="reloj"></span>
 			</span>
 		  </div>
-		  <div id="semanaSolar"></div>
+		  <div id="semanaSolar" class="semanas"></div>
 	</div>
 	<div id="cajaLunar" class="cajas">
 		<div id="displayDatos">
-		  <div id="fecha"></div>
-		  <div id="RiseSet"></div>
+		  <div id="RiseSet">
+			<div id="moonRise" class="riseSet"><img src="iconos/iconMoonRise.png" style="width:100%; margin-right: 2px;"><span>- -:- -</span></div>
+			<div id="moonSet" class="riseSet"><img src="iconos/iconMoonSet.png" style="width:100%; margin-right: 2px;"><span>- -:- -</span></div>
+		  </div>
 		  <div id="datosLuna"></div>
 		  <span id="azimuth" hidden></span>
-		  <div id="imgLuna" style="width: 110px; height: 113px">
-			<img id="setImgLuna" src="" width="70" />
+		  <div id="imgLuna">
+			<img id="setImgLuna" src="fasesLunaIcons/lunaFase15.png"/>
 		  </div>
 		</div>
-		<div id="semanaLunar"></div>
+		<div id="semanaLunar" class="semanas"></div>
 		<!--<div class="tooltip" id="toolRotation">
 		  <img src="iconos/iconRotation.png" width="18px" />
   

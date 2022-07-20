@@ -134,11 +134,11 @@ fetch(
           var diaCabecera = fechaLunaHoy;
           var riseSetWeek = [];
           $("#RiseSet").html(
-            "<p id='moonRise' class='riseSet'><img src='iconos/moonriseIcon.png' style='width:20px; margin-right: 2px;'> " +
+            "<div id='moonRise' class='riseSet'><img src='iconos/iconMoonRise.png' style='width:100%; margin-right: 2px;'><span>" +
               moonrise +
-              "</p><p id='moonSet' class='riseSet'><img src='iconos/moonsetIcon.png' style='width:20px; margin-right: 2px;'> " +
+              "</span></div><div id='moonSet' class='riseSet'><img src='iconos/iconMoonSet.png' style='width:100%; margin-right: 2px;'><span> " +
               moonset +
-              "</p>"
+              "</span></div>"
           );
           for (var i = 1; i < datoLuna.length - 1; i++) {
             var riseWeek;
@@ -162,13 +162,13 @@ fetch(
             riseSetWeek.push([riseWeek, setWeek]);
           }
           //setTimeout(
-            moonJson(moonrise, moonset, riseSetWeek, direccion, azimuth)
+            moonJson(moonrise, moonset, riseSetWeek, direccion, azimuth, fechaLunaHoy)
   })
 }
 
-function moonJson(moonrise, moonset, riseSetWeek, direccion, azimuth) {
+function moonJson(moonrise, moonset, riseSetWeek, direccion, azimuth, fechaLunaHoy, idioma) {
     //Funcion AJAX para MOONJSON
-    $.getJSON("moon2022.json", function (response) {
+    $.getJSON("https://akiv1965.github.io/SunMoon/moon2022.json", function (response) {
       //console.log(response);
       
       for (var i = 0; i < response.length; i = i + 24) {
@@ -178,8 +178,7 @@ function moonJson(moonrise, moonset, riseSetWeek, direccion, azimuth) {
         var porcentFase;
         var fase;
         var distancia;
-        var version =
-          "Fases Lunares " + chrome.runtime.getManifest().version;
+        
         // Compara fecha actual con moon2020 para encontrar datos
         // Compare actual date and date moon2020 to find correct data
         //console.log(new Date(response[0].time).toLocaleDateString(), fechaLunaHoy)
@@ -207,35 +206,35 @@ function moonJson(moonrise, moonset, riseSetWeek, direccion, azimuth) {
           //console.log($("#moonRise").text(), "..HoraSalida...", horaSalida);
           i = i + horaSalida; //(new Date().toLocaleTimeString().split(":")[0]) Suma las horas del día
           
-          edadLuna = "Día " +Number((response[i].age).toFixed()) ; //Math.floor(response[i].age)Math.round(response[i].age)(response[i].age).toFixed()
+          edadLuna = "<small>Edad lunar:</small> " +Number((response[i].age).toFixed())+" días" ; //Math.floor(response[i].age)Math.round(response[i].age)(response[i].age).toFixed()
           edadImgLuna =Number((response[i].age).toFixed())//Number(Math.round(response[i].age)) Math.floor(response[i].age); ////
           porcentFase = response[i].phase;
           console.log(response[i].age, horaSalida, (edadImgLuna-Number(response[i].age)));
           if((edadImgLuna-Number(response[i].age)) <= 0.70 && (edadImgLuna-Number(response[i].age)) > 0.28 && (edadImgLuna-Number(response[i].age)) > 0){
             edadImgLuna = edadImgLuna-1;
-            edadLuna = "Dia " + edadImgLuna;
+            edadLuna = "<small>Edad lunar:</small> " + edadImgLuna+" días";
           }
           if (edadImgLuna == 16 && porcentFase > 99.35) {
             edadImgLuna = 15;
-            edadLuna = "Dia " + 15;
+            edadLuna = "<small>Edad lunar:</small> " + 15+" días";
           }
 
           if (edadImgLuna == 14 && porcentFase > 99.10) {
             edadImgLuna = 15;
-            edadLuna = "Dia " + 15;
+            edadLuna = "<small>Edad lunar:</small> " + 15+" días";
           }
           if (edadImgLuna == 15 && porcentFase < 98.95) {
             edadImgLuna = 16;
-            edadLuna = "Dia " + 16;
+            edadLuna = "<small>Edad lunar:</small> " + 16+" días";
           }
           //console.log(response[i+24].age, response[i-2].age,response[i-1].age, response[i].age, edadImgLuna)
           if (edadImgLuna == 0) {
             edadImgLuna = 0;
-            edadLuna = "Dia " + 1;
+            edadLuna = "<small>Edad lunar:</small> " + 1+" días";
           }
           if (edadImgLuna > 29) {
             edadImgLuna = 0;
-            edadLuna = "Dia " + 0;
+            edadLuna = "<small>Edad lunar:</small> " + 0+" días";
           }
           /*if(edadImgLuna >= 29){
                                         edadImgLuna= 1
@@ -243,17 +242,17 @@ function moonJson(moonrise, moonset, riseSetWeek, direccion, azimuth) {
                                     }*/
 
           distancia =
-            "Distancia " +
+            "<small>Distancia:</small> " +
             new Number(response[i].distance).toLocaleString();
 
           if (idioma == "en") {
-            edadLuna = "Day " + edadImgLuna;
+            edadLuna = "<small>Moon age:</small> " + edadImgLuna+" days";
             if (edadImgLuna == 0) {
               edadImgLuna = 0;
-              edadLuna = "Day " + 1;
+              edadLuna = "<small>Moon age:</small> " + 1+" days";
             }
             distancia =
-              "Distance: " +
+              "<small>Distance:</small> " +
               new Number(response[i].distance).toLocaleString();
             diasSemana = [
               "Sunday",
@@ -264,7 +263,7 @@ function moonJson(moonrise, moonset, riseSetWeek, direccion, azimuth) {
               "Friday",
               "Saturday",
             ];
-            version = "Moon Phases " + chrome.runtime.getManifest().version;
+            
             $("#toolRotation .tooltiptext").text("Click to see rotation");
             $("#toolDirection .tooltiptext").text(
               "Click to see moonrise point"
@@ -300,33 +299,18 @@ function moonJson(moonrise, moonset, riseSetWeek, direccion, azimuth) {
 
           console.log(response[i + 24].age + ".." + response[i].age);
           // Set data in fases.html
-          $("#fecha").text(diasSemana[numeroDia] + " " + fecha);
+          
           $("#datosLuna").html(
-            "<p id='edadLunar' class='datosLunares'>" +
+            "<span id='edadLunar' class='datosLunares'>" +
               edadLuna +
-              ". <b>" +
-              fase +
-              "</b> " +
-              porcentFase +
-              "%<p id='distancia' class='datosLunares'>" +
+              ".</span> <span id='faseLunar' class='datosLunares'>Fase: " +
+              fase +" "+ porcentFase +
+              "%</span> " +
+              "<span id='distancia' class='datosLunares'>" +
               distancia +
-              "Km</p>"
+              "Km</span>"
           );
-          chrome.action.setIcon({
-            path: { 32: "fasesLunaIcons/lunaFase" + edadImgLuna + ".png" },
-          });
-          chrome.action.setTitle({
-            title:
-              "\u{1F315} \u2191 " +
-              moonrise +
-              "\n\u{1F311} \u2193 " +
-              moonset +
-              "\n" +
-              fase +
-              " " +
-              porcentFase +
-              "%",
-          });
+          
 
           //Muestra efecto de rotación de la luna.
           var conteo = -1;
@@ -361,15 +345,17 @@ function moonJson(moonrise, moonset, riseSetWeek, direccion, azimuth) {
             }
 
             $("#imgLuna").html(
-              "<img src='fasesLunaIcons/lunaFase" + conteo + ".png'>"
+              "<img src='fasesLunaIcons/lunaFase" + conteo + ".png' id='setImgLuna'>"
             );
 
             setTimeout(function () {
               var backLuna = "fasesLunaIcons/lunaFase" + conteo + ".png";
-              $("#imgLuna").css(
-                "background-image",
-                "url(" + backLuna + ")"
-              );
+              $("#imgLuna").css({
+                "background-image" :
+                "url(" + backLuna + ")",
+                "background-size" :
+                "cover"
+            });
             }, 100);
           }
           var intervalo = setInterval(rotacion, 200);
@@ -384,9 +370,9 @@ function moonJson(moonrise, moonset, riseSetWeek, direccion, azimuth) {
           }
 
           $("#datos").text(edadImgLuna);
-          $("#botonCreditos").text(version);
           // Set moon week column. Icons, porcent and days
-          var edadImgLunaPrev = Number(edadLuna.slice(4, 6));
+          console.log(edadLuna.split(" "))
+          var edadImgLunaPrev = Number(edadLuna.split(" ")[2]);
           //console.log(riseSetWeek)
           for (var k = 0; k <= 6; k++) {
             i = i + 24;
@@ -406,13 +392,13 @@ function moonJson(moonrise, moonset, riseSetWeek, direccion, azimuth) {
             }
             console.log("Numero.." + numeroDia);
             $("#semanaLunar").append(
-              "<div id='filaLunar'><div class='diaSemana'><span id='dia' class='filaTexto'>" +
+              "<div id='filaLunar'><div class='diaSemana'><span id='dia' class='filaTexto' style='font-size: 0.8em'>" +
                 diasSemana[numeroDia] +
                 "</span><span class='filaTexto' style='font-size: 0.9em'>" +
                 porcentaje +
                 "%</span></div><img src='fasesLunaIcons/lunaFase" +
                 edadImgLunaPrev +
-                ".png' style='width: 41px;'><div class='diaSemana'><span class='filaTexto' style='font-size: 0.9em'>&#8679;  " +
+                ".png' style='width: 55px;'><div class='diaSemana'><span class='filaTexto' style='font-size: 0.9em'>&#8679;  " +
                 riseSetWeek[k][0] +
                 "</span><span class='filaTexto' style='font-size: 0.9em'>&#8681;  " +
                 riseSetWeek[k][1] +

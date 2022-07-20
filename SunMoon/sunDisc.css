@@ -12,8 +12,8 @@ body {
     margin: 0;
     display: flex;
     align-items: center;
-    justify-content: center;
-    background: linear-gradient(9deg, rgb(10,25,145), rgb(200,245,255));
+    justify-content: space-around;
+    font-family: sans-serif;
 }
 #ciudad{
     position: absolute;
@@ -141,14 +141,17 @@ body {
 /* Removes SVG styling that would hide the time label */
 
 .cajas{
-    width: 50%;
-    height: 100%;
+    width: 225px;
+    height: 90%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
+    border-radius: 12px;
 }
-
+#cajaSolar{
+    background: linear-gradient(9deg, rgb(10,25,145), rgb(200,245,255));
+}
 .solarFlex{
     width: 215px;
     display: flex;
@@ -250,7 +253,7 @@ transform: rotate(90deg);
 	transform: rotate(90deg);
     transform-origin: center;
 }
-#semanaSolar{
+.semanas{
     width: 215px;
     max-height: 220px;
     display: flex;
@@ -259,13 +262,13 @@ transform: rotate(90deg);
     overflow-y: auto;
     overflow-x: hidden;
 }
-#semanaSolar::-webkit-scrollbar{
+.semanas::-webkit-scrollbar{
     width: 5px;
 }
-#semanaSolar::-webkit-scrollbar-track{
+.semanas::-webkit-scrollbar-track{
     background: rgb(10,20,115, 0.2);
 }
-#semanaSolar::-webkit-scrollbar-thumb{
+.semanas::-webkit-scrollbar-thumb{
     background: rgb(255, 255, 255, 0.8);
 }
 .blockSemanal{

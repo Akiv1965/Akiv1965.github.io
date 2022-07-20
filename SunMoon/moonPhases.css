@@ -1,0 +1,66 @@
+#cajaLunar{
+    background-image: url("iconos/nightBackground.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#displayDatos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#RiseSet{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.riseSet{
+    width: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: rgb(215, 215, 215);
+}
+#datosLuna{
+    width: 215px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgb(205, 205, 205);
+    margin: 7px 0px;
+    font-size: 0.8em;
+}
+#imgLuna{
+    width: 150px;
+    height: 150px;
+}
+#setImgLuna{
+    width: 100%;
+}
+
+/*#semanaLunar{
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    overflow-x: hidden;
+}*/
+#filaLunar{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 5px;
+    color: rgb(205, 205, 205);
+    font-size: 0.9em;
+}
+.filaTexto{
+    display: flex;
+}
+.diaSemana{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
