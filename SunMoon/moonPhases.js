@@ -344,9 +344,10 @@ function moonJson(moonrise, moonset, riseSetWeek, direccion, azimuth, fechaLunaH
               }, 3000);
             }
 
-            $("#imgLuna").html(
+            /*$("#imgLuna").html(
               "<img src='fasesLunaIcons/lunaFase" + conteo + ".png' id='setImgLuna'>"
-            );
+            );*/
+            $("#setImgLuna").attr("src", "fasesLunaIcons/lunaFase" + conteo + ".png" )
 
            setTimeout(function () {
               var backLuna = "fasesLunaIcons/lunaFase" + conteo + ".png";
