@@ -348,7 +348,7 @@ function moonJson(moonrise, moonset, riseSetWeek, direccion, azimuth, fechaLunaH
               "<img src='fasesLunaIcons/lunaFase" + conteo + ".png' id='setImgLuna'>"
             );
 
-            setTimeout(function () {
+           setTimeout(function () {
               var backLuna = "fasesLunaIcons/lunaFase" + conteo + ".png";
               $("#imgLuna").css({
                 "background-image" :
@@ -358,7 +358,7 @@ function moonJson(moonrise, moonset, riseSetWeek, direccion, azimuth, fechaLunaH
                 "background-repeat":
                 "no-repeat"
             });
-            }, 100);
+            }, 50);
           }
           var intervalo = setInterval(rotacion, 200);
           $("div #toolRotation").on("click", function (e) {
