@@ -1,3 +1,7 @@
+for(var h=0; h < 30; h++){
+	$("#hiddenDiv").append("<img src='fasesLunaIcons/lunaFase" + h + ".png' width='10px' hidden>")
+}
+
 navigator.geolocation.getCurrentPosition(function(position) {
 	var idioma = (navigator.language).slice(0, 2);
   		if (idioma !== "es") {
