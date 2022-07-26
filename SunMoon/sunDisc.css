@@ -16,11 +16,11 @@ body {
     font-family: sans-serif;
 }
 #ciudad{
+    width: 100%;
     position: absolute;
-    top: 55px;
-    left: 10px;
+    top: 65px;
     text-align: center;
-    font-size: 1.3em;
+    font-size: 1.5em;
 }
 
 .base-timer{
@@ -75,17 +75,16 @@ body {
     position: absolute;
 }
 #horaActual{
+    width: 100%;
     position: absolute;
-    top: 39px;
-    left: 10px;
-    font-size: 0.9em;
+    top: 90px;
     text-align: center;
 }
 #fechaActual{
+    width: 100%;
 	position: absolute;
-    top: 6px;
-    left: 10px;
-	font-size: 0.7em;
+    top: 35px;
+	font-size: 0.8em;
 	text-align: center;
 }
 #reloj{
@@ -141,7 +140,7 @@ body {
 /* Removes SVG styling that would hide the time label */
 
 .cajas{
-    width: 225px;
+    width: 55%;
     height: 90%;
     display: flex;
     flex-direction: column;
@@ -149,11 +148,18 @@ body {
     justify-content: space-around;
     border-radius: 12px;
 }
+.backgroundCajas{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 #cajaSolar{
     background: linear-gradient(9deg, rgb(10,25,145), rgb(200,245,255));
 }
 .solarFlex{
-    width: 215px;
+    width: 70%;
     display: flex;
     justify-content: space-around;
 }
@@ -254,7 +260,7 @@ transform: rotate(90deg);
     transform-origin: center;
 }
 .semanas{
-    width: 215px;
+    width: 90%;
     max-height: 220px;
     display: flex;
     flex-direction: column;

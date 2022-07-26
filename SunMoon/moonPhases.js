@@ -168,9 +168,9 @@ fetch(
 
 function moonJson(moonrise, moonset, riseSetWeek, direccion, azimuth, fechaLunaHoy, idioma) {
     //Funcion AJAX para MOONJSON
-    $.getJSON("moon2022.json", function (response) {
-      //console.log(response);
-      
+    $.getJSON("https://akiv1965.github.io/SunMoon/moon2022.json", function (response) {
+      console.log(response);
+
       for (var i = 0; i < response.length; i = i + 24) {
         var fechaLunaJson = new Date(response[i].time).toLocaleDateString(); //new Date(response[i].time).toDateString().slice(0, 10);
         var edadLuna;
@@ -401,7 +401,7 @@ function moonJson(moonrise, moonset, riseSetWeek, direccion, azimuth, fechaLunaH
                 porcentaje +
                 "%</span></div><img src='fasesLunaIcons/lunaFase" +
                 edadImgLunaPrev +
-                ".png' style='width: 55px;'><div class='diaSemana'><span class='filaTexto' style='font-size: 0.9em'>&#8679;  " +
+                ".png' style='width: 60px;'><div class='diaSemana'><span class='filaTexto' style='font-size: 0.9em'>&#8679;  " +
                 riseSetWeek[k][0] +
                 "</span><span class='filaTexto' style='font-size: 0.9em'>&#8681;  " +
                 riseSetWeek[k][1] +

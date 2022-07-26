@@ -126,9 +126,9 @@ fetch("https://api.openweathermap.org/data/2.5/onecall?lat="+lat+"&lon="+lon+"&u
 			numeroDia=0
 		}
 		$("#semanaSolar").append("<div class='blockSemanal'>"
-		+"<span class='amaneceAnoche'><img src='iconos/iconAmanecer.png' style='width: 30px'>"+amanecerSemanal+"</span>"
+		+"<span class='amaneceAnoche'><img src='iconos/iconAmanecer.png' style='width: 35px'>"+amanecerSemanal+"</span>"
 		+"<span class='amaneceAnoche centroSemanal'><span class='diaSemanal'>"+diaSemana[numeroDia]+"</span><span id='duracionSemanal'>"+duracionDiaHorasSemanal+"h "+duracionDiaMinutosSemanal+"min"+"</span></span>"
-		+"<span class='amaneceAnoche'><img src='iconos/iconAnochecer.png' style='width: 30px'>"+anochecerSemanal+"</span></div>"
+		+"<span class='amaneceAnoche'><img src='iconos/iconAnochecer.png' style='width: 35px'>"+anochecerSemanal+"</span></div>"
 		)
 		
 	}
