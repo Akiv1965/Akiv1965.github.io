@@ -159,12 +159,12 @@ body {
     background: linear-gradient(9deg, rgb(10,25,145), rgb(200,245,255));
 }
 .solarFlex{
-    width: 70%;
+    width: 75%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 .amanecerAnochecer{
-    width: 60px;
+    width: 70px;
     display: flex;
     flex-direction: column;
     align-items: center;

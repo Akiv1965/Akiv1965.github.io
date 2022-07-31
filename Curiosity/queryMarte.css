@@ -1,0 +1,12 @@
+@media only screen and (max-width: 600px) {
+    .pantallaControl{
+        width: 100%;
+    }
+    #cajaBotones{
+        width: 90%;
+        flex-wrap: wrap;
+    }
+    .containe{
+        width: 90%;
+    }
+  }

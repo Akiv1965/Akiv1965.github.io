@@ -9,21 +9,24 @@
 }
 html{
   height: 100%;
-   margin: 0;
+  margin: 0;
 }
 body {
- 
+ height: 100%;
   margin: 0;
 	background: var(--backgroundPrincipal);
 	font-family: sans-serif;
 }
 #cajaMarte{
+  width: 100%;
+  height: 100%;
 	display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-around;
 }
 #titulo{
-  height: 55px;
+  width: 75%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -35,16 +38,22 @@ body {
 	text-shadow: 0px 0px 2px rgb(173, 255, 47, 0.7);
 }
 #cabListaFechas{
+  width: 75%;
   text-align: center;
   color: rgb(173, 255, 47, 0.8);
 }
+.pantallaControl{
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 10px;
+}
 #cajaBotones{
-  height:340px;
+  width: 100%;
 	position: relative;
 	display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  padding: 0px 10px 0px 0px;
+  justify-content: space-between;
 }
 @keyframes pingBall {
   /*from {left: 0px; top: 0px}
@@ -67,9 +76,9 @@ body {
 #ping{
 	position: absolute;
 	width: 140px;
-	height: 13px;
-	bottom: -28px;
-  left: -2px;
+	height: 14px;
+	bottom: -36px;
+  left: 27px;
 	box-shadow: inset 1px 0px 4px 1px rgb(30 140 20);
 	border-radius: 10px;
 }
@@ -87,16 +96,15 @@ body {
   row-gap: 4px;
 }
 .botonCamara{
-  width: 90px;
 	color: rgb(15, 205, 30,0.6);
   background: rgb(10,10,10,0.3);
   border-radius: 6px;
-  padding: 6px 5px 2px 5px;
+  padding: 4px 7px 2px 7px;
   box-shadow: 0px 0px 4px inset greenyellow;
   text-align: center;
   opacity: 0.4;
   border: none;
-  font-size: 0.8em;
+  font-size: 0.7em;
 }
 #nombreCam{
 	color: rgb(200, 40, 40);
@@ -104,6 +112,8 @@ body {
 	text-align: center;
 }
 .nombreCamOculto{
+  width: 100%;
+  text-align: center;
   font-size: 0.7em;
   color: rgb(15, 205, 30,0.6);
   opacity: 0.4;
@@ -111,9 +121,8 @@ body {
 
 
 #slidesContainer{
-  width: 570px;
-  min-height: 355px;
-  max-height: 355px;
+  width: 85%;
+  min-height: 375px;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -125,15 +134,14 @@ body {
 
 /* Hide the images by default */
 .slides {
+  width: 80%;
+  max-width: 380px;
 	display: flex;
-  max-width: 355px;
-  min-width: 355px;
 }
 #caption{
   position: absolute;
+  width: 25%;
   bottom: 0px;
-  left: 135px;
-	width: 120px;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -147,24 +155,25 @@ body {
 	text-align: center;
   border: none;
   background: none;
-  color: rgb(40, 60, 40);
+  color: rgb(90, 40, 40);
   text-shadow: 1px 1px 2px rgb(135, 250, 135);
   font-weight: bold;
 }
 #slidesMovie{
 	position: absolute;
 	top: 0;
-	width: 400px;
-	max-width: 400px;
-    min-height: 400px;
+	width: 80%;
+	max-width: 380px;
+  min-width: 380px;
 	background: var(--backgroundPrincipal);
 }
 #botonMovie{
-	width: 30px;
+	width: 21%;
 	cursor: pointer;
+  transform: rotate(33deg);
 }
 #botonCerrarMovie{
-	width: 30px;
+	width: 21%;
   cursor: pointer;
 }
 #contMovie{
@@ -174,9 +183,9 @@ body {
 	color: rgb(173, 255, 47, 0.5);
 }
 #fechasID{
-  width: 570px;
+  width: 80%;
   color: rgb(173, 255, 47, 0.8);
-  margin:10px 0px 10px 0px;
+  margin:8px 0px 12px 0px;
   padding: 5px;
   border: none;
   border-radius: 10px;
@@ -206,8 +215,9 @@ select{
 
 /* Next & previous buttons */
 .flechas{
-  width: 33px;
+  width: 21%;
   cursor: pointer;
+  transform: rotate(270deg);
 }
 
 /* Position the "next button" to the right
@@ -236,7 +246,8 @@ select{
 
 /* Position the image container (needed to position the left and right arrows) */
 .container {
-  width: 570px;
+  width: 75%;
+  height: 70px;
   position: relative;
   display: flex;
   align-items: center;
@@ -245,24 +256,23 @@ select{
 
 /* Container for image text */
 .caption-container {
-  width: 160px;
-  height: 58px;
+  position: absolute;
+  width: 25%;
+  left: -10px;
 	display: flex;
   justify-content: space-around;
   align-items: center;
   border-radius: 12px;
-  background: rgb(35, 35, 35);
+  /*background: rgb(35, 35, 35);
   box-shadow: 2px 1px 3px;
-  padding: 0px 4px;
+  padding: 8px 5px 5px 6px;*/
+  transform: rotate(90deg);
 }
 .row{
-  width: 400px;
-  height: 75px;
 	display: flex;
   align-items: center;
 	overflow-x: auto;
   overflow-y: hidden;
-  margin-top: 5px;
 }
 #indexThumb{
 	position: absolute;
@@ -285,7 +295,6 @@ select{
 	position: relative;
   min-width: 65px;
   max-width: 65px;
-  height: 65px;
   max-height: 65px;
   z-index: 999999999;
   margin-right: 2px;

@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <link rel="stylesheet" href="marte.css">
+    <link rel="stylesheet" href="queryMarte.css">
     <link href="https://fonts.googleapis.com/css2?family=Electrolize&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
     <link rel="icon" sizes="192x192" href="iconos/iconMars.png">
@@ -26,17 +27,14 @@
       <!--<div id="nombreCam"></div>-->
       <!--SELECT de archivo-->
       <select id="fechasID" name="fechas"></select>
-      
-      <!-- SLIDESHOW-->
 
-      <!-- Full-width images with number text -->
-      <div id="slidesContainer">
-        
-        <div class="slides"></div>
+      <!-- SLIDESHOW-->
+      <div class="pantallaControl">
+      
         <div id="cajaBotones">
           <span id='ping' hidden><img id='imgBall' src='iconos/pingGreen.png' width='11px'></span>
-         <div class="bloqueBoton">
-           <button id="FHAZ" class="botonCamara" title="Cámara frontal para prevención de riesgos"
+          <div class="bloqueBoton">
+            <button id="FHAZ" class="botonCamara" title="Cámara frontal para prevención de riesgos"
               disabled>FHAZ</button>
             <span class="nombreCamOculto" id="FHAZnombre">Cámara frontal</span>
           </div>
@@ -47,11 +45,11 @@
           </div>
           <div class="bloqueBoton">
             <button id="MAST" class="botonCamara" title="Cámara del mástil" disabled>MAST</button>
-            <span class="nombreCamOculto" id="MASTnombre">Cámara del mástil</span>
+            <span class="nombreCamOculto" id="MASTnombre">Cámara mástil</span>
           </div>
           <div class="bloqueBoton">
             <button id="CHEMCAM" class="botonCamara" title="Conjunto de cámaras para química" disabled>CHEMCAM</button>
-            <span class="nombreCamOculto" id="CHEMCAMnombre">Cámaras para química</span>
+            <span class="nombreCamOculto" id="CHEMCAMnombre">Cámaras química</span>
           </div>
           <div class="bloqueBoton">
             <button id="MARDI" class="botonCamara" title="Cámara manual" disabled>MARDI</button>
@@ -59,42 +57,47 @@
           </div>
           <div class="bloqueBoton">
             <button id="MAHLI" class="botonCamara" title="Cámara de descenso" disabled>MAHLI</button>
-            <span class="nombreCamOculto" id="MAHLInombre">Cámara de descenso</span>
+            <span class="nombreCamOculto" id="MAHLInombre">Cámara descenso</span>
           </div>
           <div class="bloqueBoton">
             <button id="NAVCAM" class="botonCamara" title="Cámara de navegación" disabled>NAVCAM</button>
-            <span class="nombreCamOculto" id="NAVCAMnombre">Cámara de navegación</span>
+            <span class="nombreCamOculto" id="NAVCAMnombre">Cámara navegación</span>
           </div>
         </div>
-        <div id="slidesMovie" hidden></div>
-        <span id="caption">
-              <input type="number" id="primer" class="inputNumero" min="1" size="3" name="quantity">
-           /
-              <input type="number" id="ultimo" class="inputNumero" size="3" name="quantity">
-            
-            </span>
-            <!-- Target button -->
-        <a id="target" title="Zoom"><img src="iconos/iconZoom.png" style="width: 100%"></a>
+        <!-- Full-width images with number text -->
+        <div id="slidesContainer">
+          <div class="caption-container">
+            <a id="prev" class="flechas"><img src="iconos/iconMovieLeft.png" style="width: 100%"></a>
+            <span id='botonCerrarMovie' title="Parar animación"><img src="iconos/iconMovieStop.png"
+                style="width: 100%"></span>
+            <span id="botonMovie" title="Iniciar animación"><img src="iconos/iconMoviePlay.png"
+                style="width: 100%"></span>
+            <a id="next" class="flechas"><img src="iconos/iconMovieRight.png" style="width: 100%"></a>
+          </div>
+          <div class="slides"></div>
+
+          <div id="slidesMovie" hidden></div>
+          <span id="caption">
+            <input type="number" id="primer" class="inputNumero" min="1" size="3" name="quantity">
+            /
+            <input type="number" id="ultimo" class="inputNumero" size="3" name="quantity">
+
+          </span>
+          <!-- Target button -->
+          <a id="target" title="Zoom"><img src="iconos/iconZoom.png" style="width: 100%"></a>
+          
+        </div>
+
       </div>
-      
       <!-- Image text -->
       <!-- Container for the image gallery -->
       <div class="container">
-
+      
         <!-- Thumbnail images -->
         <div class="row" id="galeria" style="background: var(--backgroundPrincipal)">
         </div>
-          <div class="caption-container">
-            <a id="prev" class="flechas"><img src="iconos/iconMovieLeft.png"
-              style="width: 100%"></a>
-               <span id='botonCerrarMovie' title="Parar animación"><img src="iconos/iconMovieStop.png"
-                  style="width: 100%"></span>
-              <span id="botonMovie" title="Iniciar animación"><img src="iconos/iconMoviePlay.png"
-                  style="width: 100%"></span>
-            <a id="next" class="flechas"><img src="iconos/iconMovieRight.png"
-              style="width: 100%"></a>
-          </div>
-       
+
+
       </div>
 
     </div>

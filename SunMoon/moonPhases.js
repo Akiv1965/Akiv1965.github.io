@@ -134,9 +134,9 @@ fetch(
           var diaCabecera = fechaLunaHoy;
           var riseSetWeek = [];
           $("#RiseSet").html(
-            "<div id='moonRise' class='riseSet'><img src='iconos/iconMoonRise.png' style='width:100%; margin-right: 2px;'><span>" +
+            "<div id='moonRise' class='riseSet'><img src='iconos/iconMoonRise.png' style='width:100%;'><span>" +
               moonrise +
-              "</span></div><div id='moonSet' class='riseSet'><img src='iconos/iconMoonSet.png' style='width:100%; margin-right: 2px;'><span> " +
+              "</span></div><div id='moonSet' class='riseSet'><img src='iconos/iconMoonSet.png' style='width:100%;'><span> " +
               moonset +
               "</span></div>"
           );
