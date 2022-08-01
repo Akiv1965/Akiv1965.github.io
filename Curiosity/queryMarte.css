@@ -3,7 +3,7 @@
         font-size: 1.2em;
     }
     #fechasID{
-        margin: 0px;
+        margin: 2px 0px;
     }
     .pantallaControl{
         width: 100%;
@@ -22,6 +22,9 @@
         left: auto;
         transform: rotate(0deg);
     }
+    #slidesContainer{
+        position: relative;
+    }
     .flechas{
         transform: rotate(0deg);
     }
@@ -30,5 +33,10 @@
     }
     #botonCerrarMovie{
         transform: rotate(0deg);
+    }
+    #target{
+        top: 3px;
+        left: 0px;
+        right: auto;
     }
   }

@@ -43,6 +43,7 @@ body {
   color: rgb(173, 255, 47, 0.8);
 }
 .pantallaControl{
+  position: relative;
   width: 75%;
   display: flex;
   flex-direction: column;
@@ -122,11 +123,11 @@ body {
 
 #slidesContainer{
   width: 85%;
-  min-height: 375px;
+  min-height: 370px;
+  max-height: 370px;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  position: relative;
   background: var(--backgroundPrincipal);
   border-radius: 15px;
   box-shadow: 1px 2px 3px;
@@ -135,7 +136,7 @@ body {
 /* Hide the images by default */
 .slides {
   width: 80%;
-  max-width: 380px;
+  max-width: 365px;
 	display: flex;
 }
 #caption{
@@ -207,10 +208,9 @@ select{
 	color: rgb(173, 255, 47, 0.5);
   width: 20px;
   position: absolute;
-  top: 3px;
-  left: 3px;
-    cursor: pointer;
-    opacity: 0.9;
+  right: 10%;
+  cursor: pointer;
+  opacity: 0.9;
 }
 
 /* Next & previous buttons */
@@ -257,8 +257,8 @@ select{
 /* Container for image text */
 .caption-container {
   position: absolute;
-  width: 25%;
-  left: -10px;
+  width: 20%;
+  left: 10px;
 	display: flex;
   justify-content: space-around;
   align-items: center;
@@ -293,9 +293,9 @@ select{
 /* Six columns side by side */
 .column {
 	position: relative;
-  min-width: 65px;
-  max-width: 65px;
-  max-height: 65px;
+  min-width: 50px;
+  max-width: 50px;
+  max-height: 50px;
   z-index: 999999999;
   margin-right: 2px;
   cursor: pointer;
