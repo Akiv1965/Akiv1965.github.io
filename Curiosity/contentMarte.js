@@ -17,6 +17,7 @@ function curiosityLaunch () {
 			url: "https://api.nasa.gov/mars-photos/api/v1/manifests/curiosity?api_key=hb4mXofbbZ3GHnWy48wjFiXBGj7wkadXhEN9TOYA",
 			success: function (data) {
 				console.log(data)
+				
 				var fotoLength = data.photo_manifest.photos.length - 1;
 				var fotoLengthArchivo = fotoLength
 				var diaSolUltimo = data.photo_manifest.photos[fotoLength].sol
@@ -243,8 +244,11 @@ function curiosityLaunch () {
 					//$(".flechas").hide()
 					//$(".numbertext").hide()
 					$("#botonMovie").off("click")
+					//$("#botonMovie").css({"filter": "drop-shadow(1px 2px 2px rgb(199, 25, 30))"})
+					$("#imgPlay").attr("src", "iconos/iconMoviePlayVerde.png")
+					$("#imgStop").attr("src", "iconos/iconMovieStopRojo.png")
 					$("#target").hide()
-					$("#ping").show()
+					//$("#ping").show()
 					console.log($("#datos").text(), "....", ".botonCamara #"+$("#datos").text())
 					// $("#img"+indexArrayImg).css({"position": "sticky", "left": "0px"})
 
@@ -286,7 +290,10 @@ function curiosityLaunch () {
 					indexFoto = Number($("#primer").val()) - 1
 					indexArrayImg = Number($("#primer").val());
 					scrollX = scrollX - 50
-					$("#ping").hide();
+					//$("#ping").hide();
+					//$("#botonMovie").css({"filter": "drop-shadow(1px 2px 2px rgb(25, 199, 30))"})
+					$("#imgPlay").attr("src", "iconos/iconMoviePlayNegro.png")
+					$("#imgStop").attr("src", "iconos/iconMovieStopNegro.png")
 					$("#fechasID").attr("disabled", false)
 					$(".botonCamara").css({"opacity": "1"})
 					$(".nombreCamOculto").css({"opacity": "1"})

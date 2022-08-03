@@ -32,7 +32,7 @@
       <div class="pantallaControl">
       
         <div id="cajaBotones">
-          <span id='ping' hidden><img id='imgBall' src='iconos/pingGreen.png' width='11px'></span>
+          <!--<span id='ping' hidden><img id='imgBall' src='iconos/pingGreen.png' width='11px'></span>-->
           <div class="bloqueBoton">
             <button id="FHAZ" class="botonCamara" title="Cámara frontal para prevención de riesgos"
               disabled>FHAZ</button>
@@ -67,38 +67,40 @@
         <!-- Full-width images with number text -->
         <div id="slidesContainer">
           <div class="caption-container">
-            <a id="prev" class="flechas"><img src="iconos/iconMovieLeft.png" style="width: 100%"></a>
-            <span id='botonCerrarMovie' title="Parar animación"><img src="iconos/iconMovieStop.png"
+            
+            <span id='botonCerrarMovie' class="videoBoton" title="Parar animación"><img src="iconos/iconMovieStopNegro.png" id="imgStop"
                 style="width: 100%"></span>
-            <span id="botonMovie" title="Iniciar animación"><img src="iconos/iconMoviePlay.png"
+            <span id="botonMovie" class="videoBoton" title="Iniciar animación"><img src="iconos/iconMoviePlayNegro.png" id="imgPlay"
                 style="width: 100%"></span>
-            <a id="next" class="flechas"><img src="iconos/iconMovieRight.png" style="width: 100%"></a>
           </div>
           <div class="slides"></div>
 
           <div id="slidesMovie" hidden></div>
-          <span id="caption">
+          <span class="caption">
+            <a id="prev" class="flechas"><img src="iconos/iconPrev.png" style="width: 100%"></a>
             <input type="number" id="primer" class="inputNumero" min="1" size="3" name="quantity">
             /
             <input type="number" id="ultimo" class="inputNumero" size="3" name="quantity">
-
+            <a id="next" class="flechas"><img src="iconos/iconNext.png" style="width: 100%"></a>
           </span>
           <!-- Target button -->
           <a id="target" title="Zoom"><img src="iconos/iconZoom.png" style="width: 100%"></a>
           
         </div>
 
+        <div class="container">
+      
+          <!-- Thumbnail images -->
+          <div class="row" id="galeria" style="background: var(--backgroundPrincipal)">
+          </div>
+  
+  
+        </div>
+
       </div>
       <!-- Image text -->
       <!-- Container for the image gallery -->
-      <div class="container">
-      
-        <!-- Thumbnail images -->
-        <div class="row" id="galeria" style="background: var(--backgroundPrincipal)">
-        </div>
-
-
-      </div>
+     
 
     </div>
 
