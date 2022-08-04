@@ -25,6 +25,12 @@ body {
   align-items: center;
   justify-content: space-around;
 }
+#divCabecera{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 #titulo{
   width: 75%;
 	display: flex;
@@ -54,6 +60,7 @@ body {
 	position: relative;
 	display: flex;
   justify-content: space-between;
+  padding: 2px;
 }
 @keyframes pingBall {
   /*from {left: 0px; top: 0px}
@@ -191,7 +198,7 @@ body {
 	color: rgb(173, 255, 47, 0.5);
 }
 #fechasID{
-  width: 80%;
+  width: 75%;
   color: rgb(173, 255, 47, 0.8);
   margin:8px 0px 12px 0px;
   padding: 5px;
