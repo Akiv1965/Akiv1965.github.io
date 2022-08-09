@@ -1,6 +1,6 @@
+import {lat, lon} from "../moduloLatLon.js";
+console.log(lat, lon)
 
-
-function stationMeteor(lat, lon){
     functionUbicacion(lat, lon)
 var idioma = (navigator.language).slice(0, 2);
 if (idioma !== "es") {
@@ -14,4 +14,3 @@ fetch("https://api.openweathermap.org/data/2.5/onecall?lat="+lat+"&lon="+lon+"&u
     console.log(clima)
 
     })
-}
