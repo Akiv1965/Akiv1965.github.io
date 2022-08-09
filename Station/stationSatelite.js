@@ -1,5 +1,5 @@
-//import {lat, lon} from "../moduloLatLon.js";
-//console.log(lat, lon)
+import {lat, lon} from "../moduloLatLon.js";
+console.log(lat, lon)
 $(document).ready(function(){
     	$("select").on("change", function(){
 		zona= $("#zona").val()
