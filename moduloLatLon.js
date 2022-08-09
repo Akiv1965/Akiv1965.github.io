@@ -1,4 +1,4 @@
-export default latLon
+
 const latLon= () => navigator.geolocation.getCurrentPosition(function(position) {
 
     var lat =  Number(position.coords.latitude);//40.481815
@@ -7,3 +7,4 @@ const latLon= () => navigator.geolocation.getCurrentPosition(function(position) 
     return lat,lon
 }
 )
+export default latLon
