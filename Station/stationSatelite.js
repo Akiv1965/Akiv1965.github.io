@@ -16,7 +16,7 @@ $(document).ready(function(){
 		fotoSatelite(zona, visibilidad)
 	})
 })
-import latLon from "../moduloLatLon.js";
+import latLon from "./moduloLatLon.js";
 console.log(latLon)
 var zona= "mediterranean";
 var visibilidad= "infrared";
