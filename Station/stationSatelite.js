@@ -1,4 +1,4 @@
-import {Lat, Lon} from "./moduloLatLon.js";
+import {Lat, Lon} from "../moduloLatLon.js";
 console.log(Lat, Lon)
 $(document).ready(function(){
     	$("select").on("change", function(){
