@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+  <title>Station</title>
+    <meta charset="utf-8">
+	
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="Station.css">
+<!--<link rel="stylesheet" href="moonPhases.css">
+<link rel="stylesheet" href="querys.css">
+<link rel="stylesheet" href="stationMoon.css">
+<link rel="icon" sizes="192x192" href="iconos/iconSun.png">-->
+<script src="../jquery-3.5.1.js"></script>
+<script type="module" src="../moduloLatLon.js"></script>
+<script src="../setUbicacion.js"></script>
+<script src="../crono.js"></script>
+<script src="stationSatelite.js"></script>
+<script src="stationMeteor.js"></script>
+  </head>
+  	
+	<body onload="stationMeteor()">
+    <div class="contenedor">
+        <div class="cajas" id="cajaSatelite">
+            <span id="lat" hidden></span>
+            <span id="lon" hidden></span>
+            <div id="fotoSatelite">
+                
+                <div id="instrumentos">
+                <span class="selectVisib">
+                <select id="visibilidad">
+                <option id="infrared" value="infrared">Infrared</option>
+                <option id="visible" value="visible">Visible</option>
+                </select>
+
+                <select id="zona">
+                <option id="mediterranean" value="mediterranean">Mediterráneo</option>
+                <option id="europe" value="europe">Europa</option>
+                <option id="global" value="global">Global</option>
+                </select>
+                <div id="ampliar" class="ampliar"><a href="" target="_BLANK" title="Imagen original">&#9974;</a></div>
+                </span>
+                
+                <div class="cabeceraCiudad"><span id="ciudad"></span><span id="horaActual"></span></div>
+            </div>
+                <!--<span id="fechaSatelite"></span>-->
+                <img src="" id="imgMediterranean" style="width: 100%;">
+            </div>
+            <div id="videoSatelite">
+                <video width="100%" autoplay controls>
+                    <source src="https://api.met.no/weatherapi/geosatellite/1.4/europe.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+        <div class="cajas" id="cajaStation">
+            <div id="actual" class="cajaTiempo"></div>
+            <div id="diario" class="cajaTiempo"></div>
+            <div id="semana" class="cajaTiempo"></div>
+        </div>
+    </div>
+    </body>
+</html>

@@ -1,4 +1,11 @@
+var tiempoRestSegundos= "x"
+setInterval(
+    
 function crono(){
+    if(tiempoRestSegundos == "x"){
+        $("#horaActual").html("<span>"+new Date().toLocaleDateString()+"</span><span>"+new Date().toLocaleTimeString("en-GB")+"</span>")
+    
+}else{
     tiempoRestSegundos--
    
    if(tiempoRestSegundos < 0){
@@ -22,11 +29,13 @@ function crono(){
        minutos= "0"+minutos
    }
    $("#tiempoDescuento").text(tiempoRestHoras+":"+minutos+":"+segundos)
+   $("#horaActual").html("<b>"+new Date().toLocaleTimeString("en-GB")+"</b>")
    /*if(mensDiaNoche == "Hasta el amanecer"){
     
    }else{
     $("#hastaElAnochecer").text(tiempoRestHoras+":"+minutos+":"+segundos)
    }*/
-   
-   $("#horaActual").html("<b>"+new Date().toLocaleTimeString("en-GB")+"</b>")
 }
+   
+}
+, 1000);

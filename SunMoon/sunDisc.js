@@ -11,9 +11,6 @@ navigator.geolocation.getCurrentPosition(function(position) {
 	var lat =  Number(position.coords.latitude);//40.481815
 	var lon =  Number(position.coords.longitude);//-3.364305
 	var fechaLunaHoy = new Date().toLocaleDateString();
-		//$("#latitud").text(lat)
-		//$("#longitud").text(lon)
-    //console.log(lat + "  ..  " + lon + idioma)
 	
 	
   functionUbicacion(lat, lon)
@@ -101,7 +98,8 @@ fetch("https://api.openweathermap.org/data/2.5/onecall?lat="+lat+"&lon="+lon+"&u
 
 		 console.log(amanecer, ";;", anochecer, ";;", duracionMinutos)
 
-		 setInterval(crono, 1000)
+		 //setInterval(crono, 1000)
+		 
 		  
 	
 	 
