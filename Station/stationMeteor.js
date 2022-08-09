@@ -1,7 +1,7 @@
 import {lat, lon} from "../moduloLatLon.js";
 console.log(lat, lon)
 
-    functionUbicacion(lat, lon)
+    //functionUbicacion(lat, lon)
 var idioma = (navigator.language).slice(0, 2);
 if (idioma !== "es") {
     idioma = "en";
