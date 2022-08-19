@@ -7,8 +7,7 @@ html{
     height: 100%;
 }
 body {
-    width: 100%;
-    height: 100%;
+    width: 99%;
     margin: 0;
     font-family: sans-serif;
 }
@@ -21,52 +20,188 @@ body {
     padding: 2px;
 }
 .cajas{
+    position: relative;
     width: 100%;
     display: flex;
-    align-items: flex-start;
-    background: rgb(15, 15, 65);
 }
 #fotoSatelite{
     width: 100%;
     position: relative;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 .cabeceraCiudad{
-    width: 50%;
+    width: 100%;
+    position: static;
+    bottom: 0px;
+    left: 0px;
     display: flex;
     /* flex-direction: column; */
     align-items: center;
     justify-content: space-around;
+    padding: 6px 0px 0px 0px;
 }
 #ciudad{
-    font-size: 2.1em;
+    font-size: clamp(1.5rem, 8vw - 2rem, 3rem);
+}
+#direccionPostal{
+    display: flex;
+    flex-direction: column;
+    font-size: clamp(0.5rem, 8vw - 0.7rem, 0.9rem);
 }
 #horaActual{
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 0.9em;
+    font-size: 0.8em;
 }
 
 #instrumentos{
-    width: 100%;
+    position: absolute;
+    width: 80%;
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    background: rgb(255,255, 255);
+    justify-content: space-between;
 }
 .selectVisib{
-    width: 40%;
     display: flex;
-    align-items: baseline;
     justify-content: center;
+}
+select{
+    background: none;
+    color: rgb(230, 240, 10);
 }
 .ampliar{
     font-size: 1.1em;
     font-weight: bold;
     margin-left: 8px;
 }
+a{
+    text-decoration: none;
+    color: rgb(190, 230, 10);
+}
 #videoSatelite{
     width: 100%;
+}
+
+.cajaTiempo{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+}
+#actual1{
+    width: 100%;
+    display: flex;
+}
+.divDatos{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.spanDatos{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 3px;
+    font-size: 0.9em;
+}
+.riseAndSet{
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#riseAndSet{
+    width: 100%;
+    justify-content: space-around;
+    font-size: 1em;
+}
+.temperaturas{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#tempActual{
+    font-size: clamp(2rem, 8vw - 2.5rem, 3rem);
+}
+#iconoActual{
+    position: relative;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#descripActual{
+    position: absolute;
+    bottom: 5px;
+}
+#actual2{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#iconoViento{
+    position: relative;
+    width: 35%;
+}
+#velocidadViento{
+    width: 100%;
+    position: absolute;
+    top: 41%;
+    text-align: center;
+    font-size: 0.8rem;
+}
+#datosActual{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+    row-gap: 10px;
+}
+.cajaPrevisiones{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#horas{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    overflow: auto;
+}
+.cajaHoras{
+    min-width: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#horaEnHoras{
+    width: 100%;
+    text-align: center;
+    font-size: 0.8rem;
+}
+#iconoEnHoras{
+    position: relative;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#tempEnHoras{
+    width: 100%;
+    position: absolute;
+}
+#descripEnHoras{
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    font-size: 0.9rem;
 }
