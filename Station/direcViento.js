@@ -35,10 +35,11 @@ function DirecViento(direcViento, iconoViento, velocidad){
 			iconoViento= "iconos/vientos/Oeste.png"
 			//$("#O").css("color", "red")
 		}
-		if(direcViento >= 290 && direcViento >350){
+		if(direcViento >= 290 && direcViento <350){
 			direcViento= "NO"
 			iconoViento= "iconos/vientos/Noroeste.png"
 			//$("#NO").css("color", "red")
 		}
-		$("#iconoViento").html("<span id='velocidadViento'>"+velocidad+"<small>Km/h</small></span><img src='"+iconoViento+"' style='width: 100%'>")
+		//$("#iconoViento").html("<span id='velocidadViento'>"+velocidad+"<small>Km/h</small></span><img src='"+iconoViento+"' style='width: 100%'>")
+		return iconoViento
 	}
