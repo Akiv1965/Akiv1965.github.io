@@ -82,7 +82,9 @@ fetch("https://api.openweathermap.org/data/2.5/onecall?lat="+lat+"&lon="+lon+"&u
 	 +"<span id='horaEnHoras'>"+hora+"</span>"
 	 +"<div id='boxTemp'><span id='tempEnHoras' style='bottom:"+posicion+"px'>"+tempHoras+"</span></div>"
 	 +"<div id='iconoEnHoras' ><img src='http://openweathermap.org/img/wn/"+iconoHoras+"@4x.png' style='width: 35%'><span id='descripEnHoras'>"+descripHoras+"</span></div>"
-	 //+"<div id='datosEnHoras'><span class='spanDatosHoras'><img src='"+iconoVientoEnHoras+"' style='width: 100%'></span><span class='spanDatosHoras'><img src='iconos/iconLluvia.png' style='width: 50%'><span style='width:100%; position: absolute; top: 7px; left: 11px; font-size: 0.8rem'>"+probLluvia+"%</span></div>"
+	 +"<div class='datosEnHoras'>"
+	 +"<span class='spanDatosHoras' style='width: 80%; display: flex; flex-direction: column; align-items: center;'><img src='"+iconoVientoEnHoras+"' style='width: 100%'><span style='position: absolute; top: 41%; font-weight: bold; color: rgb(30, 30, 70, 0.8)'>"+velocidad+"<small>Km/h</small></span></span>"
+	 +"<span class='spanDatosHoras'><img src='iconos/iconLluvia.png' style='width: 100%'><span style='position: absolute; top: 20%; left: 30%; font-weight: bold; color: rgb(30, 30, 70, 0.8)'>"+probLluvia+"%</span></span></div>"
 	 +"</div>")
 	 
 	}
@@ -102,7 +104,7 @@ fetch("https://api.openweathermap.org/data/2.5/onecall?lat="+lat+"&lon="+lon+"&u
 		var descripDias= climaDias[h].weather[0].description
 
 		$("#dias").append("<div class='cajaDias'>"
-		+"<span id='diaEnDias'>"+diaSemana[numeroDia]+" <small>"+fechaDias+"</small></span>"
+		+"<span id='diaEnDias'><small>"+diaSemana[numeroDia]+"</small> "+fechaDias+"</span>"
 		+"<div id=iconoEnDias>"
 		+"<span id='tempEnDias'>"+tempMaxDias+" - "+tempMinDias+"</span>"
 		+"<img src='http://openweathermap.org/img/wn/"+iconoDias+"@4x.png' style='width: 40%'>"

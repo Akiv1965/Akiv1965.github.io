@@ -192,18 +192,26 @@ a{
 }
 .cajaHoras{
     position: relative;
-    min-width: 110px;
+    min-width: 100px;
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
+}
+.cajaHoras:hover .datosEnHoras{
+    bottom: 0px;
+    transition-duration: 0.8s;
 }
 #horaEnHoras{
     width: 100%;
     text-align: center;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
+    padding: 1px 0px;
+    text-shadow: 1px 1px 2px rgb(150, 150, 210);
 }
 #iconoEnHoras{
+    position: relative;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -211,7 +219,7 @@ a{
 }
 #boxTemp{
     width: 100%;
-    height: 50%;
+    height: 40%;
     position: relative;
 }
 .termometro{
@@ -229,17 +237,28 @@ a{
 #descripEnHoras{
     width: 100%;
     position: absolute;
-    bottom: 0px;
+    top: -2px;
     font-size: 0.7rem;
     text-align: center;
 }
-#datosEnHoras{
+.datosEnHoras{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: -150px;
     display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: flex-start;
+    row-gap: 3px;
+    background: white;
 }
 .spanDatosHoras{
     position: relative;
-    width: 50%;
+    width: 39%;
+    display: flex;
+    align-items: center;
+    font-size: 0.7rem;
 }
 #dias{
     width: 100%;
@@ -266,10 +285,13 @@ a{
     justify-content: space-around;
 }
 #diaEnDias{
-    font-size: 0.8rem;
+    font-size: 0.7rem;
 }
 #iconoEnDias{
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+#descripEnDias{
+    font-size: 0.8rem;
 }
