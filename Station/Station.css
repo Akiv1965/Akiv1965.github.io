@@ -177,7 +177,8 @@ a{
     min-height: 50%;
     display: flex;
     align-items: center;
-    overflow: auto;
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 .indexMaxMin{
     position: absolute;
@@ -284,14 +285,49 @@ a{
     align-items: center;
     justify-content: space-around;
 }
-#diaEnDias{
+.riseSetEnDias{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
     font-size: 0.7rem;
 }
+#riseEnDias{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    column-gap: 2px;
+}
+#setEnDias{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    column-gap: 2px;
+}
+#diaEnDias{
+    width: 100%;
+    text-align: center;
+    font-size: 0.7rem;
+    background: rgb(30,30, 220, 0.6);
+    color: rgb(235, 235, 199);
+}
 #iconoEnDias{
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+#tempEnDias{
+    width: 100%;
+    position: absolute;
+    top: -6px;
+    text-align: center;
+    font-size: 0.9rem;
+}
 #descripEnDias{
+    position: absolute;
+    bottom: -2px;
     font-size: 0.8rem;
 }

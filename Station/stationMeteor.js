@@ -30,14 +30,14 @@ fetch("https://api.openweathermap.org/data/2.5/onecall?lat="+lat+"&lon="+lon+"&u
 	var visibilidad= (climaActual.visibility).toLocaleString()
 	var direcViento= climaActual.wind_deg
     var iconoViento= DirecViento(direcViento, iconoViento, velocidad);
-	var amanecer= new Date((climaActual.sunrise)*1000).getHours()+":"+new Date((climaActual.sunrise)*1000).getMinutes()
-	var anochecer= new Date((climaActual.sunset)*1000).getHours()+":"+new Date((climaActual.sunset)*1000).getMinutes()
+	var amanecer=  new Date((climaActual.sunrise)*1000).toLocaleTimeString().slice(0, -3)//new Date((climaActual.sunrise)*1000).getHours()+":"+new Date((climaActual.sunrise)*1000).getMinutes()
+	var anochecer= new Date((climaActual.sunset)*1000).toLocaleTimeString().slice(0, -3)//new Date((climaActual.sunset)*1000).getHours()+":"+new Date((climaActual.sunset)*1000).getMinutes()
 	var arrayTemps=[]
 	var tempMin
 	var tempMax
 	var indexPosition
 	//DirecViento(direcViento, iconoViento, velocidad)
-	console.log(DirecViento(direcViento, iconoViento, velocidad))
+	console.log(DirecViento(direcViento, iconoViento, velocidad), new Date((climaActual.sunrise)*1000).toLocaleTimeString().slice(0, -3))
 	$("#iconoViento").html("<span id='velocidadViento'>"+velocidad+"<small>Km/h</small></span><img src='"+iconoViento+"' style='width: 100%'>")
 	//DIA ACTUAL
 	$("#tempActual").text(climaActual.temp.toFixed(1)+"º")
@@ -75,7 +75,7 @@ fetch("https://api.openweathermap.org/data/2.5/onecall?lat="+lat+"&lon="+lon+"&u
 	 var velocidad= (climaHoras[i].wind_speed*3.6).toFixed(1)
 	 var direcViento= climaHoras[i].wind_deg
 	 var iconoVientoEnHoras= DirecViento(direcViento, iconoViento, velocidad)
-	 var probLluvia= (climaHoras[0].pop)*100
+	 var probLluvia= (climaHoras[i].pop)*100
 	 
 	 //console.log(DirecViento(direcViento, iconoViento, velocidad))
 	 $("#horas").append("<div class='cajaHoras'>"
@@ -84,20 +84,22 @@ fetch("https://api.openweathermap.org/data/2.5/onecall?lat="+lat+"&lon="+lon+"&u
 	 +"<div id='iconoEnHoras' ><img src='http://openweathermap.org/img/wn/"+iconoHoras+"@4x.png' style='width: 35%'><span id='descripEnHoras'>"+descripHoras+"</span></div>"
 	 +"<div class='datosEnHoras'>"
 	 +"<span class='spanDatosHoras' style='width: 80%; display: flex; flex-direction: column; align-items: center;'><img src='"+iconoVientoEnHoras+"' style='width: 100%'><span style='position: absolute; top: 41%; font-weight: bold; color: rgb(30, 30, 70, 0.8)'>"+velocidad+"<small>Km/h</small></span></span>"
-	 +"<span class='spanDatosHoras'><img src='iconos/iconLluvia.png' style='width: 100%'><span style='position: absolute; top: 20%; left: 30%; font-weight: bold; color: rgb(30, 30, 70, 0.8)'>"+probLluvia+"%</span></span></div>"
+	 +"<span class='spanDatosHoras'><img src='iconos/iconLluvia.png' style='width: 100%'><span style='position: absolute; top: 20%; left: 30%; font-weight: bold; color: rgb(30, 30, 70, 0.8)'>"+probLluvia.toFixed(0)+"%</span></span></div>"
 	 +"</div>")
 	 
 	}
 	console.log($("#horas").width(), $(".cajaHoras").height(),"alticono..", $("#iconoEnHoras").height() )
 	$("#horas").prepend("<div style='height: 100%; position:sticky; left:0px; font-size: 0.7rem'>"
-	+"<div id='indexMax' class='indexMaxMin' style='width:"+$("#horas").width()+"px; border-top: 1px solid rgb(225, 10, 10); top: 15px'><span class='termometro'>"+tempMax+"</span></div>"
-	+"<div id='indexMin' class='indexMaxMin' style='width:"+$("#horas").width()+"px; top: 50%; border-bottom: 1px solid rgb(10, 10, 225); margin-bottom: 3px;'><span class='termometro' style='background: rgb(10, 10, 225, 0.6);'>"+tempMin+"</span></div></div>")
+	+"<div id='indexMax' class='indexMaxMin' style='width:"+($("#horas").width()+200)+"px; border-top: 1px solid rgb(225, 10, 10); top: 15px'><span class='termometro'>"+tempMax+"</span></div>"
+	+"<div id='indexMin' class='indexMaxMin' style='width:"+($("#horas").width()+200)+"px; top: 50%; border-bottom: 1px solid rgb(10, 10, 225); margin-bottom: 3px;'><span class='termometro' style='background: rgb(10, 10, 225, 0.6);'>"+tempMin+"</span></div></div>")
 
 
  	// DIAS ***
 	for(var h=0; h < climaDias.length; h++){
 		var fechaDias= new Date((climaDias[h].dt)*1000).toLocaleDateString()
 		numeroDia = new Date((climaDias[h].dt)*1000).getDay()
+		var amanecerEnDias= new Date((climaDias[h].sunrise)*1000).toLocaleTimeString().slice(0, -3)
+		var anochecerEnDias= new Date((climaDias[h].sunset)*1000).toLocaleTimeString().slice(0, -3)
 		var tempMaxDias= climaDias[h].temp.max
 		var tempMinDias= climaDias[h].temp.min
 		var iconoDias= climaDias[h].weather[0].icon
@@ -105,9 +107,10 @@ fetch("https://api.openweathermap.org/data/2.5/onecall?lat="+lat+"&lon="+lon+"&u
 
 		$("#dias").append("<div class='cajaDias'>"
 		+"<span id='diaEnDias'><small>"+diaSemana[numeroDia]+"</small> "+fechaDias+"</span>"
+		+"<span class='riseSetEnDias'><span id='riseEnDias'><span>"+amanecerEnDias+"</span><img src='iconos/iconAmanecer.png' style='width: 35%;'></span><span id='setEnDias'><img src='iconos/iconAnochecer.png' style='width: 35%;'><span>"+anochecerEnDias+"</span></span></span>"
 		+"<div id=iconoEnDias>"
-		+"<span id='tempEnDias'>"+tempMaxDias+" - "+tempMinDias+"</span>"
-		+"<img src='http://openweathermap.org/img/wn/"+iconoDias+"@4x.png' style='width: 40%'>"
+		+"<span id='tempEnDias'><span style='color: rgb(200,50,50, 0.8)'>"+tempMaxDias.toFixed(1)+"º&#8593; </span><span style='color: rgb(50,50,200, 0.8)'>&#8595;"+tempMinDias.toFixed(1)+"º</span></span>"
+		+"<img src='http://openweathermap.org/img/wn/"+iconoDias+"@4x.png' style='width: 50%'>"
 		+"<span id='descripEnDias'>"+descripDias+"</span>"
 		+"</div>"
 
