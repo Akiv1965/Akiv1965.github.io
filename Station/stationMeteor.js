@@ -100,20 +100,32 @@ fetch("https://api.openweathermap.org/data/2.5/onecall?lat="+lat+"&lon="+lon+"&u
 		numeroDia = new Date((climaDias[h].dt)*1000).getDay()
 		var amanecerEnDias= new Date((climaDias[h].sunrise)*1000).toLocaleTimeString().slice(0, -3)
 		var anochecerEnDias= new Date((climaDias[h].sunset)*1000).toLocaleTimeString().slice(0, -3)
+		var riseMoonEnDias= new Date((climaDias[h].moonrise)*1000).toLocaleTimeString().slice(0, -3)
+		var setMoonEnDias= new Date((climaDias[h].moonset)*1000).toLocaleTimeString().slice(0, -3)
 		var tempMaxDias= climaDias[h].temp.max
 		var tempMinDias= climaDias[h].temp.min
 		var iconoDias= climaDias[h].weather[0].icon
 		var descripDias= climaDias[h].weather[0].description
-
+		var probLluvia= (climaDias[h].pop)*100
+		var faseNum= climaDias[h].moon_phase
+		var faseLuna= fasesLunares(faseNum, faseLuna)
+		var velocidad= (climaDias[h].wind_speed*3.6).toFixed(1)
+	 	var direcViento= climaDias[h].wind_deg
+	 	var iconoVientoEnDias= DirecViento(direcViento, iconoViento, velocidad)
+		console.log(fasesLunares(faseNum, faseLuna))
 		$("#dias").append("<div class='cajaDias'>"
 		+"<span id='diaEnDias'><small>"+diaSemana[numeroDia]+"</small> "+fechaDias+"</span>"
-		+"<span class='riseSetEnDias'><span id='riseEnDias'><span>"+amanecerEnDias+"</span><img src='iconos/iconAmanecer.png' style='width: 35%;'></span><span id='setEnDias'><img src='iconos/iconAnochecer.png' style='width: 35%;'><span>"+anochecerEnDias+"</span></span></span>"
 		+"<div id=iconoEnDias>"
 		+"<span id='tempEnDias'><span style='color: rgb(200,50,50, 0.8)'>"+tempMaxDias.toFixed(1)+"º&#8593; </span><span style='color: rgb(50,50,200, 0.8)'>&#8595;"+tempMinDias.toFixed(1)+"º</span></span>"
 		+"<img src='http://openweathermap.org/img/wn/"+iconoDias+"@4x.png' style='width: 50%'>"
 		+"<span id='descripEnDias'>"+descripDias+"</span>"
 		+"</div>"
-
+		+"<span class='spanDatosHoras' style='width: 25%'><img src='iconos/iconLluvia.png' style='width: 100%'><span style='position: absolute; top: 15%; left: 25%; font-weight: bold; color: rgb(30, 30, 70, 0.8)'>"+probLluvia.toFixed(0)+"%</span></span></span>"
+		+"<div class='datosEnDias'>"
+		+"<span class='riseSetEnDias'><span id='riseEnDias' class='spanRiseSet'><span>"+amanecerEnDias+"</span><img src='iconos/iconAmanecer.png' style='width: 35%;'></span><span id='setEnDias' class='spanRiseSet'><img src='iconos/iconAnochecer.png' style='width: 35%;'><span>"+anochecerEnDias+"</span></span></span>"
+		+"<span style='display: flex; flex-direction: column; align-items: center;'><span class='riseSetEnDias'><span id='riseMoonEnDias' class='spanRiseSet'><span>"+riseMoonEnDias+"</span><img src='iconos/moonriseIcon.png' style='width: 33%;'></span><span id='setMoonEnDias' class='spanRiseSet'><img src='iconos/moonsetIcon.png' style='width: 33%;'><span>"+setMoonEnDias+"</span></span></span><span style='font-size: 0.7rem'>"+faseLuna+"</span></span>"
+		+"<span style='position: relative; width:55%'><img src='"+iconoVientoEnDias+"' style='width: 100%'><span style='position: absolute; left: 15%; top: 35%; font-size: 0.7rem'>"+velocidad+"<small>Km/h</small></span></span>"
+		+"</div>"
 		)
 	}
 })
