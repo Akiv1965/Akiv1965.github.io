@@ -23,6 +23,8 @@ fetch("https://api.openweathermap.org/data/2.5/onecall?lat="+lat+"&lon="+lon+"&u
 	var climaDias= clima.daily
 	var iconoActual= climaActual.weather[0].icon
 	var descripActual= climaActual.weather[0].description
+	var diaNoche= iconoActual.slice(-1)
+	var descripMain= climaActual.weather[0].main+diaNoche
 	var fechaActual= new Date().toLocaleDateString()
 	var numeroDia = new Date().getDay()
 	var diaSemana= ["Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sábado"]
@@ -32,22 +34,52 @@ fetch("https://api.openweathermap.org/data/2.5/onecall?lat="+lat+"&lon="+lon+"&u
     var iconoViento= DirecViento(direcViento, iconoViento, velocidad);
 	var amanecer=  new Date((climaActual.sunrise)*1000).toLocaleTimeString().slice(0, -3)//new Date((climaActual.sunrise)*1000).getHours()+":"+new Date((climaActual.sunrise)*1000).getMinutes()
 	var anochecer= new Date((climaActual.sunset)*1000).toLocaleTimeString().slice(0, -3)//new Date((climaActual.sunset)*1000).getHours()+":"+new Date((climaActual.sunset)*1000).getMinutes()
+	var riseMoon= new Date((climaDias[0].moonrise)*1000).toLocaleTimeString().slice(0, -3)
+	var setMoon= new Date((climaDias[0].moonset)*1000).toLocaleTimeString().slice(0, -3)
+	var faseNum= climaDias[0].moon_phase
+	var faseLuna= fasesLunares(faseNum, faseLuna)
 	var arrayTemps=[]
 	var tempMin
 	var tempMax
 	var indexPosition
-	//DirecViento(direcViento, iconoViento, velocidad)
-	console.log(DirecViento(direcViento, iconoViento, velocidad), new Date((climaActual.sunrise)*1000).toLocaleTimeString().slice(0, -3))
-	$("#iconoViento").html("<span id='velocidadViento'>"+velocidad+"<small>Km/h</small></span><img src='"+iconoViento+"' style='width: 100%'>")
+	var imgClima= {
+		"Thunderstormd": "images/diaTormenta.jpg",
+		"Thunderstormn": "images/nocheTormenta.jpg",
+		"Cleard": "images/diaClaro.jpg",
+		"Clearn": "images/nocheClara.jpg",
+		"Drizzled": "images/diaLluvia.jpg",
+		"Drizzlen": "images/nocheLluvia.jpg",
+		"Raind": "images/diaLluvia.jpg",
+		"Rainn": "images/nocheLluvia.jpg",
+		"Snowd": "images/diaNieve.jpg",
+		"Snown": "images/nocheNieve.jpg",
+		"Atmosphered": "images/diaNiebla.jpg",
+		"Atmospheren": "images/nocheNiebla.jpg",
+		"Cloudsd": "images/diaNubes.jpg",
+		"Cloudsn": "images/nocheNubes.jpg",
+	}
+	//console.log("url('"+imgClima[descripMain]+"')", imgClima[descripMain], imgClima.Clearn)
+	//console.log(DirecViento(direcViento, iconoViento, velocidad), new Date((climaActual.sunrise)*1000).toLocaleTimeString().slice(0, -3))
+	
 	//DIA ACTUAL
+	$("#actual").css({
+		"background-image": "url('"+imgClima[descripMain]+"')",
+		"background-size": "cover"
+	});
+	$("#iconoViento").html("<span id='velocidadViento'>"+velocidad+"<small>Km/h</small></span><img src='"+iconoViento+"' style='width: 100%'>")
 	$("#tempActual").text(climaActual.temp.toFixed(1)+"º")
 	$("#sensacActual").html("<small>Sensación térmica:</small><b>"+climaActual.feels_like.toFixed(1)+"º</b>")
-	$("#iconoActual").html("<img src='http://openweathermap.org/img/wn/"+iconoActual+"@4x.png' style='width: 85%;'><span id='descripActual'>"+descripActual+"</span>")
-	
+	$("#descripActual").html(descripActual)
+	//<img src='http://openweathermap.org/img/wn/"+iconoActual+"@4x.png' style='width: 85%;'>
 	$("#riseAndSet").html(
 		"<span class='riseAndSet' id='rise'><img src='iconos/iconAmanecer.png' style='width: 100%;'>"+amanecer+"</span>"
 		+"<span class='riseAndSet' id='set'><img src='iconos/iconAnochecer.png' style='width: 100%;'>"+anochecer+"</span>"
 		)
+	$("#riseAndSetMoon").html(
+		"<span class='riseAndSet' id='riseMoon'><img src='iconos/moonriseIcon.png' style='width: 100%;'>"+riseMoon+"</span>"
+		+"<span class='riseAndSet' id='setMoon'><img src='iconos/moonsetIcon.png' style='width: 100%;'>"+setMoon+"</span>"
+		+"<span style='width: 18%; position: absolute; font-size: 0.6rem; text-align: center'>"+faseLuna+"</span>"
+	)
 	$("#presion").html("<img src='iconos/iconPress.png' style='width: 15%;'><span>"+climaActual.pressure+"<small>mbar</small></span>")
 	$("#humedad").html("<img src='iconos/iconHumedad.png' style='width: 15%;'><span>"+climaActual.humidity+"<small>%</small></span>")
 	$("#uvi").html("<img src='iconos/iconUV2.png' style='width: 15%;'><span><small> Índice </small>"+climaActual.uvi+"</span>")

@@ -14,7 +14,7 @@ navigator.geolocation.getCurrentPosition(function(position) {
 	
 	
   functionUbicacion(lat, lon)
-  functionMoonPhases(lat, lon, idioma, fechaLunaHoy)
+  
 fetch("https://api.openweathermap.org/data/2.5/onecall?lat="+lat+"&lon="+lon+"&units=metric&lang="+idioma+"&exclude=minutely&appid=f5a03880bc93e6b9de4a16b7c4ef9aeb", {
 	
 	}
@@ -27,7 +27,8 @@ fetch("https://api.openweathermap.org/data/2.5/onecall?lat="+lat+"&lon="+lon+"&u
 		var diaSemana= ["Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sábado"]
 		var velocidad= (climaActual.wind_speed*3.6).toFixed(1)
 		var direcViento= climaActual.wind_deg
-		console.log(direcViento)
+		var faseNum= semanaSolar[0].moon_phase
+		console.log(faseNum)
 		var presionActual= climaActual.pressure
 		var top= "2px"
 		var left= "0px"
@@ -130,5 +131,7 @@ fetch("https://api.openweathermap.org/data/2.5/onecall?lat="+lat+"&lon="+lon+"&u
 		)
 		
 	}
+	
+	functionMoonPhases(lat, lon, idioma, fechaLunaHoy, faseNum)
 })
 })

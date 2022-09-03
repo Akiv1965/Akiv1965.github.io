@@ -1,4 +1,4 @@
-function functionMoonPhases(lat, lon, idioma, fechaLunaHoy){
+function functionMoonPhases(lat, lon, idioma, fechaLunaHoy, faseNum){
 var fechaISO = new Date().toISOString().slice(0, 10);
 var offSet = (new Date().getTimezoneOffset() * -1) / 60;
 var offSetVar = "+" + String(offSet).padStart(2, "0");
@@ -162,21 +162,26 @@ fetch(
             riseSetWeek.push([riseWeek, setWeek]);
           }
           //setTimeout(
-            moonJson(moonrise, moonset, riseSetWeek, direccion, azimuth, fechaLunaHoy)
+            var faseLuna
+            
+            var fase= fasesLunares(faseNum, faseLuna)
+            
+            moonJson(moonrise, moonset, riseSetWeek, direccion, azimuth, fechaLunaHoy,idioma, fase)
   })
 }
 
-function moonJson(moonrise, moonset, riseSetWeek, direccion, azimuth, fechaLunaHoy, idioma) {
-    //Funcion AJAX para MOONJSON
+function moonJson(moonrise, moonset, riseSetWeek, direccion, azimuth, fechaLunaHoy, idioma, fase) {
+    
+  //Funcion AJAX para MOONJSON
     $.getJSON("https://akiv1965.github.io/SunMoon/moon2022.json", function (response) {
       console.log(response);
-
+    console.log(fase)
       for (var i = 0; i < response.length; i = i + 24) {
         var fechaLunaJson = new Date(response[i].time).toLocaleDateString(); //new Date(response[i].time).toDateString().slice(0, 10);
         var edadLuna;
         var edadImgLuna;
         var porcentFase;
-        var fase;
+        
         var distancia;
         
         // Compara fecha actual con moon2020 para encontrar datos
@@ -272,29 +277,29 @@ function moonJson(moonrise, moonset, riseSetWeek, direccion, azimuth, fechaLunaH
             $("#botonCreditos").attr("title", "About MoonPhases. Privacy Policy. Credits")
           }
 
-          if (edadImgLuna < 15 && edadImgLuna > 0) {
-            fase = " Creciente ";
-            if (idioma == "en") {
-              fase = " Waxing ";
-            }
-          } else {
-            fase = "Menguante ";
-            if (idioma == "en") {
-              fase = " Waning ";
-            }
-          }
-          if (porcentFase > 98.99) {
-            fase = "Llena ";
-            if (idioma == "en") {
-              fase = " Full ";
-            }
-          }
-          if (porcentFase <= 1) {
-            fase = " Nueva ";
-            if (idioma == "en") {
-              fase = " New ";
-            }
-          }
+          // if (edadImgLuna < 15 && edadImgLuna > 0) {
+          //   fase = " Creciente ";
+          //   if (idioma == "en") {
+          //     fase = " Waxing ";
+          //   }
+          // } else {
+          //   fase = "Menguante ";
+          //   if (idioma == "en") {
+          //     fase = " Waning ";
+          //   }
+          // }
+          // if (porcentFase > 98.99) {
+          //   fase = "Llena ";
+          //   if (idioma == "en") {
+          //     fase = " Full ";
+          //   }
+          // }
+          // if (porcentFase <= 1) {
+          //   fase = " Nueva ";
+          //   if (idioma == "en") {
+          //     fase = " New ";
+          //   }
+          // }
           //Set icon for browser action
 
           console.log(response[i + 24].age + ".." + response[i].age);
@@ -303,7 +308,7 @@ function moonJson(moonrise, moonset, riseSetWeek, direccion, azimuth, fechaLunaH
           $("#datosLuna").html(
             "<span id='edadLunar' class='datosLunares'>" +
               edadLuna +
-              ".</span> <span id='faseLunar' class='datosLunares'>Fase: " +
+              ".</span> <span id='faseLunar' class='datosLunares'>" +
               fase +" "+ porcentFase +
               "%</span> " +
               "<span id='distancia' class='datosLunares'>" +
