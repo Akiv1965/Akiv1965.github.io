@@ -20,6 +20,7 @@ body {
     align-items: center;
     justify-content: space-around; 
     padding: 2px;
+    background: rgb(203,215,255);
 }
 .cajas{
     position: relative;
@@ -95,6 +96,7 @@ a{
     color: rgb(215, 215, 245);
     text-shadow: 1px 1px 2px rgb(35,35,50);
     border-radius: 8px;
+    padding: 5px 3px 6px 5px;
 }
 #actual1{
     width: 100%;
@@ -113,6 +115,10 @@ a{
     justify-content: center;
     column-gap: 3px;
     font-size: 0.9em;
+}
+#prob{
+    position: relative;
+    width: 18%;
 }
 .riseAndSet{
     width: 10%;
@@ -163,9 +169,11 @@ a{
 #velocidadViento{
     width: 100%;
     position: absolute;
-    top: 41%;
+    top: 43%;
     text-align: center;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
+    color: rgb(60,20,20);
+    text-shadow: 1px 1px 2px rgb(180 180 20);
 }
 #datosActual{
     width: 60%;
@@ -173,8 +181,8 @@ a{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-self: center;
-    row-gap: 10px;
+    justify-content: flex-start;
+    row-gap: 5px;
 }
 .cajaPrevisiones{
     width: 70%;

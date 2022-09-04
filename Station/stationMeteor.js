@@ -32,6 +32,7 @@ fetch("https://api.openweathermap.org/data/2.5/onecall?lat="+lat+"&lon="+lon+"&u
 	var visibilidad= (climaActual.visibility).toLocaleString()
 	var direcViento= climaActual.wind_deg
     var iconoViento= DirecViento(direcViento, iconoViento, velocidad);
+	var probLluvia= (climaDias[0].pop)*100
 	var amanecer=  new Date((climaActual.sunrise)*1000).toLocaleTimeString().slice(0, -3)//new Date((climaActual.sunrise)*1000).getHours()+":"+new Date((climaActual.sunrise)*1000).getMinutes()
 	var anochecer= new Date((climaActual.sunset)*1000).toLocaleTimeString().slice(0, -3)//new Date((climaActual.sunset)*1000).getHours()+":"+new Date((climaActual.sunset)*1000).getMinutes()
 	var riseMoon= new Date((climaDias[0].moonrise)*1000).toLocaleTimeString().slice(0, -3)
@@ -78,12 +79,13 @@ fetch("https://api.openweathermap.org/data/2.5/onecall?lat="+lat+"&lon="+lon+"&u
 	$("#riseAndSetMoon").html(
 		"<span class='riseAndSet' id='riseMoon'><img src='iconos/moonriseIcon.png' style='width: 100%;'>"+riseMoon+"</span>"
 		+"<span class='riseAndSet' id='setMoon'><img src='iconos/moonsetIcon.png' style='width: 100%;'>"+setMoon+"</span>"
-		+"<span style='width: 18%; position: absolute; font-size: 0.6rem; text-align: center'>"+faseLuna+"</span>"
+		+"<span style='width: 18%; position: absolute; top: 0px; font-size: 0.6rem; text-align: center'>"+faseLuna+"</span>"
 	)
 	$("#presion").html("<img src='iconos/iconPress.png' style='width: 15%;'><span>"+climaActual.pressure+"<small>mbar</small></span>")
 	$("#humedad").html("<img src='iconos/iconHumedad.png' style='width: 15%;'><span>"+climaActual.humidity+"<small>%</small></span>")
 	$("#uvi").html("<img src='iconos/iconUV2.png' style='width: 15%;'><span><small> Índice </small>"+climaActual.uvi+"</span>")
 	$("#visibility").html("<img src='iconos/iconVisibility.png' style='width: 15%;'><span>"+visibilidad+"<small>mt</small></span>")
+	$("#prob").html("<img src='iconos/iconLluvia.png' style='width: 100%'><span style='position: absolute; top: 13%; left: 25%; font-weight: bold; font-size: 0.8rem'>"+probLluvia.toFixed(0)+"%</span></span>")
 	//console.log($("#actual").height())
 	var altura= (($("#actual").height())/2)-30;//$(".cajaHoras").css("height")
 
