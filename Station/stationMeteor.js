@@ -67,7 +67,7 @@ fetch("https://api.openweathermap.org/data/2.5/onecall?lat="+lat+"&lon="+lon+"&u
 		"background-image": "url('"+imgClima[descripMain]+"')",
 		"background-size": "cover"
 	});
-	$("#iconoViento").html("<span id='velocidadViento'>"+velocidad+"<small>Km/h</small></span><img src='"+iconoViento+"' style='width: 100%'>")
+	$("#iconoViento").html("<span id='velocidadViento'>"+velocidad+"<small>Km/h</small></span><img src='"+iconoViento+"' style='width: 100%; filter: drop-shadow(1px 2px 3px rgb(90,50,50))'>")
 	$("#tempActual").text(climaActual.temp.toFixed(1)+"º")
 	$("#sensacActual").html("<small>Sensación térmica:</small><b>"+climaActual.feels_like.toFixed(1)+"º</b>")
 	$("#descripActual").html(descripActual)
@@ -87,7 +87,7 @@ fetch("https://api.openweathermap.org/data/2.5/onecall?lat="+lat+"&lon="+lon+"&u
 	$("#visibility").html("<img src='iconos/iconVisibility.png' style='width: 15%;'><span>"+visibilidad+"<small>mt</small></span>")
 	$("#prob").html("<img src='iconos/iconLluvia.png' style='width: 100%'><span style='position: absolute; top: 13%; left: 25%; font-weight: bold; font-size: 0.8rem'>"+probLluvia.toFixed(0)+"%</span></span>")
 	//console.log($("#actual").height())
-	var altura= (($("#actual").height())/2)-30;//$(".cajaHoras").css("height")
+	var altura= (($("#actual").height())/2)-37;//$(".cajaHoras").css("height")
 
 	// 48 HORAS  **
 //Hallar posición respecto temp mínima
