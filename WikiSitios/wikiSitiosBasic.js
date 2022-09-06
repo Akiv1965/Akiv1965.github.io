@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {	
+//document.addEventListener('DOMContentLoaded', function () {	
 console.log(document.cookie)
  ///////////   SLIDER  \\\\\\\\\\\	
 //Define Slider
@@ -310,4 +310,4 @@ $(".linkGallery").on("click", function(){
 conectWiki(lat, lon)
 
 })//Fin GeoLocation
-})
+//})
