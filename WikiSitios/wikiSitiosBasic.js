@@ -44,30 +44,30 @@ navigator.geolocation.getCurrentPosition(function(position) {
 		         ////////////
         // SCRIPT PARA AUTOCOMPLETE DE GOOGLE
         ///////////////
-		var apiKey= config.key
+// 		var apiKey= config.key
 
-        $.getScript("https://maps.googleapis.com/maps/api/js?key="+apiKey+"&libraries=places&v=weekly", function() {
-            var input = document.getElementById('inputLoc');
-            autocomplete = new google.maps.places.Autocomplete(input);
+//         $.getScript("https://maps.googleapis.com/maps/api/js?key="+apiKey+"&libraries=places&v=weekly", function() {
+//             var input = document.getElementById('inputLoc');
+//             autocomplete = new google.maps.places.Autocomplete(input);
 
-            autocomplete.addListener('place_changed', function() {
-                var places = autocomplete.getPlace();
-                if (places.length == 0) {
-                    return;
-                }
-                //nueva lat y lon	 
-                if (places.geometry.viewport.ka !== "") {
-                    lat = places.geometry.location.lat();
-                    lon = places.geometry.location.lng();
-                    console.log(lat + "  ..  " + lon)
-				conectWiki(lat, lon)
-				$("#myNav").animate({height: 0}, 300)
-                }
+//             autocomplete.addListener('place_changed', function() {
+//                 var places = autocomplete.getPlace();
+//                 if (places.length == 0) {
+//                     return;
+//                 }
+//                 //nueva lat y lon	 
+//                 if (places.geometry.viewport.ka !== "") {
+//                     lat = places.geometry.location.lat();
+//                     lon = places.geometry.location.lng();
+//                     console.log(lat + "  ..  " + lon)
+// 				conectWiki(lat, lon)
+// 				$("#myNav").animate({height: 0}, 300)
+//                 }
 
 
-            })
+//             })
 
-}) //Fin Google autocomplete
+// }) //Fin Google autocomplete
 
 // Evento para selección de idioma 			
 	$("#selecIdioma").on("change", function(){
