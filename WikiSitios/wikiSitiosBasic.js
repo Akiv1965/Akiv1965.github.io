@@ -134,7 +134,7 @@ console.log(lat+"xxxxx"+lon)
 			datosInfoWindow= datosPagina[idKey[i]]
 			//console.log(datosInfoWindow)
 				if(datosInfoWindow.thumbnail === undefined){
-				imgInfoWindow= "https://lobular-observation.000webhostapp.com/WikiSitios/img/iconNoFoto.png"
+				imgInfoWindow= "img/iconNoFoto.png"
 					
 				} else{
 				imgInfoWindow= datosInfoWindow.thumbnail.source
@@ -279,17 +279,30 @@ $(".linkGallery").on("click", function(){
 			lanzaGaleria()
 		}
 		if(leftRight < 2 && Number($("#touchInicio").text()) > 305 ){
-			console.log("jdjdfjfjfj")
 			$("#galeria").empty()
 			$("#galeria").hide()
 		}
 								
 			}, false)	
+		
+
 			
 		function lanzaGaleria(){
-			$("#galeria").html("<div id='cajaGaleria'><div id='tituloGaleria'>"+imagenesArray[indexArray].titulo+"</div><div id='imagenGaleria'><img id='imgGal' src='"+imagenesArray[indexArray].urlImg+"' width='310px'></div><div id='contador'>"+(indexArray+1)+"/"+imagenesArray.length+"</div><div id='closeGal'>&times;</div></div>")	
-
-				
+			$("#galeria").html("<div id='cajaGaleria'><div id='tituloGaleria'>"+imagenesArray[indexArray].titulo+"</div>"
+			+"<div id='imagenGaleria'><span id='flechaIzq' class='flechas'>&#10094;</span><span id='flechaDer' class='flechas'>&#10095;</span><img id='imgGal' src='"+imagenesArray[indexArray].urlImg+"' width='100%'></div><div id='contador'>"+(indexArray+1)+"/"+imagenesArray.length+"</div><div id='closeGal'>&times;</div></div>")	
+		$("#closeGal").on("click", function(){$("#galeria").hide() })
+		$(".flechas").click(function(){
+		
+			if(this.id == "flechaIzq"){
+				indexArray--
+			if(indexArray < 1){indexArray=0}
+			lanzaGaleria()
+			}else{
+				indexArray++
+			if(indexArray > imagenesArray.length-1){indexArray=0}
+			lanzaGaleria()
+			}
+		})
 		}	
 		
 	})//1ºllamada

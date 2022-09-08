@@ -36,14 +36,14 @@
     width: 100%;
     background: rgb(51, 36, 111);
 	z-index: 9999;
-	margin-top: 58px;
+	margin-top: 52px;
 }
 .marcaKm{
 	position: absolute;
 	color: rgb(225,225,255, 0.8);
     text-shadow: none;
     font-size: 0.7em;
-	top:81px;
+	top:85px;
 }
 #marcaMin{
 	left: 20px;
@@ -53,7 +53,8 @@
 }
 #metros{
 	position: fixed;
-    top: 47px;
+    top: 45px;
+    left: 30px;
     color: rgb(235,235,255, 0.9);
     text-shadow: none;
 }
@@ -106,6 +107,7 @@
 	right: 47px;
 	top: 13px;
 	opacity: 0.7;
+    cursor: pointer;
 }
 #galeria{
 	position: fixed;
@@ -131,6 +133,15 @@
 #imgGal{
 	box-shadow: 2px 2px 2px rgb(45, 65, 70);
 }
+.flechas{
+    position: absolute;
+    top: 45%;
+    font-size: 1.9rem;
+    cursor: pointer;
+}
+#flechaDer{
+    right: 0px;
+}
 #closeGal{
 	width: 25px;
 	position: absolute;
@@ -139,6 +150,7 @@
     top: 8%;
     right: 6px;
 	text-align: center;
+    cursor: pointer;
 }
 #contador{
 	width: 25px;
@@ -252,4 +264,11 @@
     top: 15px;
     right: 35px;
   }
+} 
+
+
+@media only screen and (min-width: 600px) {
+    #galeria{
+        width: 500px;
+    }
 } 
