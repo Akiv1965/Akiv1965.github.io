@@ -144,9 +144,9 @@ console.log(lat+"xxxxx"+lon)
 //Si el extracto es indefinido crea arrays labels2 e index2 
 //para recuperarlos en 2º llamada			
 		if(datosInfoWindow.extract !== undefined){
-		$("#wikiLista").append("<div id='infoWindow"+i+"' class='boxWindow'><div id='titulo'><a href='https://"+idioma+".wikipedia.org/wiki/"+datosInfoWindow.title+"' target='_blank'>"+datosInfoWindow.title+"</a></div><div id='contExtract'><span id='extracto"+i+"' class='extractos'>"+datosInfoWindow.extract+"</span><img src='"+imgInfoWindow+"' style='height: 80px;  min-width: 110px'></div><div class='linkGallery'><img src='img/iconGallery.png' width='25px'></div><div id='linkMap'></div></div>")
+		$("#wikiLista").append("<div id='infoWindow"+i+"' class='boxWindow'><div id='titulo'><a href='https://"+idioma+".wikipedia.org/wiki/"+datosInfoWindow.title+"' target='_blank'>"+datosInfoWindow.title+"</a></div><div id='contExtract'><span id='extracto"+i+"' class='extractos'>"+datosInfoWindow.extract+"</span><span class='imgExtract'><img src='"+imgInfoWindow+"' style='width:100%; height: 100%'></span></div><div class='linkGallery'><img src='img/iconGallery.png' width='100%'></div><div id='linkMap'></div></div>")
 		} else {
-			$("#wikiLista").append("<div id='infoWindow"+i+"' class='boxWindow'><div id='titulo'><a href='https://"+idioma+".wikipedia.org/wiki/"+datosInfoWindow.title+"' target='_blank'>"+datosInfoWindow.title+"</a></div><div id='contExtract'><span id='extracto"+i+"' class='extractos'><img src='img/loadingGif.gif'></span><img src='"+imgInfoWindow+"' style='height: 80px; min-width: 110px'></div><div class='linkGallery'><img src='img/iconGallery.png' width='25px'></div><div id='linkMap'></div></div>")
+			$("#wikiLista").append("<div id='infoWindow"+i+"' class='boxWindow'><div id='titulo'><a href='https://"+idioma+".wikipedia.org/wiki/"+datosInfoWindow.title+"' target='_blank'>"+datosInfoWindow.title+"</a></div><div id='contExtract'><span id='extracto"+i+"' class='extractos'><img src='img/loadingGif.gif'></span><span class='imgExtract'><img src='"+imgInfoWindow+"' style='width:100%; height: 100%'></span></div><div class='linkGallery'><img src='img/iconGallery.png' width='100%'></div><div id='linkMap'></div></div>")
 			labels2.push([datosInfoWindow.title])
 			index2.push(i)
 		}
@@ -163,7 +163,7 @@ console.log(lat+"xxxxx"+lon)
 			for(var h=0; h<coordenadas.length; h++){
 				
 				if(tituloInfo == coordenadas[h].titulo){
-		$("#infoWindow"+k+" #linkMap").html("<a href='https://www.google.com/maps/dir/?api=1&origin="+lat+","+lon+"&destination="+coordenadas[h].lat+","+coordenadas[h].lon+"' target='_blank'><img src='img/iconWalker1.png' width= '25px'></a>")
+		$("#infoWindow"+k+" #linkMap").html("<a href='https://www.google.com/maps/dir/?api=1&origin="+lat+","+lon+"&destination="+coordenadas[h].lat+","+coordenadas[h].lon+"' target='_blank'><img src='img/iconWalker1.png' width= '100%'></a>")
 		
 		if($("#infoWindow"+k+" #contExtract img").attr("src").slice(-14) !== "iconNoFoto.png"){
 		$("#infoWindow"+k+" .linkGallery").attr("id", tituloInfo)
