@@ -25,6 +25,10 @@
     justify-content: flex-end;
     padding: 8px 10px 0px 0px;
 }
+#markerWiki{
+    width: 33px;
+    margin-left: 6px;
+}
 #numWikiSitios{
 	font-size: 0.5em;
     padding: 1px 4px 1px 4px;
@@ -275,6 +279,13 @@
 
 
 @media only screen and (min-width: 505px) {
+    #tituloCabecera{
+        font-size: 2.8rem;
+    }
+    #markerWiki{
+        width: 42px;
+        margin-left: 11px;
+    }
     #titulo{
         font-size: 1.2rem;
     }
