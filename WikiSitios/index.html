@@ -41,6 +41,13 @@
   <!-- Overlay content -->
   <div class="overlay-content">
 	<!-- <input id="inputLoc" type="text" placeholder="Ver otra localización"> -->
+  <div class="divInputLatLon">
+    <span style="color: rgb(95,30,30); font-size: 1.1rem; font-weight: bold">Ver otra ubicación</span>
+    <span style="display: flex; align-items: center; justify-content: space-around;">
+    <input type="number" class="inputLatLon" id="inputLat" placeholder="Introduzca latitud">
+    <input type="number" class="inputLatLon" id="inputLon" placeholder="Introduzca longitud">
+    </span>
+  </div>
    <select id="selecIdioma" name="selecIdioma">
 	    
 		<option value="selecc">Idioma Wikipedia...</option>
@@ -57,7 +64,7 @@
 </div>
 
 <!-- Use any element to open/show the overlay navigation menu -->
-<span onclick="openNav()" id="abrirMenu"><img src="img/iconMenu.png" width="25px"></span> 
+<span onclick="openNav()" id="abrirMenu"><img src="img/iconMenu.png" width="100%"></span> 
 
 <div id="cabecera">
 

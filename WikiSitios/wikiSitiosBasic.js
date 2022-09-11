@@ -174,10 +174,10 @@ console.log(lat+"xxxxx"+lon)
 			}
 			
 		}
-		$(".boxWindow:even").css({"background": "linear-gradient(100deg, rgba(87, 74, 141,0.9), rgba(128, 119, 165,0.9) )", "color": "rgb(186, 171, 235)"});
-		$(".boxWindow #titulo a:even").css("color", "rgb(195, 181, 240)")
+		$(".boxWindow:even").css({"background": "linear-gradient(100deg, rgba(85, 70, 135,0.9), rgba(128, 119, 165,0.9) )", "color": "rgb(205, 195, 240)"});
+		$(".boxWindow #titulo a:even").css("color", "rgb(199, 190, 240)")
 		
-		$(".boxWindow:odd").css({"background": "linear-gradient(100deg, rgba(128, 119, 165,0.9), rgba(87, 74, 141,0.9) )", "color": "rgb(35, 25, 90)"});
+		$(".boxWindow:odd").css({"background": "linear-gradient(100deg, rgba(135, 125, 185,0.9), rgba(90, 80, 150,0.9) )", "color": "rgb(30, 25, 85)"});
 		$(".boxWindow #titulo a:odd").css("color", "rgb(48, 30, 100)")
 		
 		stringPlaces2= labels2.join("|")// Crea string de títulos para llamada wiki

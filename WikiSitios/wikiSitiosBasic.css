@@ -4,7 +4,7 @@
 	margin:0;
 }
 #cabecera{
-	height:99px;
+	height:106px;
 	position: fixed;
     top: 0;
     background: rgb(51, 36, 111);
@@ -66,11 +66,12 @@
 	
 }
 #wikiLista{
-	margin-top: 100px;
+	margin-top: 106px;
+    overflow: hidden;
 }
 .boxWindow{
 	position: relative;
-	padding: 13px 4px 1px 4px;
+	padding: 15px 6px 1px 6px;
     display: flex;
     flex-direction: column;
 	height: 140px;
@@ -78,6 +79,7 @@
 }
 #titulo{
 	max-width:76%;
+    font-size: 0.9rem;
 }
 #titulo a{
 	text-shadow: none;
@@ -85,7 +87,8 @@
 	text-decoration: none;
     border-radius: 9px;
     box-shadow: 1px 2px 3px;
-    padding: 1px 5px 2px 5px;
+    padding: 1px 7px 2px 7px;
+    
 }
 .extractos{
     width: 100%;
@@ -176,12 +179,14 @@
 /* MENU CORTINA */
  /* The Overlay (background) */
  #abrirMenu{
+    width: 30px;
 	position: fixed;
     z-index: 9999999;
     top: 7px;
-    left: 13px;
+    left: 15px;
     padding: 2px;
     opacity: 0.8;
+    cursor: pointer;
  }
  #inputLoc{
 	 width: 100%;
@@ -193,7 +198,25 @@
 	text-shadow: 1px 1px grey;
     font-weight: bold;
 }
-
+.divInputLatLon{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.9rem;
+}
+#inputLat{
+    background: rgb(138 128 170);
+    text-align: center;
+}
+#inputLon{
+    background: rgb(138 128 170);
+    text-align: center;
+}
+.ui-textinput-text, .ui-textinput-search{
+    width: 45%;
+    
+}
 .pac-target-input{
 	color: black;
 }
@@ -288,6 +311,7 @@
     }
     #titulo{
         font-size: 1.2rem;
+        margin-left: 10px;
     }
     .extractos{
         font-size: 1rem;
