@@ -22,10 +22,16 @@
   	
 	<body>
     <div class="contenedor">
+        
         <div class="cajas" id="cajaSatelite">
+            
 
             <div id="fotoSatelite">
-                
+                <div class="cabeceraCiudad">
+                <span id="ciudad"></span>
+                <span id="direccionPostal"></span>
+                <span id="horaActual"></span>
+            </div>
                 <div id="instrumentos">
                 <span class="selectVisib">
                 <select id="visibilidad">
@@ -43,14 +49,11 @@
                 
             </div>
                 <!--<span id="fechaSatelite"></span>-->
-                <img src="" id="imgMediterranean" style="width: 100%;">
-            <div class="cabeceraCiudad">
-                <span id="ciudad"></span>
-                <span id="direccionPostal"></span>
-                <span id="horaActual"></span></div>
+                <img src="" id="imgMediterranean" style="width: 90%;">
+            
             </div>
             <div id="videoSatelite">
-                <video width="100%" autoplay controls>
+                <video width="89%" autoplay controls>
                     <source src="https://api.met.no/weatherapi/geosatellite/1.4/europe.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>

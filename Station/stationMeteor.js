@@ -85,7 +85,7 @@ fetch("https://api.openweathermap.org/data/2.5/onecall?lat="+lat+"&lon="+lon+"&u
 	$("#humedad").html("<img src='iconos/iconHumedad.png' style='width: 15%;'><span>"+climaActual.humidity+"<small>%</small></span>")
 	$("#uvi").html("<img src='iconos/iconUV2.png' style='width: 15%;'><span><small> Índice </small>"+climaActual.uvi+"</span>")
 	$("#visibility").html("<img src='iconos/iconVisibility.png' style='width: 15%;'><span>"+visibilidad+"<small>mt</small></span>")
-	$("#prob").html("<img src='iconos/iconLluvia.png' style='width: 100%'><span style='position: absolute; top: 13%; left: 25%; font-weight: bold; font-size: 0.8rem'>"+probLluvia.toFixed(0)+"%</span></span>")
+	$("#prob").html("<img src='iconos/iconLluvia.png' style='width: 100%'><span style='position: absolute; top: 13%; left: 20%; font-weight: bold; font-size: 0.8rem'>"+probLluvia.toFixed(0)+"%</span></span>")
 	//console.log($("#actual").height())
 	var altura= (($("#actual").height())/2)-37;//$(".cajaHoras").css("height")
 
@@ -154,7 +154,7 @@ fetch("https://api.openweathermap.org/data/2.5/onecall?lat="+lat+"&lon="+lon+"&u
 		+"<img src='http://openweathermap.org/img/wn/"+iconoDias+"@4x.png' style='width: 50%'>"
 		+"<span id='descripEnDias'>"+descripDias+"</span>"
 		+"</div>"
-		+"<span class='spanDatosHoras' style='width: 25%'><img src='iconos/iconLluvia.png' style='width: 100%'><span style='position: absolute; top: 15%; left: 25%; font-weight: bold; color: rgb(30, 30, 70, 0.8)'>"+probLluvia.toFixed(0)+"%</span></span></span>"
+		+"<span class='spanDatosHoras' style='width: 25%'><img src='iconos/iconLluvia.png' style='width: 100%'><span style='position: absolute; top: 15%; left: 15%; font-weight: bold; color: rgb(30, 30, 70, 0.8)'>"+probLluvia.toFixed(0)+"%</span></span></span>"
 		+"<div class='datosEnDias'>"
 		+"<span class='riseSetEnDias'><span id='riseEnDias' class='spanRiseSet'><span>"+amanecerEnDias+"</span><img src='iconos/iconAmanecer.png' style='width: 35%;'></span><span id='setEnDias' class='spanRiseSet'><img src='iconos/iconAnochecer.png' style='width: 35%;'><span>"+anochecerEnDias+"</span></span></span>"
 		+"<span style='display: flex; flex-direction: column; align-items: center;'><span class='riseSetEnDias'><span id='riseMoonEnDias' class='spanRiseSet'><span>"+riseMoonEnDias+"</span><img src='iconos/moonriseIcon.png' style='width: 33%;'></span><span id='setMoonEnDias' class='spanRiseSet'><img src='iconos/moonsetIcon.png' style='width: 33%;'><span>"+setMoonEnDias+"</span></span></span><span style='font-size: 0.7rem'>"+faseLuna+"</span></span>"

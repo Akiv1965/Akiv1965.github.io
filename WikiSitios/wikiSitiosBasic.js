@@ -69,6 +69,47 @@ navigator.geolocation.getCurrentPosition(function(position) {
 
 // }) //Fin Google autocomplete
 
+		  $("#buscarLatLon").on("click", function(){
+			lat= $("#inputLat").val()
+			lon= $("#inputLon").val()
+			var nombreLugar= $("#inputCiudad").val()
+			if(lat !== "" && lon !== "" && nombreLugar == ""){
+				conectWiki(lat,lon)
+			}else if(lat == "" && lon == "" && nombreLugar !== ""){
+				$.get("https://nominatim.openstreetmap.org/search/"+nombreLugar+"?format=json&addressdetails=1&namedetails=1",
+					function(lugares){
+						if(lugares.length == 0){
+							alert("No se encuentra ninguna ubicación con el nombre de: "+nombreLugar+" \n Inténtelo de nuevo ")
+						}else{
+							$(".listaUbicaciones").show()
+							$(".listaUbicaciones").append("<h3>"+nombreLugar+" puede referirse a: </h3>")
+							for(var i=0; i < lugares.length; i++){
+								$(".listaUbicaciones").append(
+									"<div class='ubicacion' id='"+i+"'>"+lugares[i].display_name+"</div>"
+								)
+							}
+							$(".ubicacion").on("click", 
+					function(){
+						console.log("jdjdjdjdjjddjjddj")
+						$(".listaUbicaciones").hide()
+						$(".overlay").hide()
+						lat= lugares[this.id].lat
+						lon= lugares[this.id].lon
+						conectWiki(lat,lon)
+					})
+						}
+						console.log(lugares)
+					})
+					
+				}else{
+				alert("Introduzca")
+			}
+			//console.log($("#inputLat").val())
+			
+		  })
+	
+		  
+
 // Evento para selección de idioma 			
 	$("#selecIdioma").on("change", function(){
 		console.log($("#selecIdioma").val())
