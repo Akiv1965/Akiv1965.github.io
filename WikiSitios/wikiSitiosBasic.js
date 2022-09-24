@@ -68,8 +68,41 @@ navigator.geolocation.getCurrentPosition(function(position) {
 //             })
 
 // }) //Fin Google autocomplete
+		//   $(".busquedas").on("click",
+		//   function(){
+		// 	console.log(this.id)
+		// 	if(this.id == "busquedaLatLon"){
+		// 		$("#contInputsLatLon").animate({
+		// 			opacity: 1,
+		// 			height: "100%"
+		// 		}, 800)
+		// 	}
+			
+		// 	if(this.id == "busquedaCiudad"){
+		// 		//$("#contInputsLatLon").toggle()
+		// 		$("#contInputsCiudad").animate({
+		// 			opacity: 1,
+		// 			height: "100%"
+		// 		}, 800)
+		// 	}
+		//   })
 
-		  $("#buscarLatLon").on("click", function(){
+		// $(".busquedas").on("click",
+		//    function(){
+		// 	$("#botonBuscar").hide()
+		// 	if(this.id == "busquedaLatLon"){
+		// 	$("#contInputsLatLon").css({height: "100%", opacity: "1"})
+		// 	$("#contInputsLatLon").addClass("showInputs")
+		// 	$("#botonBuscar").show()
+		// 	}
+		// 	if(this.id == "busquedaCiudad"){
+		// 		$("#contInputsLatLon").removeClass("showInputs")	
+		// 		$("#contInputsCiudad").addClass("showInputs")
+		// 		$("#botonBuscar").show()
+		// 	}
+		//    })
+
+		  $("#botonBuscar").on("click", function(){
 			lat= $("#inputLat").val()
 			lon= $("#inputLon").val()
 			var nombreLugar= $("#inputCiudad").val()
@@ -81,7 +114,7 @@ navigator.geolocation.getCurrentPosition(function(position) {
 						if(lugares.length == 0){
 							alert("No se encuentra ninguna ubicación con el nombre de: "+nombreLugar+" \n Inténtelo de nuevo ")
 						}else{
-							$(".listaUbicaciones").show()
+							$(".listaUbicaciones").css("visibility", "visible")
 							$(".listaUbicaciones").append("<h3>"+nombreLugar+" puede referirse a: </h3>")
 							for(var i=0; i < lugares.length; i++){
 								$(".listaUbicaciones").append(
@@ -90,9 +123,10 @@ navigator.geolocation.getCurrentPosition(function(position) {
 							}
 							$(".ubicacion").on("click", 
 					function(){
-						console.log("jdjdjdjdjjddjjddj")
-						$(".listaUbicaciones").hide()
-						$(".overlay").hide()
+						
+						$(".listaUbicaciones").css("visibility", "hidden")
+						//$(".overlay").hide()
+						$("#myNav").animate({height: 0}, 300)
 						lat= lugares[this.id].lat
 						lon= lugares[this.id].lon
 						conectWiki(lat,lon)
@@ -185,9 +219,9 @@ console.log(lat+"xxxxx"+lon)
 //Si el extracto es indefinido crea arrays labels2 e index2 
 //para recuperarlos en 2º llamada			
 		if(datosInfoWindow.extract !== undefined){
-		$("#wikiLista").append("<div id='infoWindow"+i+"' class='boxWindow'><div id='titulo'><a href='https://"+idioma+".wikipedia.org/wiki/"+datosInfoWindow.title+"' target='_blank'>"+datosInfoWindow.title+"</a></div><div id='contExtract'><span id='extracto"+i+"' class='extractos'>"+datosInfoWindow.extract+"</span><span class='imgExtract'><img src='"+imgInfoWindow+"' style='width:100%; height: 100%'></span></div><div class='linkGallery'><img src='img/iconGallery.png' width='100%'></div><div id='linkMap'></div></div>")
+		$("#wikiLista").append("<div id='infoWindow"+i+"' class='boxWindow'><div id='titulo'><a href='https://"+idioma+".wikipedia.org/wiki/"+datosInfoWindow.title+"' target='_blank'>"+datosInfoWindow.title+"</a></div><div id='contExtract'><span id='extracto"+i+"' class='extractos'>"+datosInfoWindow.extract+"</span><span class='imgExtract'><img src='"+imgInfoWindow+"' style='width:100%; height: 100%; object-fit: contain;'></span></div><div class='linkGallery'><img src='img/iconGallery.png' width='100%'></div><div id='linkMap'></div></div>")
 		} else {
-			$("#wikiLista").append("<div id='infoWindow"+i+"' class='boxWindow'><div id='titulo'><a href='https://"+idioma+".wikipedia.org/wiki/"+datosInfoWindow.title+"' target='_blank'>"+datosInfoWindow.title+"</a></div><div id='contExtract'><span id='extracto"+i+"' class='extractos'><img src='img/loadingGif.gif'></span><span class='imgExtract'><img src='"+imgInfoWindow+"' style='width:100%; height: 100%'></span></div><div class='linkGallery'><img src='img/iconGallery.png' width='100%'></div><div id='linkMap'></div></div>")
+			$("#wikiLista").append("<div id='infoWindow"+i+"' class='boxWindow'><div id='titulo'><a href='https://"+idioma+".wikipedia.org/wiki/"+datosInfoWindow.title+"' target='_blank'>"+datosInfoWindow.title+"</a></div><div id='contExtract'><span id='extracto"+i+"' class='extractos'><img src='img/loadingGif.gif'></span><span class='imgExtract'><img src='"+imgInfoWindow+"' style='width:100%; height: 100%; object-fit: contain;'></span></div><div class='linkGallery'><img src='img/iconGallery.png' width='100%'></div><div id='linkMap'></div></div>")
 			labels2.push([datosInfoWindow.title])
 			index2.push(i)
 		}

@@ -1,220 +1,300 @@
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap');
+
 * {
     box-sizing: border-box;
-	margin:0;
+    margin: 0;
 }
-#cabecera{
-	height:106px;
-	position: fixed;
+
+#cabecera {
+    height: 106px;
+    position: fixed;
     top: 0;
     background: rgb(51, 36, 111);
     width: 100%;
-	z-index: 9999;
-	box-shadow: 0px 2px 2px rgb(48, 30, 120);
+    z-index: 9999;
+    box-shadow: 0px 2px 2px rgb(48, 30, 120);
 }
-#tituloCabecera{
-	position: absolute;
-	width: 100%;
-	background: rgb(51, 36, 111);
+
+#tituloCabecera {
+    position: absolute;
+    width: 100%;
+    background: rgb(51, 36, 111);
     color: rgb(135, 126, 175);
     font-family: 'Crimson Text', serif;
-	font-size: 2em;
+    font-size: 2em;
     text-shadow: none;
     display: flex;
     align-items: flex-start;
     justify-content: flex-end;
     padding: 8px 10px 0px 0px;
 }
-#markerWiki{
+
+#markerWiki {
     width: 33px;
     margin-left: 6px;
 }
-#numWikiSitios{
-	font-size: 0.5em;
+
+#numWikiSitios {
+    font-size: 0.5em;
     padding: 1px 4px 1px 4px;
     border-radius: 12px;
     margin: 0px 6px 5px 0px;
     box-shadow: 1px 1px 2px;
 }
-#contSlider{
+
+#contSlider {
     width: 100%;
     background: rgb(51, 36, 111);
-	z-index: 9999;
-	margin-top: 52px;
+    z-index: 9999;
+    margin-top: 52px;
 }
-.marcaKm{
-	position: absolute;
-	color: rgb(225,225,255, 0.8);
+
+.marcaKm {
+    position: absolute;
+    color: rgb(225, 225, 255, 0.8);
     text-shadow: none;
     font-size: 0.7em;
-	top:85px;
+    top: 85px;
 }
-#marcaMin{
-	left: 20px;
+
+#marcaMin {
+    left: 20px;
 }
-#marcaMax{
-	right:20px;
+
+#marcaMax {
+    right: 20px;
 }
-#metros{
-	position: fixed;
+
+#metros {
+    position: fixed;
     top: 45px;
     left: 30px;
-    color: rgb(235,235,255, 0.9);
+    color: rgb(235, 235, 255, 0.9);
     text-shadow: none;
 }
-.ui-mini{
-	
-}
-#wikiLista{
-	margin-top: 106px;
+
+.ui-mini {}
+
+#wikiLista {
+    margin-top: 106px;
     overflow: hidden;
 }
-.boxWindow{
-	position: relative;
-	padding: 15px 6px 1px 6px;
+
+.boxWindow {
+    position: relative;
+    padding: 15px 6px 1px 6px;
     display: flex;
     flex-direction: column;
-	height: 140px;
-	text-shadow: none;
+    height: 140px;
+    text-shadow: none;
 }
-#titulo{
-	max-width:76%;
+
+#titulo {
+    max-width: 76%;
     font-size: 0.9rem;
 }
-#titulo a{
-	text-shadow: none;
+
+#titulo a {
+    text-shadow: none;
     margin-left: 4px;
-	text-decoration: none;
+    text-decoration: none;
     border-radius: 9px;
     box-shadow: 1px 2px 3px;
     padding: 1px 7px 2px 7px;
-    
+
 }
-.extractos{
+
+.extractos {
     width: 100%;
-	height: 80px;
-	text-align: justify;
-	overflow: auto;
-	padding: 0px 7px 0px 3px;
-	font-size: 0.8em;
+    height: 80px;
+    text-align: justify;
+    overflow: auto;
+    padding: 0px 7px 0px 3px;
+    font-size: 0.8em;
 }
-#contExtract{
-	display: flex;
-	align-items: center;
-	height: 100px;
+
+#contExtract {
+    display: flex;
+    align-items: center;
+    height: 100px;
 }
-.imgExtract{
+
+.imgExtract {
     height: 80px;
     min-width: 110px;
 }
-#linkMap{
+
+#linkMap {
     width: 25px;
-	position: absolute;
-	right: 8px;
-	top: 11px;
-	opacity: 0.7;
+    position: absolute;
+    right: 8px;
+    top: 11px;
+    opacity: 0.7;
 }
-.linkGallery{
-	position: absolute;
+
+.linkGallery {
+    position: absolute;
     width: 25px;
-	right: 47px;
-	top: 13px;
-	opacity: 0.7;
+    right: 47px;
+    top: 13px;
+    opacity: 0.7;
     cursor: pointer;
 }
-#galeria{
-	position: fixed;
-	width: 310px;
-	top: 110px;
-	left: 20px;
-	z-index: 999999;
+
+#galeria {
+    position: fixed;
+    width: 310px;
+    top: 110px;
+    left: 20px;
+    z-index: 999999;
 }
-#cajaGaleria{
-	display: flex;
+
+#cajaGaleria {
+    display: flex;
     flex-direction: column;
     align-items: center;
-	min-height: 150px;
+    min-height: 150px;
 }
-#tituloGaleria{
-	width: 100%;
-	padding: 3px 0px 3px 0px;
-	background: rgb(51, 36, 111);
-	text-align: center;
-	color: rgb(210,215,235);
-	box-shadow: 2px 0px 2px rgb(45, 65, 70);
+
+#tituloGaleria {
+    width: 100%;
+    padding: 3px 0px 3px 0px;
+    background: rgb(51, 36, 111);
+    text-align: center;
+    color: rgb(210, 215, 235);
+    box-shadow: 2px 0px 2px rgb(45, 65, 70);
 }
-#imgGal{
-	box-shadow: 2px 2px 2px rgb(45, 65, 70);
+
+#imgGal {
+    box-shadow: 2px 2px 2px rgb(45, 65, 70);
 }
-.flechas{
+
+.flechas {
     position: absolute;
     top: 45%;
     font-size: 1.9rem;
     cursor: pointer;
     visibility: hidden;
 }
-#flechaDer{
+
+#flechaDer {
     right: 0px;
 }
-#closeGal{
-	width: 25px;
-	position: absolute;
-	color: rgb(210,215,235, 0.7);
-	font-size: 1.6em;
+
+#closeGal {
+    width: 25px;
+    position: absolute;
+    color: rgb(210, 215, 235, 0.7);
+    font-size: 1.6em;
     top: 8%;
     right: 6px;
-	text-align: center;
+    text-align: center;
     cursor: pointer;
 }
-#contador{
-	width: 25px;
-	position: absolute;
-	color: rgb(210,215,235, 0.7);
-	font-size: 1.1em;
+
+#contador {
+    width: 25px;
+    position: absolute;
+    color: rgb(210, 215, 235, 0.7);
+    font-size: 1.1em;
     bottom: 5%;
     left: 6px;
-	text-align: center;
+    text-align: center;
 }
 
 /* MENU CORTINA */
- /* The Overlay (background) */
- #abrirMenu{
+/* The Overlay (background) */
+#abrirMenu {
     width: 30px;
-	position: fixed;
+    position: fixed;
     z-index: 9999999;
     top: 7px;
     left: 15px;
     padding: 2px;
     opacity: 0.8;
     cursor: pointer;
- }
- #inputLoc{
-	 width: 100%;
-    background: rgb(245,245,245, 0.4);
+}
+
+#inputLoc {
+    width: 100%;
+    background: rgb(245, 245, 245, 0.4);
     border-color: rgb(46 158 247);
- }
- ::placeholder{
-	color: rgb(145,0,0);
-	text-shadow: 1px 1px grey;
+}
+
+::placeholder {
+    color: rgb(145, 0, 0);
+    text-shadow: 1px 1px grey;
     font-weight: bold;
 }
-.divInputLatLon{
-    width: 100%;
+
+.divInputLatLon {
+    width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
     font-size: 0.9rem;
 }
-#inputLat{
+.busquedas{
+    width: 100%;
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+}
+
+.contInputs {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    /* height: 0px;
+    opacity: 0; */
+}
+
+
+.inputLatLon {
     background: rgb(138 128 170);
     text-align: center;
 }
-#inputLon{
-    background: rgb(138 128 170);
-    text-align: center;
+
+
+/* #busquedaCiudad:active #contInputsCiudad {
+    height: 100%;
+    opacity: 1;
+    display: block;
 }
-.listaUbicaciones{
-    display: none;
+
+#busquedaLatLon:active #contInputsLatLon {
+    
+    position: sticky;
+    animation:rotate-scale-down-horizontal 0.4s linear both
+} */
+.showInputs{
+    height: 100%;
+    opacity: 1;
+    animation:rotate-scale-down-horizontal 0.4s linear both
+}
+@keyframes rotate-scale-down-horizontal {
+    0% {
+        transform: scale(1) rotateX(0)
+    }
+
+    50% {
+        transform: scale(.5) rotateX(-180deg)
+    }
+
+    100% {
+        transform: scale(1) rotateX(-360deg)
+    }
+}
+
+
+#botonBuscar {
+    width: 40%;
+    padding: 0;
+}
+
+.listaUbicaciones {
+    visibility: hidden;
     width: 50%;
     position: absolute;
     top: 20%;
@@ -228,44 +308,56 @@
     background: rgb(51, 36, 111, 0.9);
     padding: 4px 0px 8px 0px;
     text-shadow: none;
-    color: rgb(195,195, 225);
+    color: rgb(195, 195, 225);
 }
-.ubicacion{
+
+.ubicacion {
     width: 90%;
     text-align: center;
-    box-shadow: 1px 2px 2px rgb(170,170, 200);
+    box-shadow: 1px 2px 2px rgb(170, 170, 200);
     border-radius: 5px;
     background: rgb(51, 36, 111);
     padding: 3px 0px;
     cursor: pointer;
 }
-.ui-textinput-text, .ui-textinput-search{
+
+.ui-textinput-text,
+.ui-textinput-search {
     width: 45%;
-    
+
 }
-.pac-target-input{
-	color: black;
+
+.pac-target-input {
+    color: black;
 }
-.ui-input-text{
-	width: 80%;
+
+.ui-input-text {
+    width: 80%;
 }
+
 .overlay {
-  /* Height & width depends on how you want to reveal the overlay (see JS below) */   
-  height: 0;
-  width: 100%;
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  background-color: rgb(0,0,0); /* Black fallback color */
-  background-color: rgb(51, 36, 111, 0.8); /* Black w/opacity */
-  overflow-x: hidden; /* Disable horizontal scroll */
-  transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */
+    height: 0;
+    width: 100%;
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    background-color: rgb(0, 0, 0);
+    /* Black fallback color */
+    background-color: rgb(51, 36, 111, 0.8);
+    /* Black w/opacity */
+    overflow-x: hidden;
+    /* Disable horizontal scroll */
+    transition: 0.5s;
+    /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
 }
 
 /* Position the content inside the overlay */
 .overlay-content {
- display: flex;
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
@@ -279,87 +371,105 @@
 
 /* The navigation links inside the overlay */
 .overlay a {
-  padding: 8px;
-  text-decoration: none;
-  font-size: 36px;
-  color: #818181;
-  display: block; /* Display block instead of inline */
-  transition: 0.3s; /* Transition effects on hover (color) */
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    /* Display block instead of inline */
+    transition: 0.3s;
+    /* Transition effects on hover (color) */
 }
 
 /* When you mouse over the navigation links, change their color */
-.overlay a:hover, .overlay a:focus {
-  color: #f1f1f1;
+.overlay a:hover,
+.overlay a:focus {
+    color: #f1f1f1;
 }
 
 /* Position the close button (top right corner) */
 .overlay .closebtn {
-  position: absolute;
-  top: 100px;
-  right: 7px;
-  opacity: 0.9;
+    position: absolute;
+    top: 100px;
+    right: 7px;
+    opacity: 0.9;
 }
-#selecIdioma-button{
-	background: rgb(245,245,245, 0.4);
-	color:rgb(145,0,0);
-	text-shadow: 1px 1px grey;
-	font-size: 0.8em;
+
+#selecIdioma-button {
+    background: rgb(245, 245, 245, 0.4);
+    color: rgb(145, 0, 0);
+    text-shadow: 1px 1px grey;
+    font-size: 0.8em;
 }
-#selecIdioma{
-	background: rgb(245,245,245, 0.4);
-	color:rgb(145,0,0);
+
+#selecIdioma {
+    background: rgb(245, 245, 245, 0.4);
+    color: rgb(145, 0, 0);
 }
-#botonVuelta{
-	width: 50px;
+
+#botonVuelta {
+    width: 50px;
     background: none;
     padding: 5px;
     border: none;
-	opacity:0.8;
+    opacity: 0.8;
 }
+
 /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
 @media screen and (max-height: 450px) {
-  .overlay a {font-size: 20px}
-  .overlay .closebtn {
-    font-size: 40px;
-    top: 15px;
-    right: 35px;
-  }
-} 
+    .overlay a {
+        font-size: 20px
+    }
+
+    .overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+}
 
 
 @media only screen and (min-width: 505px) {
-    #tituloCabecera{
+    #tituloCabecera {
         font-size: 2.8rem;
     }
-    #markerWiki{
+
+    #markerWiki {
         width: 42px;
         margin-left: 11px;
     }
-    #titulo{
+
+    #titulo {
         font-size: 1.2rem;
         margin-left: 10px;
     }
-    .extractos{
+
+    .extractos {
         font-size: 1rem;
     }
-    .imgExtract{
+
+    .imgExtract {
         height: 95px;
         min-width: 145px;
     }
-    #galeria{
+
+    #galeria {
         width: 495px;
     }
-    .linkGallery{
+
+    .linkGallery {
         width: 30px;
         right: 80px;
         top: 10px;
     }
-    #linkMap{
+
+    #linkMap {
         width: 30px;
         right: 20px;
         top: 5px;
     }
-    .flechas{
+
+    .flechas {
         visibility: visible;
     }
-} 
+}

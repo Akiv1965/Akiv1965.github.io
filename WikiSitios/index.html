@@ -42,13 +42,21 @@
   <div class="overlay-content">
 	<!-- <input id="inputLoc" type="text" placeholder="Ver otra localización"> -->
   <div class="divInputLatLon">
-    <span style="color: rgb(95,30,30); font-size: 1.1rem; font-weight: bold">Ver otra ubicación</span>
-    <span style="display: flex; align-items: center; justify-content: space-around;">
+    <span style="color: rgb(95,30,30); font-size: 1.1rem; font-weight: bold">Buscar otra ubicación</span>
+    <span class="busquedas" id="busquedaLatLon">
+    <span style="width: 30%; text-align: left;">&#128073; Por Latitud - Longitud</span>
+    <span class="contInputs" id="contInputsLatLon">
     <input type="number" class="inputLatLon" id="inputLat" placeholder="Introduzca latitud">
     <input type="number" class="inputLatLon" id="inputLon" placeholder="Introduzca longitud">
+    </span>
+    </span>
+    <span class="busquedas" id="busquedaCiudad">
+    <span style="width: 30%; text-align: left;">&#128073; Por nombre</span>
+    <span class="contInputs" id="contInputsCiudad">
     <input type="text" class="inputLatLon" id="inputCiudad" placeholder="Introduzca lugar">
     </span>
-    <input type="button" id="buscarLatLon" value="Buscar">
+    </span>
+    <input type="button" id="botonBuscar" value="Buscar">
   </div>
    <select id="selecIdioma" name="selecIdioma">
 	    
