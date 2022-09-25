@@ -6,7 +6,7 @@
 
     //var lat =  Number(position.coords.latitude);//40.481815
     //var lon =  Number(position.coords.longitude);//-3.364305
- var ubicacion;
+
       $.get(
         "https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=" +
           lat +
@@ -15,11 +15,13 @@
           "",
         function (ciudad) {
           ubicacion = ciudad.address;
-          $("#ciudad").text(ubicacion.city);
+          lugar= ubicacion.city;
+          paisCode= ubicacion.country_code
+          $("#ciudad").text(lugar);
           $("#direccionPostal").html("<span>"+ubicacion.state+"</span>"
           +"<span>"+ubicacion.postcode+" "+ubicacion.country+"</span>")
           console.log(ciudad, new Date().getDate());
-          //return lat, lon
+          airQuality(lugar, paisCode)
         }
       );
       //})

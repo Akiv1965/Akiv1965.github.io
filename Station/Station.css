@@ -59,7 +59,10 @@ body {
     align-items: center;
     font-size: 0.8em;
 }
-
+#airQuality{
+    display: flex;
+    flex-direction: column;
+}
 #instrumentos{
     position: absolute;
     left: 15%;

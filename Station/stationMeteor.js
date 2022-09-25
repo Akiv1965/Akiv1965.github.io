@@ -3,11 +3,14 @@ navigator.geolocation.getCurrentPosition(function(position) {
 
     const lat =  Number(position.coords.latitude);//40.481815
     const lon =  Number(position.coords.longitude);//-3.364305
-
+	// var lugar;
+	// var paisCode
 
 
 
     functionUbicacion(lat, lon)
+	
+	
 var idioma = (navigator.language).slice(0, 2);
 if (idioma !== "es") {
     idioma = "en";
