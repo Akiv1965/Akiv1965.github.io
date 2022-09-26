@@ -21,7 +21,7 @@ fetch('https://api.openaq.org/v2/latest?limit=100&page=1&offset=0&sort=desc&radi
       var parametro= datosAQ[t].parameter
       var valor= datosAQ[t].value
       var unidad= datosAQ[t].unit
-      $("#airQuality").append("<span>"+objectParams[parametro]+": "+valor+unidad+"</span>")
+      $("#airQuality").append("<span class='classParam'><small>"+objectParams[parametro]+":</small> <big>"+valor+"</big><small>"+unidad+"</small></span>")
     }
     
   }

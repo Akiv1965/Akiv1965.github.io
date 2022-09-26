@@ -33,7 +33,7 @@ body {
     padding: 10px 6px;
 }
 #fotoSatelite{
-    width: 100%;
+    width: 40%;
     position: relative;
     display: flex;
 }
@@ -59,9 +59,23 @@ body {
     align-items: center;
     font-size: 0.8em;
 }
+#cabAQ{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(245,245,245, 0.9);
+}
 #airQuality{
     display: flex;
     flex-direction: column;
+    row-gap: 4px;
+    padding: 5px 3px;
+    border-radius: 10px;
+    border: 2px solid rgb(24,139,254);
+}
+.classParam{
+    font-size: 0.9rem;
 }
 #instrumentos{
     position: absolute;
@@ -91,7 +105,7 @@ a{
     color: rgb(190, 230, 10);
 }
 #videoSatelite{
-    width: 100%;
+    width: 40%;
     display: flex;
 }
 
