@@ -1,8 +1,8 @@
 
 navigator.geolocation.getCurrentPosition(function(position) {
 
-    const lat =  Number(position.coords.latitude);//40.481815
-    const lon =  Number(position.coords.longitude);//-3.364305
+    const lat = Number(position.coords.latitude);//
+    const lon = Number(position.coords.longitude);//
 	// var lugar;
 	// var paisCode
 

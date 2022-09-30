@@ -75,7 +75,22 @@ body {
     border: 2px solid rgb(24,139,254);
 }
 .classParam{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
     font-size: 0.9rem;
+}
+.escala{
+    width: 20%;
+    height: 50%;
+    display: flex;
+    border-radius: 10px;
+    background: rgb(230,230,245);
+}
+.spanColor{
+    width: 34%;
+    filter: brightness(0.9);
+    box-shadow: 1px 1px 2px;
 }
 #instrumentos{
     position: absolute;
@@ -123,6 +138,7 @@ a{
     width: 100%;
     display: flex;
     align-items: center;
+    background: rgb(30,30,30, 0.2);
 }
 .divDatos{
     width: 100%;
@@ -181,6 +197,7 @@ a{
     display: flex;
     align-items: center;
     justify-content: center;
+    background: rgb(30,30,30, 0.2);
 }
 #iconoViento{
     position: relative;
