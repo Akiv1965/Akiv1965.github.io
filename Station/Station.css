@@ -212,6 +212,7 @@ a{
     font-size: 0.9rem;
     color: rgb(60,20,20);
     text-shadow: 1px 1px 2px rgb(180 180 20);
+    z-index: 99;
 }
 #datosActual{
     width: 60%;
