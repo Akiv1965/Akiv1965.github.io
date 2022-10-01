@@ -90,7 +90,7 @@ fetch("https://api.openweathermap.org/data/2.5/onecall?lat="+lat+"&lon="+lon+"&u
 	$("#visibility").html("<img src='iconos/iconVisibility.png' style='width: 15%;'><span>"+visibilidad+"<small>mt</small></span>")
 	$("#prob").html("<img src='iconos/iconLluvia.png' style='width: 100%'><span style='position: absolute; top: 13%; left: 20%; font-weight: bold; font-size: 0.8rem'>"+probLluvia.toFixed(0)+"%</span></span>")
 	//console.log($("#actual").height())
-	var altura= (($("#actual").height())/2)-37;//$(".cajaHoras").css("height")
+	var altura= (($("#actual").height())/2)-47;//$(".cajaHoras").css("height")
 
 	// 48 HORAS  **
 //Hallar posición respecto temp mínima
@@ -117,8 +117,8 @@ fetch("https://api.openweathermap.org/data/2.5/onecall?lat="+lat+"&lon="+lon+"&u
 	 //console.log(DirecViento(direcViento, iconoViento, velocidad))
 	 $("#horas").append("<div class='cajaHoras'>"
 	 +"<span id='horaEnHoras'>"+hora+"</span>"
-	 +"<div id='boxTemp'><span id='tempEnHoras' style='bottom:"+posicion+"px'>"+tempHoras+"</span></div>"
-	 +"<div id='iconoEnHoras' ><img src='http://openweathermap.org/img/wn/"+iconoHoras+"@4x.png' style='width: 35%'><span id='descripEnHoras'>"+descripHoras+"</span></div>"
+	 +"<div id='boxTemp'><span id='tempEnHoras' style='bottom:"+posicion+"px'>"+tempHoras+"º<div id='iconoEnHoras' ><img src='http://openweathermap.org/img/wn/"+iconoHoras+"@4x.png' style='width: 35%'><span id='descripEnHoras'>"+descripHoras+"</span></div></span></div>"
+	 +""
 	 +"<div class='datosEnHoras'>"
 	 +"<span class='spanDatosHoras' style='width: 80%; display: flex; flex-direction: column; align-items: center;'><img src='"+iconoVientoEnHoras+"' style='width: 100%'><span style='position: absolute; top: 41%; font-weight: bold; color: rgb(30, 30, 70, 0.8)'>"+velocidad+"<small>Km/h</small></span></span>"
 	 +"<span class='spanDatosHoras'><img src='iconos/iconLluvia.png' style='width: 100%'><span style='position: absolute; top: 20%; left: 30%; font-weight: bold; color: rgb(30, 30, 70, 0.8)'>"+probLluvia.toFixed(0)+"%</span></span></div>"
@@ -128,7 +128,7 @@ fetch("https://api.openweathermap.org/data/2.5/onecall?lat="+lat+"&lon="+lon+"&u
 	console.log($("#horas").width(), $(".cajaHoras").height(),"alticono..", $("#iconoEnHoras").height() )
 	$("#horas").prepend("<div style='height: 100%; position:sticky; left:0px; font-size: 0.7rem'>"
 	+"<div id='indexMax' class='indexMaxMin' style='width:"+($("#horas").width()+200)+"px; border-top: 1px solid rgb(225, 10, 10); top: 15px'><span class='termometro'>"+tempMax+"</span></div>"
-	+"<div id='indexMin' class='indexMaxMin' style='width:"+($("#horas").width()+200)+"px; top: 50%; border-bottom: 1px solid rgb(10, 10, 225); margin-bottom: 3px;'><span class='termometro' style='background: rgb(10, 10, 225, 0.6);'>"+tempMin+"</span></div></div>")
+	+"<div id='indexMin' class='indexMaxMin' style='width:"+($("#horas").width()+200)+"px; bottom: 0px; border-bottom: 1px solid rgb(10, 10, 225); margin-bottom: 3px;'><span class='termometro' style='background: rgb(10, 10, 225, 0.6);'>"+tempMin+"</span></div></div>")
 
 
  	// DIAS ***

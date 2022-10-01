@@ -65,6 +65,7 @@ body {
     align-items: center;
     justify-content: center;
     color: rgb(245,245,245, 0.9);
+    text-shadow: 1px 1px rgb(10 10 90);
 }
 #airQuality{
     display: flex;
@@ -89,7 +90,7 @@ body {
 }
 .spanColor{
     width: 34%;
-    filter: brightness(0.9);
+    filter: brightness(0.8);
     box-shadow: 1px 1px 2px;
 }
 #instrumentos{
@@ -132,7 +133,6 @@ a{
     color: rgb(215, 215, 245);
     text-shadow: 1px 1px 2px rgb(35,35,50);
     border-radius: 8px;
-    padding: 5px 3px 6px 5px;
 }
 #actual1{
     width: 100%;
@@ -230,13 +230,10 @@ a{
     align-items: center;
     padding-left: 3px;
 }
-#cajaStation{
-    margin-top: 5px;
-}
 #horas{
     position: relative;
     width: 100%;
-    min-height: 55%;
+    min-height: 50%;
     display: flex;
     align-items: center;
     overflow-x: auto;
@@ -270,7 +267,9 @@ a{
     width: 100%;
     text-align: center;
     font-size: 0.7rem;
-    text-shadow: 1px 1px 2px rgb(150, 150, 210);
+    background: rgb(30,30,90, 0.9);
+    border: 1px solid black;
+    color: rgb(200, 200, 250)
 }
 #iconoEnHoras{
     position: relative;
@@ -281,7 +280,7 @@ a{
 }
 #boxTemp{
     width: 100%;
-    height: 40%;
+    height: 57%;
     position: relative;
 }
 .termometro{
