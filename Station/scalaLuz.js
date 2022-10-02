@@ -12,7 +12,7 @@ function scalaLuz(parametro, ppm){
       if(ppm >= 1 && ppm <= 6){
         $("#naranja"+parametro).css(
           {
-          "background": "rgb(255,200,10)",
+          "background": "rgb(255,90,10)",
           "filter": "brightness(1.9)"
           }
           )
@@ -41,7 +41,7 @@ function scalaLuz(parametro, ppm){
       if(ppm >= 1 && ppm <= 3){
         $("#naranja"+parametro).css(
           {
-          "background": "rgb(255,200,10)",
+          "background": "rgb(255,90,10)",
           "filter": "brightness(1.9)"
           }
           )
@@ -70,7 +70,7 @@ function scalaLuz(parametro, ppm){
       if(ppm >= 1 && ppm <= 5){
         $("#naranja"+parametro).css(
           {
-          "background": "rgb(255,200,10)",
+          "background": "rgb(255,90,10)",
           "filter": "brightness(1.9)"
           }
           )
@@ -99,7 +99,7 @@ function scalaLuz(parametro, ppm){
       if(ppm >= 1.3 && ppm <= 5){
         $("#naranja"+parametro).css(
           {
-          "background": "rgb(255,200,10)",
+          "background": "rgb(255,90,10)",
           "filter": "brightness(1.9)"
           }
           )
@@ -117,7 +117,7 @@ function scalaLuz(parametro, ppm){
 
   if(parametro == "o3"){
     console.log("flfllfllfll", ppm)
-      if(ppm < 0.075){
+      if(ppm < 0.085){
         $("#verde"+parametro).css(
           {
           "background": "rgb(10,250,10)",
@@ -125,10 +125,10 @@ function scalaLuz(parametro, ppm){
           }
           )
       }
-      if(ppm >= 0.075 && ppm <= 0.10){
+      if(ppm >= 0.085 && ppm <= 0.10){
         $("#naranja"+parametro).css(
           {
-          "background": "rgb(255,200,10)",
+          "background": "rgb(255,90,10)",
           "filter": "brightness(1.9)"
           }
           )
@@ -157,7 +157,7 @@ function scalaLuz(parametro, ppm){
       if(ppm >= 5 && ppm <= 9){
         $("#naranja"+parametro).css(
           {
-          "background": "rgb(255,200,10)",
+          "background": "rgb(255,90,10)",
           "filter": "brightness(1.9)"
           }
           )

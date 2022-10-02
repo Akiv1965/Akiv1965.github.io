@@ -42,7 +42,7 @@ fetch('https://api.openaq.org/v2/latest?limit=100&page=1&offset=0&sort=desc&radi
 
       $("#airQuality").append(
         "<span class='classParam' title='"+objectParams[parametro]+"'><small style='width: 30%; cursor: pointer;'>"+parametro+":</small><span style='width: 30%'><big>"+valor+"</big><small>"+unidad+"</small></span>"
-        +"<div class='escala'><span id='verde"+parametro+"' class='spanColor' style='background: green;'></span><span id='naranja' class='spanColor' style='background: orange;'></span><span id='rojo' class='spanColor' style='background: red;'></span></div></span>")
+        +"<div class='escala'><span id='verde"+parametro+"' class='spanColor' style='background: green;'></span><span id='naranja"+parametro+"' class='spanColor' style='background: orange;'></span><span id='rojo"+parametro+"' class='spanColor' style='background: red;'></span></div></span>")
         
         scalaLuz(parametro, ppm)
     }
